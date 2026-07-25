@@ -1,0 +1,102 @@
+swagger: '2.0'
+info:
+  description: Employer APIs
+  version: v1
+  title: Swagger spec for Work Market API v1 Addressbook UpdateCheckIn API
+  termsOfService: https://developer.workmarket.com/tos
+  contact:
+    name: Work Market API Team
+    url: https://developer.workmarket.com
+    email: api@workmarket.com
+  license:
+    name: Company Licence
+    url: https://developer.workmarket.com/licenses/LICENSE-2.0.html
+host: www.workmarket.com
+basePath: /
+schemes:
+- https
+tags:
+- name: UpdateCheckIn
+paths:
+  /v1/employer/{id}/update_checkin:
+    post:
+      tags:
+      - UpdateCheckIn
+      summary: Check-in action used for both new check-ins or updating an existing entry
+      description: ''
+      operationId: updateCheckInAction
+      parameters:
+      - name: id
+        in: path
+        required: true
+        type: string
+      - name: check_in_out_id
+        in: query
+        required: false
+        type: string
+      - name: datetime
+        in: query
+        required: false
+        type: string
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/ApiV1Response'
+  /v1/employer/{id}/update_checkout:
+    post:
+      tags:
+      - UpdateCheckIn
+      summary: Check-out action used for both new check-outs or updating an existing entry
+      description: ''
+      operationId: updateCheckOutAction
+      parameters:
+      - name: id
+        in: path
+        required: true
+        type: string
+      - name: check_in_out_id
+        in: query
+        required: false
+        type: string
+      - name: datetime
+        in: query
+        required: false
+        type: string
+      - name: note
+        in: query
+        required: false
+        type: string
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/ApiV1Response'
+definitions:
+  v1Meta:
+    type: object
+    properties:
+      errors:
+        type: array
+        items:
+          type: object
+      status_code:
+        type: integer
+        format: int32
+      version:
+        type: integer
+        format: int32
+      requestId:
+        type: string
+      execution_time:
+        type: number
+        format: double
+      timestamp:
+        type: integer
+        format: int64
+  ApiV1Response:
+    type: object
+    properties:
+      meta:
+        description: Details about this response
+        $ref: '#/definitions/v1Meta'

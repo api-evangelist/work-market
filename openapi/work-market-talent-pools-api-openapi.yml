@@ -1,0 +1,310 @@
+swagger: '2.0'
+info:
+  description: Employer APIs
+  version: v1
+  title: Swagger spec for Work Market API v1 Addressbook Talent Pools API
+  termsOfService: https://developer.workmarket.com/tos
+  contact:
+    name: Work Market API Team
+    url: https://developer.workmarket.com
+    email: api@workmarket.com
+  license:
+    name: Company Licence
+    url: https://developer.workmarket.com/licenses/LICENSE-2.0.html
+host: www.workmarket.com
+basePath: /
+schemes:
+- https
+tags:
+- name: Talent Pools
+paths:
+  /v1/employer/groups/list:
+    get:
+      tags:
+      - Talent Pools
+      summary: List talent pools
+      description: ''
+      operationId: listTalentPoolsAction
+      parameters:
+      - name: iDisplayStart
+        in: query
+        required: false
+        type: integer
+        format: int32
+      - name: iDisplayLength
+        in: query
+        required: false
+        type: integer
+        format: int32
+      - name: start
+        in: query
+        required: false
+        type: integer
+        format: int32
+      - name: limit
+        in: query
+        required: false
+        type: integer
+        format: int32
+      - name: activeOnly
+        in: query
+        required: false
+        type: boolean
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                type: array
+                items:
+                  $ref: '#/definitions/TalentPool'
+  /v1/employer/groups/{groupId}/add_workers:
+    post:
+      tags:
+      - Talent Pools
+      summary: Add or invite workers to talent pool
+      description: ''
+      operationId: addOrInviteWorkersAction
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: false
+        schema:
+          type: array
+          items:
+            type: string
+      - name: groupId
+        in: path
+        required: true
+        type: integer
+        format: int64
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                $ref: '#/definitions/v1Status'
+  /v1/employer/groups/{groupId}/apply_on_behalf:
+    post:
+      tags:
+      - Talent Pools
+      summary: Add workers to talent pool
+      description: ''
+      operationId: applyToTalentPoolOnBehalfAction
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: false
+        schema:
+          $ref: '#/definitions/ApplyToTalentPoolOnBehalfRequest'
+      - name: groupId
+        in: path
+        required: true
+        type: integer
+        format: int64
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                $ref: '#/definitions/ApplyToTalentPoolOnBehalfResponse'
+  /v1/employer/groups/{groupId}/approve_workers:
+    post:
+      tags:
+      - Talent Pools
+      summary: Approve workers in talent pool
+      description: ''
+      operationId: approveWorkersAction
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: false
+        schema:
+          type: array
+          items:
+            type: string
+      - name: groupId
+        in: path
+        required: true
+        type: integer
+        format: int64
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                $ref: '#/definitions/v1Status'
+  /v1/employer/groups/{groupId}/decline_workers:
+    post:
+      tags:
+      - Talent Pools
+      summary: Decline workers from talent pool
+      description: ''
+      operationId: declineWorkersAction
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: false
+        schema:
+          type: array
+          items:
+            type: string
+      - name: groupId
+        in: path
+        required: true
+        type: integer
+        format: int64
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                $ref: '#/definitions/v1Status'
+  /v1/employer/groups/{groupId}/remove_workers:
+    post:
+      tags:
+      - Talent Pools
+      summary: Remove workers from talent pool
+      description: ''
+      operationId: removeWorkersAction
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: false
+        schema:
+          type: array
+          items:
+            type: string
+      - name: groupId
+        in: path
+        required: true
+        type: integer
+        format: int64
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                $ref: '#/definitions/v1Status'
+definitions:
+  ApplyToTalentPoolOnBehalfRequest:
+    type: object
+    properties:
+      userIds:
+        type: array
+        readOnly: true
+        items:
+          type: string
+      override:
+        type: boolean
+        readOnly: true
+      suppressNotification:
+        type: boolean
+        readOnly: true
+  v1Status:
+    type: object
+    properties:
+      successful:
+        type: boolean
+        readOnly: true
+  ApplyToTalentPoolOnBehalfResponse:
+    type: object
+    properties:
+      success:
+        type: array
+        readOnly: true
+        items:
+          type: string
+      failure:
+        type: array
+        readOnly: true
+        items:
+          type: string
+  TalentPool:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+        readOnly: true
+      name:
+        type: string
+        readOnly: true
+      description:
+        type: string
+        readOnly: true
+      members:
+        type: integer
+        format: int32
+        readOnly: true
+      active:
+        type: boolean
+        readOnly: true
+      deleted:
+        type: boolean
+        readOnly: true
+  v1Meta:
+    type: object
+    properties:
+      errors:
+        type: array
+        items:
+          type: object
+      status_code:
+        type: integer
+        format: int32
+      version:
+        type: integer
+        format: int32
+      requestId:
+        type: string
+      execution_time:
+        type: number
+        format: double
+      timestamp:
+        type: integer
+        format: int64

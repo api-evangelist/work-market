@@ -1,0 +1,74 @@
+swagger: '2.0'
+info:
+  description: Employer APIs
+  version: v1
+  title: Swagger spec for Work Market API v1 Addressbook Authorization API
+  termsOfService: https://developer.workmarket.com/tos
+  contact:
+    name: Work Market API Team
+    url: https://developer.workmarket.com
+    email: api@workmarket.com
+  license:
+    name: Company Licence
+    url: https://developer.workmarket.com/licenses/LICENSE-2.0.html
+host: www.workmarket.com
+basePath: /
+schemes:
+- https
+tags:
+- name: Authorization
+paths:
+  /v1/employer/authorization/request:
+    post:
+      tags:
+      - Authorization
+      summary: Request new access token
+      description: ''
+      operationId: request
+      parameters:
+      - name: token
+        in: query
+        required: true
+        type: string
+      - name: secret
+        in: query
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                $ref: '#/definitions/Authorization'
+definitions:
+  Authorization:
+    type: object
+    properties:
+      access_token:
+        type: string
+        readOnly: true
+  v1Meta:
+    type: object
+    properties:
+      errors:
+        type: array
+        items:
+          type: object
+      status_code:
+        type: integer
+        format: int32
+      version:
+        type: integer
+        format: int32
+      requestId:
+        type: string
+      execution_time:
+        type: number
+        format: double
+      timestamp:
+        type: integer
+        format: int64

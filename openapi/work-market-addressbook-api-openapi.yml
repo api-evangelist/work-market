@@ -1,0 +1,238 @@
+swagger: '2.0'
+info:
+  description: Employer APIs
+  version: v1
+  title: Swagger spec for Work Market API v1 Addressbook API
+  termsOfService: https://developer.workmarket.com/tos
+  contact:
+    name: Work Market API Team
+    url: https://developer.workmarket.com
+    email: api@workmarket.com
+  license:
+    name: Company Licence
+    url: https://developer.workmarket.com/licenses/LICENSE-2.0.html
+host: www.workmarket.com
+basePath: /
+schemes:
+- https
+tags:
+- name: Addressbook
+paths:
+  /v1/employer/addressbook/clients/add:
+    post:
+      tags:
+      - Addressbook
+      summary: Add client
+      description: ''
+      operationId: addClient
+      parameters:
+      - name: company_name
+        in: query
+        required: false
+        type: string
+      - name: industry_name
+        in: query
+        required: false
+        type: string
+      - name: customer_id
+        in: query
+        required: false
+        type: string
+      - name: region
+        in: query
+        required: false
+        type: string
+      - name: division
+        in: query
+        required: false
+        type: string
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                $ref: '#/definitions/ClientCompanyId'
+  /v1/employer/addressbook/clients/contacts/add:
+    post:
+      tags:
+      - Addressbook
+      summary: Add contact to client
+      description: ''
+      operationId: addClientContact
+      parameters:
+      - name: client_id
+        in: query
+        required: false
+        type: integer
+        format: int64
+      - name: first_name
+        in: query
+        required: false
+        type: string
+      - name: last_name
+        in: query
+        required: false
+        type: string
+      - name: title
+        in: query
+        required: false
+        type: string
+      - name: manager
+        in: query
+        required: false
+        type: string
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                $ref: '#/definitions/ClientContactId'
+  /v1/employer/addressbook/locations/contacts/add:
+    post:
+      tags:
+      - Addressbook
+      summary: Add contact to location
+      description: ''
+      operationId: addLocationContact
+      parameters:
+      - name: location_id
+        in: query
+        required: false
+        type: integer
+        format: int64
+      - name: first_name
+        in: query
+        required: false
+        type: string
+      - name: last_name
+        in: query
+        required: false
+        type: string
+      - name: title
+        in: query
+        required: false
+        type: string
+      - name: manager
+        in: query
+        required: false
+        type: string
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                $ref: '#/definitions/ClientContactId'
+  /v1/employer/crm/clients/list:
+    get:
+      tags:
+      - Addressbook
+      summary: List clients
+      description: ''
+      operationId: listClientsAction
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                type: array
+                items:
+                  $ref: '#/definitions/Client'
+  /v1/employer/crm/contacts/list:
+    get:
+      tags:
+      - Addressbook
+      summary: List contacts
+      description: ''
+      operationId: listContactsAction
+      parameters:
+      - name: client_id
+        in: query
+        required: false
+        type: string
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                type: array
+                items:
+                  $ref: '#/definitions/Contact'
+definitions:
+  ClientCompanyId:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+        readOnly: true
+  ClientContactId:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+        readOnly: true
+  Client:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+        readOnly: true
+      name:
+        type: string
+        readOnly: true
+      customer_id:
+        type: string
+        readOnly: true
+  v1Meta:
+    type: object
+    properties:
+      errors:
+        type: array
+        items:
+          type: object
+      status_code:
+        type: integer
+        format: int32
+      version:
+        type: integer
+        format: int32
+      requestId:
+        type: string
+      execution_time:
+        type: number
+        format: double
+      timestamp:
+        type: integer
+        format: int64
+  Contact:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+        readOnly: true
+      name:
+        type: string
+        readOnly: true

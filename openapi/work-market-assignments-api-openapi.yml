@@ -1,0 +1,2996 @@
+swagger: '2.0'
+info:
+  description: Employer APIs
+  version: v1
+  title: Swagger spec for Work Market API v1 Addressbook Assignments API
+  termsOfService: https://developer.workmarket.com/tos
+  contact:
+    name: Work Market API Team
+    url: https://developer.workmarket.com
+    email: api@workmarket.com
+  license:
+    name: Company Licence
+    url: https://developer.workmarket.com/licenses/LICENSE-2.0.html
+host: www.workmarket.com
+basePath: /
+schemes:
+- https
+tags:
+- name: Assignments
+paths:
+  /v1/employer/assignments/accept_bonus:
+    post:
+      tags:
+      - Assignments
+      summary: Accept bonus request
+      description: ''
+      operationId: acceptBonusPostAction
+      parameters:
+      - name: id
+        in: query
+        required: false
+        type: string
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                $ref: '#/definitions/v1Status'
+  /v1/employer/assignments/accept_budget_increase:
+    post:
+      tags:
+      - Assignments
+      summary: Accept budget increase request
+      description: ''
+      operationId: acceptBudgetIncreasePostAction
+      parameters:
+      - name: id
+        in: query
+        required: false
+        type: string
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                $ref: '#/definitions/v1Status'
+  /v1/employer/assignments/accept_expense_reimbursement:
+    post:
+      tags:
+      - Assignments
+      summary: Accept expense reimbursement
+      description: ''
+      operationId: acceptExpenseReimbursementPostAction
+      parameters:
+      - name: id
+        in: query
+        required: false
+        type: string
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                $ref: '#/definitions/v1Status'
+  /v1/employer/assignments/accept_reschedule:
+    post:
+      tags:
+      - Assignments
+      summary: Accept reschedule request
+      description: ''
+      operationId: acceptReschedulePostAction
+      parameters:
+      - name: id
+        in: query
+        required: false
+        type: string
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                $ref: '#/definitions/v1Status'
+  /v1/employer/assignments/add_note:
+    post:
+      tags:
+      - Assignments
+      summary: Add message
+      description: ''
+      operationId: addNote
+      parameters:
+      - name: id
+        in: query
+        required: false
+        type: string
+      - name: content
+        in: query
+        required: false
+        type: string
+      - name: is_private
+        in: query
+        required: false
+        type: boolean
+      - name: is_privileged
+        in: query
+        required: false
+        type: boolean
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                $ref: '#/definitions/v1Status'
+  /v1/employer/assignments/approve_payment:
+    post:
+      tags:
+      - Assignments
+      summary: Approve payment
+      description: ''
+      operationId: approvePayment
+      parameters:
+      - name: id
+        in: query
+        required: false
+        type: string
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                $ref: '#/definitions/v1Status'
+  /v1/employer/assignments/attachments/add:
+    post:
+      tags:
+      - Assignments
+      summary: Add document
+      description: ''
+      operationId: addDocument
+      parameters:
+      - name: id
+        in: query
+        required: false
+        type: string
+      - name: attachment
+        in: query
+        required: false
+        type: string
+      - name: filename
+        in: query
+        required: false
+        type: string
+      - name: description
+        in: query
+        required: false
+        type: string
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                $ref: '#/definitions/Attachment'
+  /v1/employer/assignments/attachments/get:
+    get:
+      tags:
+      - Assignments
+      summary: Get attachment
+      description: ''
+      operationId: getAttachment
+      parameters:
+      - name: uuid
+        in: query
+        required: false
+        type: string
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                $ref: '#/definitions/Attachment'
+  /v1/employer/assignments/attachments/list:
+    get:
+      tags:
+      - Assignments
+      summary: List attachments
+      description: ''
+      operationId: listAttachments
+      parameters:
+      - name: id
+        in: query
+        required: false
+        type: string
+      - name: closeout
+        in: query
+        required: false
+        type: boolean
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                type: array
+                items:
+                  $ref: '#/definitions/Attachment'
+  /v1/employer/assignments/attachments/remove:
+    post:
+      tags:
+      - Assignments
+      summary: Remove attachment
+      description: ''
+      operationId: removeAttachment
+      parameters:
+      - name: id
+        in: query
+        required: false
+        type: string
+      - name: uuid
+        in: query
+        required: false
+        type: string
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                $ref: '#/definitions/v1Status'
+  /v1/employer/assignments/cancel:
+    post:
+      tags:
+      - Assignments
+      summary: Cancel assignment
+      description: ''
+      operationId: cancel
+      parameters:
+      - name: id
+        in: query
+        required: false
+        type: string
+      - name: note
+        in: query
+        required: false
+        type: string
+      - name: amount
+        in: query
+        required: false
+        type: number
+        format: double
+      - name: reason
+        in: query
+        required: false
+        type: string
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                $ref: '#/definitions/v1Status'
+  /v1/employer/assignments/create:
+    post:
+      tags:
+      - Assignments
+      summary: Create new assignment
+      description: ''
+      operationId: create
+      parameters:
+      - name: template_id
+        in: query
+        required: false
+        type: string
+      - name: external_work_id
+        in: query
+        required: false
+        type: integer
+        format: int64
+      - name: title
+        in: query
+        required: false
+        type: string
+      - name: description
+        in: query
+        required: false
+        type: string
+      - name: instructions
+        in: query
+        required: false
+        type: string
+      - name: private_instructions
+        in: query
+        required: false
+        type: boolean
+      - name: desired_skills
+        in: query
+        required: false
+        type: string
+      - name: industry_id
+        in: query
+        required: false
+        type: integer
+        format: int64
+      - name: owner_id
+        in: query
+        required: false
+        type: string
+      - name: owner_email
+        in: query
+        required: false
+        type: string
+      - name: support_contact_id
+        in: query
+        required: false
+        type: string
+      - name: support_contact_email
+        in: query
+        required: false
+        type: string
+      - name: client_id
+        in: query
+        required: false
+        type: integer
+        format: int64
+      - name: project_id
+        in: query
+        required: false
+        type: integer
+        format: int64
+      - name: scheduled_start
+        in: query
+        required: false
+        type: integer
+        format: int64
+      - name: scheduled_start_date
+        in: query
+        required: false
+        type: string
+      - name: scheduled_end
+        in: query
+        required: false
+        type: integer
+        format: int64
+      - name: scheduled_end_date
+        in: query
+        required: false
+        type: string
+      - name: multiple_day_schedule
+        in: query
+        required: false
+        type: boolean
+      - name: pricing_mode
+        in: query
+        required: false
+        type: string
+      - name: pricing_type
+        in: query
+        required: false
+        type: string
+      - name: pricing_flat_price
+        in: query
+        required: false
+        type: number
+        format: double
+      - name: pricing_per_hour_price
+        in: query
+        required: false
+        type: number
+        format: double
+      - name: pricing_max_number_of_hours
+        in: query
+        required: false
+        type: number
+        format: double
+      - name: pricing_per_unit_price
+        in: query
+        required: false
+        type: number
+        format: double
+      - name: pricing_max_number_of_units
+        in: query
+        required: false
+        type: number
+        format: double
+      - name: pricing_initial_per_hour_price
+        in: query
+        required: false
+        type: number
+        format: double
+      - name: pricing_initial_number_of_hours
+        in: query
+        required: false
+        type: number
+        format: double
+      - name: pricing_additional_per_hour_price
+        in: query
+        required: false
+        type: number
+        format: double
+      - name: pricing_max_blended_number_of_hours
+        in: query
+        required: false
+        type: number
+        format: double
+      - name: location_offsite
+        in: query
+        required: false
+        type: string
+      - name: location_id
+        in: query
+        required: false
+        type: integer
+        format: int64
+      - name: location_name
+        in: query
+        required: false
+        type: string
+      - name: location_number
+        in: query
+        required: false
+        type: string
+      - name: location_instructions
+        in: query
+        required: false
+        type: string
+      - name: location_address1
+        in: query
+        required: false
+        type: string
+      - name: location_address2
+        in: query
+        required: false
+        type: string
+      - name: location_city
+        in: query
+        required: false
+        type: string
+      - name: location_state
+        in: query
+        required: false
+        type: string
+      - name: location_zip
+        in: query
+        required: false
+        type: string
+      - name: location_country
+        in: query
+        required: false
+        type: string
+      - name: location_dress_code
+        in: query
+        required: false
+        type: string
+      - name: location_type
+        in: query
+        required: false
+        type: string
+      - name: requirement_set_ids
+        in: query
+        required: false
+        type: array
+        items:
+          type: integer
+          format: int64
+        collectionFormat: multi
+      - name: send_radius
+        in: query
+        required: false
+        type: integer
+        format: int64
+      - name: resource_id
+        in: query
+        required: false
+        type: array
+        items:
+          type: string
+        collectionFormat: multi
+      - name: assign_to_first_to_accept
+        in: query
+        required: false
+        type: boolean
+      - name: auto_invite
+        in: query
+        required: false
+        type: boolean
+      - name: show_in_work_feed
+        in: query
+        required: false
+        type: boolean
+      - name: payment_terms_days
+        in: query
+        required: false
+        type: integer
+        format: int32
+      - name: disable_address_correction
+        in: query
+        required: false
+        type: boolean
+      - name: deliverables_instructions
+        in: query
+        required: false
+        type: string
+      - name: deliverables_due_date
+        in: query
+        required: false
+        type: integer
+        format: int32
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                $ref: '#/definitions/AssignmentCreationResponse'
+  /v1/employer/assignments/decline_bonus:
+    post:
+      tags:
+      - Assignments
+      summary: Decline bonus request
+      description: ''
+      operationId: declineBonusPostAction
+      parameters:
+      - name: id
+        in: query
+        required: false
+        type: string
+      - name: reason
+        in: query
+        required: false
+        type: string
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                $ref: '#/definitions/v1Status'
+  /v1/employer/assignments/decline_budget_increase:
+    post:
+      tags:
+      - Assignments
+      summary: Decline budget increase request
+      description: ''
+      operationId: declineBudgetIncreasePostAction
+      parameters:
+      - name: id
+        in: query
+        required: false
+        type: string
+      - name: reason
+        in: query
+        required: false
+        type: string
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                $ref: '#/definitions/v1Status'
+  /v1/employer/assignments/decline_expense_reimbursement:
+    post:
+      tags:
+      - Assignments
+      summary: Decline expense reimbursement request
+      description: ''
+      operationId: declineExpenseReimbursementPostAction
+      parameters:
+      - name: id
+        in: query
+        required: false
+        type: string
+      - name: reason
+        in: query
+        required: false
+        type: string
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                $ref: '#/definitions/v1Status'
+  /v1/employer/assignments/decline_reschedule:
+    post:
+      tags:
+      - Assignments
+      summary: Decline reschedule request
+      description: ''
+      operationId: declineReschedulePostAction
+      parameters:
+      - name: id
+        in: query
+        required: false
+        type: string
+      - name: reason
+        in: query
+        required: false
+        type: string
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                $ref: '#/definitions/v1Status'
+  /v1/employer/assignments/delete:
+    post:
+      tags:
+      - Assignments
+      summary: Delete assignment
+      description: ''
+      operationId: delete
+      parameters:
+      - name: id
+        in: query
+        required: false
+        type: string
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                $ref: '#/definitions/v1Status'
+  /v1/employer/assignments/get:
+    get:
+      tags:
+      - Assignments
+      summary: Get assignment details
+      description: ''
+      operationId: get
+      parameters:
+      - name: id
+        in: query
+        required: false
+        type: string
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                $ref: '#/definitions/AssignmentDetails'
+  /v1/employer/assignments/increase_spendlimit:
+    post:
+      tags:
+      - Assignments
+      summary: Increase spend limit
+      description: ''
+      operationId: increaseSpendLimit
+      parameters:
+      - name: id
+        in: query
+        required: false
+        type: string
+      - name: type
+        in: query
+        required: false
+        type: string
+      - name: pricing_mode
+        in: query
+        required: false
+        type: string
+      - name: flat_price
+        in: query
+        required: false
+        type: number
+        format: double
+      - name: per_hour_price
+        in: query
+        required: false
+        type: number
+        format: double
+      - name: max_number_of_hours
+        in: query
+        required: false
+        type: number
+        format: double
+      - name: per_unit_price
+        in: query
+        required: false
+        type: number
+        format: double
+      - name: max_number_of_units
+        in: query
+        required: false
+        type: number
+        format: double
+      - name: initial_per_hour_price
+        in: query
+        required: false
+        type: number
+        format: double
+      - name: initial_number_of_hours
+        in: query
+        required: false
+        type: number
+        format: double
+      - name: additional_per_hour_price
+        in: query
+        required: false
+        type: number
+        format: double
+      - name: max_blended_number_of_hours
+        in: query
+        required: false
+        type: number
+        format: double
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                $ref: '#/definitions/v1Status'
+      deprecated: true
+  /v1/employer/assignments/list:
+    get:
+      tags:
+      - Assignments
+      summary: List assignments
+      description: ''
+      operationId: listAssignmentsAction
+      parameters:
+      - name: status
+        in: query
+        required: false
+        type: string
+      - name: labels
+        in: query
+        required: false
+        type: array
+        items:
+          type: string
+        collectionFormat: multi
+      - name: client_id
+        in: query
+        required: false
+        type: integer
+        format: int64
+      - name: start
+        in: query
+        required: false
+        type: integer
+        format: int32
+      - name: limit
+        in: query
+        required: false
+        type: integer
+        format: int32
+      - name: sort_dir
+        in: query
+        required: false
+        type: string
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                type: object
+                properties:
+                  count:
+                    type: integer
+                    format: int32
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/definitions/AssignmentListItem'
+                  limit:
+                    type: integer
+                    format: int32
+                  start:
+                    type: integer
+                    format: int32
+                  totalResults:
+                    type: integer
+                    format: int32
+  /v1/employer/assignments/list_exceptions:
+    get:
+      tags:
+      - Assignments
+      summary: List exception-status assignments
+      description: ''
+      operationId: listAssignmentExceptionsAction
+      parameters:
+      - name: start
+        in: query
+        required: false
+        type: integer
+        format: int32
+      - name: limit
+        in: query
+        required: false
+        type: integer
+        format: int32
+      - name: exception_type
+        in: query
+        required: false
+        type: string
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                type: object
+                properties:
+                  count:
+                    type: integer
+                    format: int32
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/definitions/AssignmentListItem'
+                  limit:
+                    type: integer
+                    format: int32
+                  start:
+                    type: integer
+                    format: int32
+                  totalResults:
+                    type: integer
+                    format: int32
+  /v1/employer/assignments/list_updated:
+    get:
+      tags:
+      - Assignments
+      summary: List updated assignments
+      description: ''
+      operationId: listUpdatedAction
+      parameters:
+      - name: status
+        in: query
+        required: false
+        type: string
+      - name: modified_since
+        in: query
+        required: false
+        type: integer
+        format: int64
+      - name: start
+        in: query
+        required: false
+        type: integer
+        format: int32
+      - name: limit
+        in: query
+        required: false
+        type: integer
+        format: int32
+      - name: sort_dir
+        in: query
+        required: false
+        type: string
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                type: object
+                properties:
+                  count:
+                    type: integer
+                    format: int32
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/definitions/AssignmentListItem'
+                  limit:
+                    type: integer
+                    format: int32
+                  start:
+                    type: integer
+                    format: int32
+                  totalResults:
+                    type: integer
+                    format: int32
+  /v1/employer/assignments/offers/accept:
+    post:
+      tags:
+      - Assignments
+      summary: Accept offer/application
+      description: ''
+      operationId: acceptOffer
+      parameters:
+      - name: id
+        in: query
+        required: false
+        type: integer
+        format: int64
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                $ref: '#/definitions/v1Status'
+  /v1/employer/assignments/offers/decline:
+    post:
+      tags:
+      - Assignments
+      summary: Decline offer/application
+      description: ''
+      operationId: declineOffer
+      parameters:
+      - name: id
+        in: query
+        required: false
+        type: integer
+        format: int64
+      - name: reason
+        in: query
+        required: false
+        type: string
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                $ref: '#/definitions/v1Status'
+  /v1/employer/assignments/questions/answer:
+    post:
+      tags:
+      - Assignments
+      summary: Answer question
+      description: ''
+      operationId: answerQuestion
+      parameters:
+      - name: id
+        in: query
+        required: false
+        type: integer
+        format: int64
+      - name: answer
+        in: query
+        required: false
+        type: string
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                $ref: '#/definitions/v1Status'
+  /v1/employer/assignments/rate_assignment:
+    post:
+      tags:
+      - Assignments
+      summary: Rate assignments
+      description: ''
+      operationId: saveSinglePendingResourceRatingData
+      parameters:
+      - name: id
+        in: query
+        required: true
+        type: string
+      - name: value
+        in: query
+        required: false
+        type: integer
+        format: int32
+      - name: quality
+        in: query
+        required: false
+        type: integer
+        format: int32
+      - name: professionalism
+        in: query
+        required: false
+        type: integer
+        format: int32
+      - name: communication
+        in: query
+        required: false
+        type: integer
+        format: int32
+      - name: review
+        in: query
+        required: false
+        type: string
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                $ref: '#/definitions/v1Status'
+  /v1/employer/assignments/reject_payment:
+    post:
+      tags:
+      - Assignments
+      summary: Reject payment
+      description: ''
+      operationId: rejectPayment
+      parameters:
+      - name: id
+        in: query
+        required: false
+        type: string
+      - name: note
+        in: query
+        required: false
+        type: string
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                $ref: '#/definitions/v1Status'
+  /v1/employer/assignments/reschedule:
+    post:
+      tags:
+      - Assignments
+      summary: Request reschedule
+      description: ''
+      operationId: reschedule
+      parameters:
+      - name: id
+        in: query
+        required: false
+        type: string
+      - name: scheduled_start
+        in: query
+        required: false
+        type: string
+      - name: scheduled_end
+        in: query
+        required: false
+        type: string
+      - name: multiple_day_schedule
+        in: query
+        required: false
+        type: boolean
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                $ref: '#/definitions/v1Status'
+  /v1/employer/assignments/statuses:
+    get:
+      tags:
+      - Assignments
+      summary: List statuses
+      description: ''
+      operationId: listAssignmentStatusesAction
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                type: array
+                items:
+                  $ref: '#/definitions/Status'
+  /v1/employer/assignments/templates/get:
+    get:
+      tags:
+      - Assignments
+      summary: Get template
+      description: ''
+      operationId: getAssignmentTemplateAction
+      parameters:
+      - name: id
+        in: query
+        required: false
+        type: string
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                $ref: '#/definitions/Template'
+  /v1/employer/assignments/templates/list:
+    get:
+      tags:
+      - Assignments
+      summary: List templates
+      description: ''
+      operationId: listAssignmentTemplatesAction
+      parameters:
+      - name: client_id
+        in: query
+        required: false
+        type: integer
+        format: int64
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                type: array
+                items:
+                  $ref: '#/definitions/TemplateListItem'
+  /v1/employer/assignments/void:
+    post:
+      tags:
+      - Assignments
+      summary: Void assignment
+      description: ''
+      operationId: doVoid
+      parameters:
+      - name: id
+        in: query
+        required: false
+        type: string
+      - name: note
+        in: query
+        required: false
+        type: string
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                $ref: '#/definitions/v1Status'
+  /v1/employer/assignments/{assignmentId}/unassign:
+    post:
+      tags:
+      - Assignments
+      summary: Unassign worker
+      description: ''
+      operationId: unassignAssignment
+      produces:
+      - application/json
+      parameters:
+      - name: assignmentId
+        in: path
+        required: true
+        type: string
+      - name: cancellation_reason
+        in: query
+        required: true
+        type: string
+      - name: rollback_to_original_price
+        in: query
+        required: true
+        type: boolean
+      - name: note
+        in: query
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                $ref: '#/definitions/v1Status'
+  /v1/employer/assignments/{id}/custom_fields:
+    post:
+      tags:
+      - Assignments
+      summary: Update custom fields
+      description: ''
+      operationId: editAssignmentFieldsAction
+      parameters:
+      - name: id
+        in: path
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                $ref: '#/definitions/v1Status'
+  /v1/employer/assignments/{id}/edit:
+    post:
+      tags:
+      - Assignments
+      summary: Edit assignment
+      description: ''
+      operationId: editAssignmentAction
+      parameters:
+      - name: id
+        in: path
+        required: true
+        type: string
+      - name: title
+        in: query
+        required: false
+        type: string
+      - name: description
+        in: query
+        required: false
+        type: string
+      - name: instructions
+        in: query
+        required: false
+        type: string
+      - name: desired_skills
+        in: query
+        required: false
+        type: string
+      - name: industry_id
+        in: query
+        required: false
+        type: integer
+        format: int64
+      - name: owner_id
+        in: query
+        required: false
+        type: string
+      - name: owner_email
+        in: query
+        required: false
+        type: string
+      - name: support_contact_id
+        in: query
+        required: false
+        type: string
+      - name: support_contact_email
+        in: query
+        required: false
+        type: string
+      - name: client_id
+        in: query
+        required: false
+        type: integer
+        format: int64
+      - name: project_id
+        in: query
+        required: false
+        type: integer
+        format: int64
+      - name: scheduled_start
+        in: query
+        required: false
+        type: integer
+        format: int64
+      - name: scheduled_start_date
+        in: query
+        required: false
+        type: string
+      - name: scheduled_end
+        in: query
+        required: false
+        type: integer
+        format: int64
+      - name: scheduled_end_date
+        in: query
+        required: false
+        type: string
+      - name: multiple_day_schedule
+        in: query
+        required: false
+        type: boolean
+      - name: pricing_mode
+        in: query
+        required: false
+        type: string
+      - name: pricing_type
+        in: query
+        required: false
+        type: string
+      - name: pricing_flat_price
+        in: query
+        required: false
+        type: number
+        format: double
+      - name: pricing_per_hour_price
+        in: query
+        required: false
+        type: number
+        format: double
+      - name: pricing_max_number_of_hours
+        in: query
+        required: false
+        type: number
+        format: double
+      - name: pricing_per_unit_price
+        in: query
+        required: false
+        type: number
+        format: double
+      - name: pricing_max_number_of_units
+        in: query
+        required: false
+        type: number
+        format: double
+      - name: pricing_initial_per_hour_price
+        in: query
+        required: false
+        type: number
+        format: double
+      - name: pricing_initial_number_of_hours
+        in: query
+        required: false
+        type: number
+        format: double
+      - name: pricing_additional_per_hour_price
+        in: query
+        required: false
+        type: number
+        format: double
+      - name: pricing_max_blended_number_of_hours
+        in: query
+        required: false
+        type: number
+        format: double
+      - name: location_offsite
+        in: query
+        required: false
+        type: string
+      - name: location_id
+        in: query
+        required: false
+        type: integer
+        format: int64
+      - name: location_name
+        in: query
+        required: false
+        type: string
+      - name: location_number
+        in: query
+        required: false
+        type: string
+      - name: location_instructions
+        in: query
+        required: false
+        type: string
+      - name: location_address1
+        in: query
+        required: false
+        type: string
+      - name: location_address2
+        in: query
+        required: false
+        type: string
+      - name: location_city
+        in: query
+        required: false
+        type: string
+      - name: location_state
+        in: query
+        required: false
+        type: string
+      - name: location_zip
+        in: query
+        required: false
+        type: string
+      - name: location_country
+        in: query
+        required: false
+        type: string
+      - name: location_dress_code
+        in: query
+        required: false
+        type: string
+      - name: location_type
+        in: query
+        required: false
+        type: string
+      - name: requirement_set_ids
+        in: query
+        required: false
+        type: array
+        items:
+          type: integer
+          format: int64
+        collectionFormat: multi
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                $ref: '#/definitions/v1Status'
+  /v1/employer/assignments/{id}/pricing/bonus:
+    /v1/employer/assignments/{id}/pricing/budget_increase: null
+    post:
+      tags:
+      - Assignments
+      summary: Add budget increase
+      description: ''
+      operationId: increaseBudget
+      parameters:
+      - name: id
+        in: path
+        required: true
+        type: string
+      - name: flat_price
+        in: query
+        required: false
+        type: number
+        format: double
+      - name: max_number_of_hours
+        in: query
+        required: false
+        type: number
+        format: double
+      - name: max_number_of_units
+        in: query
+        required: false
+        type: number
+        format: double
+      - name: max_blended_number_of_hours
+        in: query
+        required: false
+        type: number
+        format: double
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                $ref: '#/definitions/v1Status'
+  /v1/employer/assignments/{id}/pricing/expense_reimbursement:
+    post:
+      tags:
+      - Assignments
+      summary: Add expense reimbursement
+      description: ''
+      operationId: reimburseExpensePostAction
+      parameters:
+      - name: id
+        in: path
+        required: true
+        type: string
+      - name: amount
+        in: query
+        required: true
+        type: number
+        format: double
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                $ref: '#/definitions/v1Status'
+  /v1/employer/assignments/{id}/send:
+    post:
+      tags:
+      - Assignments
+      summary: Send assignment
+      description: ''
+      operationId: send
+      parameters:
+      - name: id
+        in: path
+        required: true
+        type: string
+      - name: group_id
+        in: query
+        required: false
+        type: array
+        items:
+          type: integer
+          format: int64
+        collectionFormat: multi
+      - name: send_radius
+        in: query
+        required: false
+        type: integer
+        format: int64
+      - name: resource_id
+        in: query
+        required: false
+        type: array
+        items:
+          type: string
+        collectionFormat: multi
+      - name: assign_to_first_to_accept
+        in: query
+        required: false
+        type: boolean
+      - name: auto_invite
+        in: query
+        required: false
+        type: boolean
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                $ref: '#/definitions/SendResults'
+  /v1/employer/assignments/{workNumber}/complete:
+    post:
+      tags:
+      - Assignments
+      summary: Complete assignment for worker
+      description: ''
+      operationId: complete
+      parameters:
+      - name: workNumber
+        in: path
+        required: true
+        type: string
+      - name: resolution
+        in: query
+        required: false
+        type: string
+      - name: hours_worked
+        in: query
+        required: false
+        type: number
+        format: double
+      - name: units
+        in: query
+        required: false
+        type: number
+        format: double
+      - name: override_additional_expenses
+        in: query
+        required: false
+        type: number
+        format: double
+      - name: override_price
+        in: query
+        required: false
+        type: number
+        format: double
+      - name: tax_rate
+        in: query
+        required: false
+        type: number
+        format: double
+      - name: approve_payment
+        in: query
+        required: false
+        type: boolean
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                $ref: '#/definitions/v1Status'
+definitions:
+  DeclinedResource:
+    type: object
+    properties:
+      id:
+        type: string
+        readOnly: true
+      first_name:
+        type: string
+        readOnly: true
+      last_name:
+        type: string
+        readOnly: true
+      email:
+        type: string
+        readOnly: true
+      phone_numbers:
+        type: array
+        readOnly: true
+        items:
+          $ref: '#/definitions/PhoneNumber'
+      uuid:
+        type: string
+        readOnly: true
+  History:
+    type: object
+    properties:
+      date:
+        type: integer
+        format: int64
+        readOnly: true
+      text:
+        type: string
+        readOnly: true
+      set_by:
+        type: string
+        readOnly: true
+      resolved_by:
+        type: string
+        readOnly: true
+      label_id:
+        type: integer
+        format: int64
+        readOnly: true
+      label_name:
+        type: string
+        readOnly: true
+      created_on:
+        type: integer
+        format: int64
+        readOnly: true
+  SupportContact:
+    type: object
+    properties:
+      id:
+        type: string
+        readOnly: true
+      first_name:
+        type: string
+        readOnly: true
+      last_name:
+        type: string
+        readOnly: true
+      email:
+        type: string
+        readOnly: true
+      phone_numbers:
+        type: array
+        readOnly: true
+        items:
+          $ref: '#/definitions/PhoneNumber'
+  LocationContact:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+        readOnly: true
+      first_name:
+        type: string
+        readOnly: true
+      last_name:
+        type: string
+        readOnly: true
+      email:
+        type: string
+        readOnly: true
+      phone_numbers:
+        type: array
+        readOnly: true
+        items:
+          $ref: '#/definitions/PhoneNumber'
+  Payment:
+    type: object
+    properties:
+      max_spend_limit:
+        type: number
+        format: double
+        readOnly: true
+      actual_spend_limit:
+        type: number
+        format: double
+        readOnly: true
+      buyer_fee:
+        type: number
+        format: double
+        readOnly: true
+      total_cost:
+        type: number
+        format: double
+        readOnly: true
+      hours_worked:
+        type: number
+        format: double
+        readOnly: true
+      paid_on:
+        type: integer
+        format: int64
+        readOnly: true
+      payment_due_on:
+        type: integer
+        format: int64
+        readOnly: true
+  Application:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+        readOnly: true
+      note:
+        type: string
+        readOnly: true
+      resource:
+        readOnly: true
+        $ref: '#/definitions/ApplicantProfile'
+      scheduling:
+        readOnly: true
+        $ref: '#/definitions/RescheduleRequest'
+      pricing:
+        readOnly: true
+        $ref: '#/definitions/Pricing'
+      expires_on:
+        type: integer
+        format: int64
+        readOnly: true
+      expired:
+        type: boolean
+        readOnly: true
+  CustomField:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+        readOnly: true
+      name:
+        type: string
+        readOnly: true
+      default:
+        type: string
+        readOnly: true
+      required:
+        type: boolean
+        readOnly: true
+      value:
+        type: string
+        readOnly: true
+      type:
+        type: string
+        readOnly: true
+  InternalOwnerDetails:
+    type: object
+    properties:
+      first_name:
+        type: string
+        readOnly: true
+      last_name:
+        type: string
+        readOnly: true
+  CustomFieldGroup:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+        readOnly: true
+      name:
+        type: string
+        readOnly: true
+      fields:
+        type: array
+        readOnly: true
+        items:
+          $ref: '#/definitions/CustomField'
+      required:
+        type: boolean
+        readOnly: true
+  BudgetIncreaseRequest:
+    type: object
+    properties:
+      type:
+        type: string
+        readOnly: true
+      spend_limit:
+        type: number
+        format: double
+        readOnly: true
+      budget_increases:
+        type: string
+        readOnly: true
+      expense_reimbursements:
+        type: number
+        format: double
+        readOnly: true
+      bonuses:
+        type: number
+        format: double
+        readOnly: true
+      additional_expenses:
+        type: number
+        format: double
+        readOnly: true
+      flat_price:
+        type: number
+        format: double
+        readOnly: true
+      per_hour_price:
+        type: number
+        format: double
+        readOnly: true
+      max_number_of_hours:
+        type: number
+        format: double
+        readOnly: true
+      per_unit_price:
+        type: number
+        format: double
+        readOnly: true
+      max_number_of_units:
+        type: number
+        format: double
+        readOnly: true
+      initial_per_hour_price:
+        type: number
+        format: double
+        readOnly: true
+      initial_number_of_hours:
+        type: number
+        format: double
+        readOnly: true
+      additional_per_hour_price:
+        type: number
+        format: double
+        readOnly: true
+      max_blended_number_of_hours:
+        type: number
+        format: double
+        readOnly: true
+      note:
+        type: string
+        readOnly: true
+      requested_on:
+        type: integer
+        format: int64
+        readOnly: true
+  Status:
+    type: object
+    properties:
+      id:
+        type: string
+        readOnly: true
+      name:
+        type: string
+        readOnly: true
+  Parts:
+    type: object
+    properties:
+      part_value:
+        type: number
+        format: double
+        readOnly: true
+      part_name:
+        type: string
+        readOnly: true
+      part_number:
+        type: string
+        readOnly: true
+      shipping_provider:
+        type: string
+        readOnly: true
+      tracking_number:
+        type: string
+        readOnly: true
+      priority:
+        type: string
+        readOnly: true
+      deliver_to:
+        type: string
+        readOnly: true
+      part_count:
+        type: integer
+        format: int32
+        readOnly: true
+  Pricing:
+    type: object
+    properties:
+      type:
+        type: string
+        readOnly: true
+      spend_limit:
+        type: number
+        format: double
+        readOnly: true
+      budget_increases:
+        type: string
+        readOnly: true
+      expense_reimbursements:
+        type: number
+        format: double
+        readOnly: true
+      bonuses:
+        type: number
+        format: double
+        readOnly: true
+      additional_expenses:
+        type: number
+        format: double
+        readOnly: true
+      flat_price:
+        type: number
+        format: double
+        readOnly: true
+      per_hour_price:
+        type: number
+        format: double
+        readOnly: true
+      max_number_of_hours:
+        type: number
+        format: double
+        readOnly: true
+      per_unit_price:
+        type: number
+        format: double
+        readOnly: true
+      max_number_of_units:
+        type: number
+        format: double
+        readOnly: true
+      initial_per_hour_price:
+        type: number
+        format: double
+        readOnly: true
+      initial_number_of_hours:
+        type: number
+        format: double
+        readOnly: true
+      additional_per_hour_price:
+        type: number
+        format: double
+        readOnly: true
+      max_blended_number_of_hours:
+        type: number
+        format: double
+        readOnly: true
+  Template:
+    type: object
+    properties:
+      template_id:
+        type: string
+        description: template_id
+        readOnly: true
+      title:
+        type: string
+        readOnly: true
+      description:
+        type: string
+        readOnly: true
+      instructions:
+        type: string
+        readOnly: true
+      desired_skills:
+        type: string
+        readOnly: true
+      project:
+        type: integer
+        format: int64
+        readOnly: true
+      client:
+        type: integer
+        format: int64
+        readOnly: true
+      internal_owner:
+        type: string
+        readOnly: true
+      internal_owner_details:
+        readOnly: true
+        $ref: '#/definitions/InternalOwnerDetails'
+      sent_worker_count:
+        type: integer
+        format: int32
+        readOnly: true
+      assignment_window_start:
+        type: integer
+        format: int64
+        readOnly: true
+      assignment_window_start_date:
+        type: string
+        readOnly: true
+      assignment_window_end:
+        type: integer
+        format: int64
+        readOnly: true
+      assignment_window_end_date:
+        type: string
+        readOnly: true
+      scheduled_time:
+        type: integer
+        format: int64
+        readOnly: true
+      scheduled_time_date:
+        type: string
+        readOnly: true
+      scheduled_start:
+        type: integer
+        format: int64
+        readOnly: true
+      scheduled_end:
+        type: integer
+        format: int64
+        readOnly: true
+      reschedule_request:
+        readOnly: true
+        $ref: '#/definitions/RescheduleRequest'
+      budget_increase_request:
+        readOnly: true
+        $ref: '#/definitions/BudgetIncreaseRequest'
+      expense_reimbursement_request:
+        readOnly: true
+        $ref: '#/definitions/ExpenseReimbursementRequest'
+      bonus_request:
+        readOnly: true
+        $ref: '#/definitions/BonusRequest'
+      industry:
+        type: string
+        readOnly: true
+      time_zone:
+        type: string
+        readOnly: true
+      required_attachments:
+        type: integer
+        format: int32
+        readOnly: true
+      location:
+        readOnly: true
+        $ref: '#/definitions/Location'
+      location_offsite:
+        type: boolean
+        readOnly: true
+      location_contact:
+        readOnly: true
+        $ref: '#/definitions/LocationContact'
+      support_contact:
+        readOnly: true
+        $ref: '#/definitions/SupportContact'
+      pricing:
+        readOnly: true
+        $ref: '#/definitions/Pricing'
+      invoice_number:
+        type: string
+        readOnly: true
+      attachments:
+        type: array
+        readOnly: true
+        items:
+          $ref: '#/definitions/AssignmentDetailsAttachment'
+      created_on:
+        type: integer
+        format: int64
+        readOnly: true
+      last_modified_on:
+        type: integer
+        format: int64
+        readOnly: true
+      notes:
+        type: array
+        readOnly: true
+        items:
+          $ref: '#/definitions/Note'
+      custom_fields:
+        type: array
+        readOnly: true
+        items:
+          $ref: '#/definitions/CustomFieldGroup'
+      parts_group:
+        readOnly: true
+        $ref: '#/definitions/PartsGroup'
+      pending_offers:
+        type: array
+        readOnly: true
+        items:
+          $ref: '#/definitions/Application'
+      declined_resources:
+        type: array
+        readOnly: true
+        items:
+          $ref: '#/definitions/DeclinedResource'
+      questions:
+        type: array
+        readOnly: true
+        items:
+          $ref: '#/definitions/QuestionAnswerPair'
+      deliverables_fulfilled:
+        type: boolean
+        readOnly: true
+      template_name:
+        type: string
+        readOnly: true
+      template_description:
+        type: string
+        readOnly: true
+  QuestionAnswerPair:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+        readOnly: true
+      question:
+        type: string
+        readOnly: true
+      answer:
+        type: string
+        readOnly: true
+  ExpenseReimbursementRequest:
+    type: object
+    properties:
+      expense_reimbursement:
+        type: number
+        format: double
+        readOnly: true
+      note:
+        type: string
+        readOnly: true
+      requested_on:
+        type: integer
+        format: int64
+        readOnly: true
+  Location:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+        readOnly: true
+      name:
+        type: string
+        readOnly: true
+      location_number:
+        type: string
+        readOnly: true
+      instructions:
+        type: string
+        readOnly: true
+      address_1:
+        type: string
+        readOnly: true
+      address_2:
+        type: string
+        readOnly: true
+      city:
+        type: string
+        readOnly: true
+      state:
+        type: string
+        readOnly: true
+      zip:
+        type: string
+        readOnly: true
+      country:
+        type: string
+        readOnly: true
+      latitude:
+        type: string
+        readOnly: true
+      longitude:
+        type: string
+        readOnly: true
+  v1Meta:
+    type: object
+    properties:
+      errors:
+        type: array
+        items:
+          type: object
+      status_code:
+        type: integer
+        format: int32
+      version:
+        type: integer
+        format: int32
+      requestId:
+        type: string
+      execution_time:
+        type: number
+        format: double
+      timestamp:
+        type: integer
+        format: int64
+  AssignmentCreationResponse:
+    type: object
+    properties:
+      resource_send_results:
+        type: object
+        readOnly: true
+        additionalProperties:
+          type: array
+          items:
+            type: string
+      invalid_groups:
+        type: array
+        readOnly: true
+        items:
+          type: integer
+          format: int64
+      number_of_resources_sent:
+        type: integer
+        format: int64
+        readOnly: true
+      successful:
+        type: boolean
+        readOnly: true
+      id:
+        type: string
+        readOnly: true
+      requestURL:
+        type: string
+        readOnly: true
+      correctedAddress:
+        readOnly: true
+        $ref: '#/definitions/Address'
+  RescheduleRequest:
+    type: object
+    properties:
+      note:
+        type: string
+        readOnly: true
+      requested_on:
+        type: integer
+        format: int64
+        readOnly: true
+      request_window_start:
+        type: integer
+        format: int64
+        readOnly: true
+      request_window_end:
+        type: integer
+        format: int64
+        readOnly: true
+      request_scheduled_time:
+        type: integer
+        format: int64
+        readOnly: true
+      requested_by_resource:
+        type: boolean
+        readOnly: true
+  Note:
+    type: object
+    properties:
+      date:
+        type: integer
+        format: int64
+        readOnly: true
+      text:
+        type: string
+        readOnly: true
+      created_by:
+        type: string
+        readOnly: true
+      is_private:
+        type: boolean
+        readOnly: true
+      is_privileged:
+        type: boolean
+        readOnly: true
+  AssignmentDetails:
+    type: object
+    properties:
+      id:
+        type: string
+        readOnly: true
+      title:
+        type: string
+        readOnly: true
+      description:
+        type: string
+        readOnly: true
+      instructions:
+        type: string
+        readOnly: true
+      desired_skills:
+        type: string
+        readOnly: true
+      short_url:
+        type: string
+        readOnly: true
+      status:
+        type: string
+        readOnly: true
+      substatuses:
+        type: array
+        readOnly: true
+        items:
+          $ref: '#/definitions/AssignmentDetailsLabel'
+      labels:
+        type: array
+        readOnly: true
+        items:
+          $ref: '#/definitions/AssignmentDetailsLabel'
+      project:
+        type: integer
+        format: int64
+        readOnly: true
+      client:
+        type: integer
+        format: int64
+        readOnly: true
+      internal_owner:
+        type: string
+        readOnly: true
+      internal_owner_details:
+        readOnly: true
+        $ref: '#/definitions/InternalOwnerDetails'
+      sent_worker_count:
+        type: integer
+        format: int32
+        readOnly: true
+      assignment_window_start:
+        type: integer
+        format: int64
+        readOnly: true
+      assignment_window_start_date:
+        type: string
+        readOnly: true
+      assignment_window_end:
+        type: integer
+        format: int64
+        readOnly: true
+      assignment_window_end_date:
+        type: string
+        readOnly: true
+      scheduled_time:
+        type: integer
+        format: int64
+        readOnly: true
+      scheduled_time_date:
+        type: string
+        readOnly: true
+      scheduled_start:
+        type: integer
+        format: int64
+        readOnly: true
+      scheduled_end:
+        type: integer
+        format: int64
+        readOnly: true
+      reschedule_request:
+        readOnly: true
+        $ref: '#/definitions/RescheduleRequest'
+      budget_increase_request:
+        readOnly: true
+        $ref: '#/definitions/BudgetIncreaseRequest'
+      expense_reimbursement_request:
+        readOnly: true
+        $ref: '#/definitions/ExpenseReimbursementRequest'
+      bonus_request:
+        readOnly: true
+        $ref: '#/definitions/BonusRequest'
+      resolution:
+        type: string
+        readOnly: true
+      industry:
+        type: string
+        readOnly: true
+      time_zone:
+        type: string
+        readOnly: true
+      required_attachments:
+        type: integer
+        format: int32
+        readOnly: true
+      location:
+        readOnly: true
+        $ref: '#/definitions/Location'
+      location_offsite:
+        type: boolean
+        readOnly: true
+      location_contact:
+        readOnly: true
+        $ref: '#/definitions/LocationContact'
+      support_contact:
+        readOnly: true
+        $ref: '#/definitions/SupportContact'
+      active_resource:
+        readOnly: true
+        $ref: '#/definitions/ActiveResource'
+      pricing:
+        readOnly: true
+        $ref: '#/definitions/Pricing'
+      invoice_number:
+        type: string
+        readOnly: true
+      payment:
+        readOnly: true
+        $ref: '#/definitions/Payment'
+      attachments:
+        type: array
+        readOnly: true
+        items:
+          $ref: '#/definitions/AssignmentDetailsAttachment'
+      created_on:
+        type: integer
+        format: int64
+        readOnly: true
+      last_modified_on:
+        type: integer
+        format: int64
+        readOnly: true
+      history:
+        type: array
+        readOnly: true
+        items:
+          $ref: '#/definitions/History'
+      notes:
+        type: array
+        readOnly: true
+        items:
+          $ref: '#/definitions/Note'
+      custom_fields:
+        type: array
+        readOnly: true
+        items:
+          $ref: '#/definitions/CustomFieldGroup'
+      parts_group:
+        readOnly: true
+        $ref: '#/definitions/PartsGroup'
+      pending_offers:
+        type: array
+        readOnly: true
+        items:
+          $ref: '#/definitions/Application'
+      declined_resources:
+        type: array
+        readOnly: true
+        items:
+          $ref: '#/definitions/DeclinedResource'
+      questions:
+        type: array
+        readOnly: true
+        items:
+          $ref: '#/definitions/QuestionAnswerPair'
+      deliverables_fulfilled:
+        type: boolean
+        readOnly: true
+  AssignmentListItem:
+    type: object
+    properties:
+      id:
+        type: string
+        readOnly: true
+      project_id:
+        type: integer
+        format: int64
+        readOnly: true
+      project_name:
+        type: string
+        readOnly: true
+      title:
+        type: string
+        readOnly: true
+      scheduled_start:
+        type: integer
+        format: int64
+        readOnly: true
+      scheduled_end:
+        type: integer
+        format: int64
+        readOnly: true
+      address_line1:
+        type: string
+        readOnly: true
+      address_line2:
+        type: string
+        readOnly: true
+      city:
+        type: string
+        readOnly: true
+      state:
+        type: string
+        readOnly: true
+      postal_code:
+        type: string
+        readOnly: true
+      country:
+        type: string
+        readOnly: true
+      latitude:
+        type: number
+        format: double
+        readOnly: true
+      longitude:
+        type: number
+        format: double
+        readOnly: true
+      location_id:
+        type: string
+        readOnly: true
+      spend_limit:
+        type: string
+        readOnly: true
+      modified_status:
+        type: string
+        readOnly: true
+      status:
+        type: string
+        readOnly: true
+      substatuses:
+        type: array
+        readOnly: true
+        items:
+          $ref: '#/definitions/Label'
+      labels:
+        type: array
+        readOnly: true
+        items:
+          $ref: '#/definitions/Label'
+      internal_owner:
+        type: string
+        readOnly: true
+      client:
+        type: string
+        readOnly: true
+      client_id:
+        type: integer
+        format: int64
+        readOnly: true
+      invoice_number:
+        type: string
+        readOnly: true
+      paid_date:
+        type: integer
+        format: int64
+        readOnly: true
+      total_cost:
+        type: string
+        readOnly: true
+      resource_company_name:
+        type: string
+        readOnly: true
+      resource_user_number:
+        type: string
+        readOnly: true
+      resource_full_name:
+        type: string
+        readOnly: true
+      last_modified_on:
+        type: integer
+        format: int64
+        readOnly: true
+      modifier_first_name:
+        type: string
+        readOnly: true
+      modifier_last_name:
+        type: string
+        readOnly: true
+  AssignmentDetailsLabel:
+    type: object
+    properties:
+      code:
+        type: string
+        readOnly: true
+      note:
+        type: string
+        readOnly: true
+      description:
+        type: string
+        readOnly: true
+      userResolvable:
+        type: boolean
+        readOnly: true
+      colorRgb:
+        type: string
+        readOnly: true
+      id:
+        type: integer
+        format: int64
+        readOnly: true
+      isSetId:
+        type: boolean
+        readOnly: true
+      isSetDescription:
+        type: boolean
+        readOnly: true
+      isSetCode:
+        type: boolean
+        readOnly: true
+      isSetColorRgb:
+        type: boolean
+        readOnly: true
+      isSetNote:
+        type: boolean
+        readOnly: true
+  SendResults:
+    type: object
+    properties:
+      resource_send_results:
+        type: object
+        readOnly: true
+        additionalProperties:
+          type: array
+          items:
+            type: string
+      invalid_groups:
+        type: array
+        readOnly: true
+        items:
+          type: integer
+          format: int64
+      number_of_resources_sent:
+        type: integer
+        format: int64
+        readOnly: true
+      successful:
+        type: boolean
+        readOnly: true
+  PartsGroup:
+    type: object
+    properties:
+      supplied_by_resource:
+        type: boolean
+        readOnly: true
+      return_required:
+        type: boolean
+        readOnly: true
+      distribution_method:
+        type: string
+        readOnly: true
+      pickup_location:
+        readOnly: true
+        $ref: '#/definitions/PartLocation'
+      site_parts:
+        type: array
+        readOnly: true
+        items:
+          $ref: '#/definitions/Parts'
+      return_parts:
+        type: array
+        readOnly: true
+        items:
+          $ref: '#/definitions/Parts'
+  v1Status:
+    type: object
+    properties:
+      successful:
+        type: boolean
+        readOnly: true
+  PartLocation:
+    type: object
+    properties:
+      name:
+        type: string
+        readOnly: true
+      address1:
+        type: string
+        readOnly: true
+      address2:
+        type: string
+        readOnly: true
+      city:
+        type: string
+        readOnly: true
+      state:
+        type: string
+        readOnly: true
+      zip:
+        type: string
+        readOnly: true
+      country:
+        type: string
+        readOnly: true
+  Address:
+    type: object
+    properties:
+      address_1:
+        type: string
+        readOnly: true
+      address_2:
+        type: string
+        readOnly: true
+      city:
+        type: string
+        readOnly: true
+      state:
+        type: string
+        readOnly: true
+      zip:
+        type: string
+        readOnly: true
+      country:
+        type: string
+        readOnly: true
+  BonusRequest:
+    type: object
+    properties:
+      bonus:
+        type: number
+        format: double
+        readOnly: true
+      note:
+        type: string
+        readOnly: true
+      requested_on:
+        type: integer
+        format: int64
+        readOnly: true
+  ActiveResource:
+    type: object
+    properties:
+      id:
+        type: string
+        readOnly: true
+      first_name:
+        type: string
+        readOnly: true
+      last_name:
+        type: string
+        readOnly: true
+      company_name:
+        type: string
+        readOnly: true
+      email:
+        type: string
+        readOnly: true
+      profile_picture:
+        type: string
+        readOnly: true
+      profile_picture_large:
+        type: string
+        readOnly: true
+      rating:
+        type: integer
+        format: int32
+        readOnly: true
+      number_of_ratings:
+        type: integer
+        format: int64
+        readOnly: true
+      confirmed_onsite:
+        type: boolean
+        readOnly: true
+      confirmed_date:
+        type: integer
+        format: int64
+        readOnly: true
+      phone_numbers:
+        type: array
+        readOnly: true
+        items:
+          $ref: '#/definitions/PhoneNumber'
+      address:
+        readOnly: true
+        $ref: '#/definitions/Address'
+      check_in_out:
+        type: array
+        readOnly: true
+        items:
+          $ref: '#/definitions/CheckInOut'
+      uuid:
+        type: string
+        readOnly: true
+  TemplateListItem:
+    type: object
+    properties:
+      template_id:
+        type: string
+        readOnly: true
+      name:
+        type: string
+        readOnly: true
+      client_id:
+        type: integer
+        format: int64
+        readOnly: true
+  Label:
+    type: object
+    properties:
+      id:
+        type: string
+        readOnly: true
+      name:
+        type: string
+        readOnly: true
+  AssignmentDetailsAttachment:
+    type: object
+    properties:
+      uuid:
+        type: string
+        readOnly: true
+      name:
+        type: string
+        readOnly: true
+      description:
+        type: string
+        readOnly: true
+      relative_uri:
+        type: string
+        readOnly: true
+  CheckInOut:
+    type: object
+    properties:
+      check_in_out_id:
+        type: integer
+        format: int64
+        readOnly: true
+      checked_in_on:
+        type: integer
+        format: int64
+        readOnly: true
+      checked_out_on:
+        type: integer
+        format: int64
+        readOnly: true
+      created_on:
+        type: integer
+        format: int64
+        readOnly: true
+      modified_on:
+        type: integer
+        format: int64
+        readOnly: true
+      note:
+        type: string
+        readOnly: true
+  Attachment:
+    type: object
+    properties:
+      uuid:
+        type: string
+        readOnly: true
+      filename:
+        type: string
+        readOnly: true
+      description:
+        type: string
+        readOnly: true
+      size:
+        type: integer
+        format: int32
+        readOnly: true
+      attachment:
+        type: string
+        readOnly: true
+  PhoneNumber:
+    type: object
+    properties:
+      country_code:
+        type: string
+        readOnly: true
+      phone:
+        type: string
+        readOnly: true
+      type:
+        type: string
+        readOnly: true
+        enum:
+        - WORK
+        - HOME
+        - OTHER
+        - MOBILE
+      extension:
+        type: string
+        readOnly: true
+  ApplicantProfile:
+    type: object
+    properties:
+      id:
+        type: string
+        readOnly: true
+      first_name:
+        type: string
+        readOnly: true
+      last_name:
+        type: string
+        readOnly: true
+      email:
+        type: string
+        readOnly: true
+      company_name:
+        type: string
+        readOnly: true
+      rating:
+        type: number
+        format: double
+        readOnly: true
+      number_of_ratings:
+        type: integer
+        format: int32
+        readOnly: true
+      job_title:
+        type: string
+        readOnly: true
+      overview:
+        type: string
+        readOnly: true
+      phone_numbers:
+        type: array
+        readOnly: true
+        items:
+          $ref: '#/definitions/PhoneNumber'
+      uuid:
+        type: string
+        readOnly: true

@@ -1,0 +1,200 @@
+swagger: '2.0'
+info:
+  description: Employer APIs
+  version: v1
+  title: Swagger spec for Work Market API v1 Addressbook Constants API
+  termsOfService: https://developer.workmarket.com/tos
+  contact:
+    name: Work Market API Team
+    url: https://developer.workmarket.com
+    email: api@workmarket.com
+  license:
+    name: Company Licence
+    url: https://developer.workmarket.com/licenses/LICENSE-2.0.html
+host: www.workmarket.com
+basePath: /
+schemes:
+- https
+tags:
+- name: Constants
+paths:
+  /v1/employer/constants/cancellation_codes:
+    get:
+      tags:
+      - Constants
+      summary: List cancellation reason codes
+      description: ''
+      operationId: cancellationReasonCodes
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                type: array
+                items:
+                  type: string
+  /v1/employer/constants/dress_codes:
+    get:
+      tags:
+      - Constants
+      summary: List dress codes
+      description: ''
+      operationId: dressCodes
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                type: array
+                items:
+                  $ref: '#/definitions/dress_code'
+      deprecated: true
+  /v1/employer/constants/industries:
+    get:
+      tags:
+      - Constants
+      summary: List industry IDs
+      description: ''
+      operationId: industries
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                type: array
+                items:
+                  $ref: '#/definitions/Industry'
+  /v1/employer/constants/location_types:
+    get:
+      tags:
+      - Constants
+      summary: Location types
+      description: ''
+      operationId: locationTypes
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                type: array
+                items:
+                  $ref: '#/definitions/LocationType'
+  /v1/employer/constants/substatuses:
+    get:
+      tags:
+      - Constants
+      summary: List substatuses
+      description: ''
+      operationId: subStatuses
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                type: array
+                items:
+                  $ref: '#/definitions/Substatus'
+      deprecated: true
+  /v1/employer/constants/unassign_codes:
+    get:
+      tags:
+      - Constants
+      summary: List unassign reason codes
+      description: ''
+      operationId: unassignReasonCodes
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/v1Meta'
+              response:
+                type: array
+                items:
+                  type: string
+definitions:
+  Substatus:
+    type: object
+    properties:
+      id:
+        type: string
+        readOnly: true
+      name:
+        type: string
+        readOnly: true
+  dress_code:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+        readOnly: true
+      name:
+        type: string
+        readOnly: true
+  LocationType:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+        readOnly: true
+      name:
+        type: string
+        readOnly: true
+  v1Meta:
+    type: object
+    properties:
+      errors:
+        type: array
+        items:
+          type: object
+      status_code:
+        type: integer
+        format: int32
+      version:
+        type: integer
+        format: int32
+      requestId:
+        type: string
+      execution_time:
+        type: number
+        format: double
+      timestamp:
+        type: integer
+        format: int64
+  Industry:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+        readOnly: true
+      name:
+        type: string
+        readOnly: true
+      checked:
+        type: boolean
+        readOnly: true
