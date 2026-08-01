@@ -1,0 +1,38 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/work-market-employer-api-openapi.yml
+format: envelope
+description: >-
+  Error semantics of the WorkMarket Employer API, derived from the published
+  Swagger 2.0 spec. The API does not use RFC 9457 problem+json; errors are
+  reported inside the standard {meta, response} envelope. The spec documents
+  only 200 responses per operation, so no per-status problem catalog is
+  published — the envelope below is the error contract the spec defines.
+envelope:
+  container: meta
+  fields:
+    - name: meta.status_code
+      type: integer
+      description: HTTP-style status code of the request outcome.
+    - name: meta.errors
+      type: array
+      description: List of error objects when the request fails.
+    - name: meta.requestId
+      type: string
+      description: Server-assigned id for tracing the request.
+    - name: meta.version
+      type: integer
+    - name: meta.execution_time
+      type: number
+    - name: meta.timestamp
+      type: integer
+  success_flag:
+    name: response.successful
+    type: boolean
+    description: Present on Status-shaped responses (v1Status.successful).
+problems: []
+notes:
+  - >-
+    The published spec declares only 200 responses; 4xx/5xx shapes are not
+    enumerated publicly. This catalog should be upgraded if WorkMarket
+    publishes an error-code reference.

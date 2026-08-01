@@ -1,0 +1,59 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Location",
+  "x-generated": "2026-07-21",
+  "x-method": "derived",
+  "x-source": "openapi/work-market-employer-api-openapi.yml#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "readOnly": true
+    },
+    "name": {
+      "type": "string",
+      "readOnly": true
+    },
+    "location_number": {
+      "type": "string",
+      "readOnly": true
+    },
+    "instructions": {
+      "type": "string",
+      "readOnly": true
+    },
+    "address_1": {
+      "type": "string",
+      "readOnly": true
+    },
+    "address_2": {
+      "type": "string",
+      "readOnly": true
+    },
+    "city": {
+      "type": "string",
+      "readOnly": true
+    },
+    "state": {
+      "type": "string",
+      "readOnly": true
+    },
+    "zip": {
+      "type": "string",
+      "readOnly": true
+    },
+    "country": {
+      "type": "string",
+      "readOnly": true
+    },
+    "latitude": {
+      "type": "string",
+      "readOnly": true
+    },
+    "longitude": {
+      "type": "string",
+      "readOnly": true
+    }
+  }
+}

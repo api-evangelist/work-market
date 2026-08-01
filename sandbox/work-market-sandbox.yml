@@ -1,0 +1,25 @@
+generated: '2026-07-21'
+method: searched
+source: https://developer.workmarket.com/page/sandbox-environment
+description: >-
+  WorkMarket publishes a dedicated API development (sandbox) environment for
+  testing integrations before going live. The sandbox is a separate domain
+  with its own client accounts — there are no published magic test values or
+  key prefixes; test data is whatever you create under a sandbox account.
+docs:
+  - https://developer.workmarket.com/page/sandbox-environment
+environments:
+  - name: sandbox
+    domain: https://api.dev.workmarket.com
+    signup: https://api.dev.workmarket.com/signup/creatework
+    notes: >-
+      Create a new client account on the sandbox via the signup URL, then
+      generate API token/secret credentials inside that sandbox account.
+      The sandbox host did not resolve from the public internet when probed
+      on 2026-07-21 (it may be gated); the URLs above are exactly as
+      published in the developer portal.
+  - name: production
+    domain: https://www.workmarket.com
+separation: >-
+  Separate domain and separate accounts/credentials; no shared key-prefix
+  scheme between sandbox and live is documented.

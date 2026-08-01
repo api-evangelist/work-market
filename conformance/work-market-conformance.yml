@@ -1,0 +1,37 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/work-market-employer-api-openapi.yml
+description: >-
+  Industry and cross-cutting standard conformance of the WorkMarket Employer
+  API, derived from the published Swagger 2.0 spec and the developer portal.
+standards:
+  - id: openapi-2.0
+    conforms: true
+    evidence: Published spec is Swagger 2.0 (developer.workmarket.com/page/employer-api-v1-swaggeropenapi).
+  - id: oauth2
+    conforms: false
+    evidence: Auth is a proprietary token/secret-to-access-token exchange; no OAuth 2.0 flows published.
+  - id: oidc
+    conforms: false
+    evidence: /.well-known/openid-configuration returns 404 on all hosts.
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: Errors use a proprietary {meta.errors, meta.status_code} envelope, not application/problem+json.
+  - id: pagination
+    conforms: true
+    evidence: Offset pagination via start/limit query parameters on list operations.
+  - id: idempotency
+    conforms: false
+    evidence: No idempotency-key mechanism documented.
+  - id: json:api
+    conforms: false
+    evidence: Proprietary {meta, response} envelope.
+  - id: scim
+    conforms: false
+    evidence: No SCIM paths in the spec.
+  - id: webhooks
+    conforms: true
+    evidence: Documented outbound webhook surface (developer.workmarket.com/page/webhooks).
+  - id: rfc8594-sunset
+    conforms: false
+    evidence: No Sunset/Deprecation header support documented.

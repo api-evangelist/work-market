@@ -1,0 +1,26 @@
+generated: '2026-07-21'
+method: searched
+source: https://developer.workmarket.com/
+description: >-
+  Lifecycle posture of the WorkMarket Employer API. Versioning is URI-based
+  (v1 path segments; the published spec is titled "Swagger spec for Work
+  Market API v1"). A public Atlassian Statuspage exists at
+  status.workmarket.com ("WorkMarket Public"). No public deprecation policy,
+  SLA, or Sunset/Deprecation header support is documented; three operations
+  are marked deprecated in the published spec, and the webhook file_data
+  variable is deprecated in favor of file_data_base64.
+versioning:
+  scheme: uri-path
+  current: v1
+  docs: https://developer.workmarket.com/page/employer-api-v1-swaggeropenapi
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: No published deprecation policy; deprecations are flagged in the spec/docs.
+sla:
+  url: null
+status_page: https://status.workmarket.com
+deprecated_operations:
+  - openapi/work-market-employer-api-openapi.yml#increaseSpendLimit
+  - openapi/work-market-employer-api-openapi.yml#dressCodes
+  - openapi/work-market-employer-api-openapi.yml#subStatuses

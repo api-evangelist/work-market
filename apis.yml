@@ -1,26 +1,452 @@
 aid: work-market
 name: Work Market
-description: Work Market is a company surfaced as a portfolio company of union-square-ventures and added
-  to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment
-  pipeline.
+description: >-
+  WorkMarket, an ADP company, is an independent contractor management platform
+  that helps businesses organize, manage, and pay their extended workforce of
+  1099 contractors and freelancers. The platform covers contractor onboarding
+  and verification, Labor Clouds for organizing talent by skill and location,
+  assignment creation and tracking, compliance support, and fast payment
+  processing. The WorkMarket Employer API exposes assignments, talent pools,
+  address book, custom fields, labels, projects, and payment approval as a
+  REST API, with webhooks, a Relay automation tool, and a certified MuleSoft
+  connector for enterprise integration.
 url: https://raw.githubusercontent.com/api-evangelist/work-market/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - union-square-ventures
-x-tier: stub
-x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://files.readme.io/df14adf-wm.dev.portal.logo.png
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
-- Company
-apis: []
+- Workforce Management
+- Contractors
+- Freelance
+- Gig Economy
+- Human Resources
+- Payments
+- Field Services
+- Staffing
+apis:
+- aid: work-market:work-market-addressbook-api
+  name: Work Market Addressbook API
+  description: The Addressbook API from Work Market — 5 operation(s) for addressbook.
+  humanURL: https://employer-api.workmarket.com/docs
+  baseURL: https://www.workmarket.com/api/v1
+  tags:
+  - Addressbook
+  properties:
+  - type: OpenAPI
+    url: openapi/work-market-addressbook-api-openapi.yml
+  - type: Documentation
+    url: https://developer.workmarket.com/
+  - type: APIReference
+    url: https://employer-api.workmarket.com/docs
+  - type: JSONSchema
+    url: json-schema/work-market-assignment-details.json
+  - type: JSONSchema
+    url: json-schema/work-market-assignment-list-item.json
+  - type: JSONSchema
+    url: json-schema/work-market-talent-pool.json
+  - type: JSONSchema
+    url: json-schema/work-market-client.json
+  - type: JSONSchema
+    url: json-schema/work-market-location.json
+  - type: JSONSchema
+    url: json-schema/work-market-custom-field.json
+  - type: JSONSchema
+    url: json-schema/work-market-project.json
+  - type: JSONSchema
+    url: json-schema/work-market-template.json
+  - type: JSONSchema
+    url: json-schema/work-market-payment.json
+  - type: JSONSchema
+    url: json-schema/work-market-pricing.json
+- aid: work-market:work-market-assignments-api
+  name: Work Market Assignments API
+  description: The Assignments API from Work Market — 39 operation(s) for assignments.
+  humanURL: https://employer-api.workmarket.com/docs
+  baseURL: https://www.workmarket.com/api/v1
+  tags:
+  - Assignments
+  properties:
+  - type: OpenAPI
+    url: openapi/work-market-assignments-api-openapi.yml
+  - type: Documentation
+    url: https://developer.workmarket.com/
+  - type: APIReference
+    url: https://employer-api.workmarket.com/docs
+  - type: JSONSchema
+    url: json-schema/work-market-assignment-details.json
+  - type: JSONSchema
+    url: json-schema/work-market-assignment-list-item.json
+  - type: JSONSchema
+    url: json-schema/work-market-talent-pool.json
+  - type: JSONSchema
+    url: json-schema/work-market-client.json
+  - type: JSONSchema
+    url: json-schema/work-market-location.json
+  - type: JSONSchema
+    url: json-schema/work-market-custom-field.json
+  - type: JSONSchema
+    url: json-schema/work-market-project.json
+  - type: JSONSchema
+    url: json-schema/work-market-template.json
+  - type: JSONSchema
+    url: json-schema/work-market-payment.json
+  - type: JSONSchema
+    url: json-schema/work-market-pricing.json
+- aid: work-market:work-market-authorization-api
+  name: Work Market Authorization API
+  description: The Authorization API from Work Market — 1 operation(s) for authorization.
+  humanURL: https://employer-api.workmarket.com/docs
+  baseURL: https://www.workmarket.com/api/v1
+  tags:
+  - Authorization
+  properties:
+  - type: OpenAPI
+    url: openapi/work-market-authorization-api-openapi.yml
+  - type: Documentation
+    url: https://developer.workmarket.com/
+  - type: APIReference
+    url: https://employer-api.workmarket.com/docs
+  - type: JSONSchema
+    url: json-schema/work-market-assignment-details.json
+  - type: JSONSchema
+    url: json-schema/work-market-assignment-list-item.json
+  - type: JSONSchema
+    url: json-schema/work-market-talent-pool.json
+  - type: JSONSchema
+    url: json-schema/work-market-client.json
+  - type: JSONSchema
+    url: json-schema/work-market-location.json
+  - type: JSONSchema
+    url: json-schema/work-market-custom-field.json
+  - type: JSONSchema
+    url: json-schema/work-market-project.json
+  - type: JSONSchema
+    url: json-schema/work-market-template.json
+  - type: JSONSchema
+    url: json-schema/work-market-payment.json
+  - type: JSONSchema
+    url: json-schema/work-market-pricing.json
+- aid: work-market:work-market-constants-api
+  name: Work Market Constants API
+  description: The Constants API from Work Market — 6 operation(s) for constants.
+  humanURL: https://employer-api.workmarket.com/docs
+  baseURL: https://www.workmarket.com/api/v1
+  tags:
+  - Constants
+  properties:
+  - type: OpenAPI
+    url: openapi/work-market-constants-api-openapi.yml
+  - type: Documentation
+    url: https://developer.workmarket.com/
+  - type: APIReference
+    url: https://employer-api.workmarket.com/docs
+  - type: JSONSchema
+    url: json-schema/work-market-assignment-details.json
+  - type: JSONSchema
+    url: json-schema/work-market-assignment-list-item.json
+  - type: JSONSchema
+    url: json-schema/work-market-talent-pool.json
+  - type: JSONSchema
+    url: json-schema/work-market-client.json
+  - type: JSONSchema
+    url: json-schema/work-market-location.json
+  - type: JSONSchema
+    url: json-schema/work-market-custom-field.json
+  - type: JSONSchema
+    url: json-schema/work-market-project.json
+  - type: JSONSchema
+    url: json-schema/work-market-template.json
+  - type: JSONSchema
+    url: json-schema/work-market-payment.json
+  - type: JSONSchema
+    url: json-schema/work-market-pricing.json
+- aid: work-market:work-market-custom-fields-api
+  name: Work Market Custom Fields API
+  description: The Custom Fields API from Work Market — 1 operation(s) for custom fields.
+  humanURL: https://employer-api.workmarket.com/docs
+  baseURL: https://www.workmarket.com/api/v1
+  tags:
+  - Custom Fields
+  properties:
+  - type: OpenAPI
+    url: openapi/work-market-custom-fields-api-openapi.yml
+  - type: Documentation
+    url: https://developer.workmarket.com/
+  - type: APIReference
+    url: https://employer-api.workmarket.com/docs
+  - type: JSONSchema
+    url: json-schema/work-market-assignment-details.json
+  - type: JSONSchema
+    url: json-schema/work-market-assignment-list-item.json
+  - type: JSONSchema
+    url: json-schema/work-market-talent-pool.json
+  - type: JSONSchema
+    url: json-schema/work-market-client.json
+  - type: JSONSchema
+    url: json-schema/work-market-location.json
+  - type: JSONSchema
+    url: json-schema/work-market-custom-field.json
+  - type: JSONSchema
+    url: json-schema/work-market-project.json
+  - type: JSONSchema
+    url: json-schema/work-market-template.json
+  - type: JSONSchema
+    url: json-schema/work-market-payment.json
+  - type: JSONSchema
+    url: json-schema/work-market-pricing.json
+- aid: work-market:work-market-labels-api
+  name: Work Market Labels API
+  description: The Labels API from Work Market — 3 operation(s) for labels.
+  humanURL: https://employer-api.workmarket.com/docs
+  baseURL: https://www.workmarket.com/api/v1
+  tags:
+  - Labels
+  properties:
+  - type: OpenAPI
+    url: openapi/work-market-labels-api-openapi.yml
+  - type: Documentation
+    url: https://developer.workmarket.com/
+  - type: APIReference
+    url: https://employer-api.workmarket.com/docs
+  - type: JSONSchema
+    url: json-schema/work-market-assignment-details.json
+  - type: JSONSchema
+    url: json-schema/work-market-assignment-list-item.json
+  - type: JSONSchema
+    url: json-schema/work-market-talent-pool.json
+  - type: JSONSchema
+    url: json-schema/work-market-client.json
+  - type: JSONSchema
+    url: json-schema/work-market-location.json
+  - type: JSONSchema
+    url: json-schema/work-market-custom-field.json
+  - type: JSONSchema
+    url: json-schema/work-market-project.json
+  - type: JSONSchema
+    url: json-schema/work-market-template.json
+  - type: JSONSchema
+    url: json-schema/work-market-payment.json
+  - type: JSONSchema
+    url: json-schema/work-market-pricing.json
+- aid: work-market:work-market-locations-api
+  name: Work Market Locations API
+  description: The Locations API from Work Market — 1 operation(s) for locations.
+  humanURL: https://employer-api.workmarket.com/docs
+  baseURL: https://www.workmarket.com/api/v1
+  tags:
+  - Locations
+  properties:
+  - type: OpenAPI
+    url: openapi/work-market-locations-api-openapi.yml
+  - type: Documentation
+    url: https://developer.workmarket.com/
+  - type: APIReference
+    url: https://employer-api.workmarket.com/docs
+  - type: JSONSchema
+    url: json-schema/work-market-assignment-details.json
+  - type: JSONSchema
+    url: json-schema/work-market-assignment-list-item.json
+  - type: JSONSchema
+    url: json-schema/work-market-talent-pool.json
+  - type: JSONSchema
+    url: json-schema/work-market-client.json
+  - type: JSONSchema
+    url: json-schema/work-market-location.json
+  - type: JSONSchema
+    url: json-schema/work-market-custom-field.json
+  - type: JSONSchema
+    url: json-schema/work-market-project.json
+  - type: JSONSchema
+    url: json-schema/work-market-template.json
+  - type: JSONSchema
+    url: json-schema/work-market-payment.json
+  - type: JSONSchema
+    url: json-schema/work-market-pricing.json
+- aid: work-market:work-market-projects-api
+  name: Work Market Projects API
+  description: The Projects API from Work Market — 2 operation(s) for projects.
+  humanURL: https://employer-api.workmarket.com/docs
+  baseURL: https://www.workmarket.com/api/v1
+  tags:
+  - Projects
+  properties:
+  - type: OpenAPI
+    url: openapi/work-market-projects-api-openapi.yml
+  - type: Documentation
+    url: https://developer.workmarket.com/
+  - type: APIReference
+    url: https://employer-api.workmarket.com/docs
+  - type: JSONSchema
+    url: json-schema/work-market-assignment-details.json
+  - type: JSONSchema
+    url: json-schema/work-market-assignment-list-item.json
+  - type: JSONSchema
+    url: json-schema/work-market-talent-pool.json
+  - type: JSONSchema
+    url: json-schema/work-market-client.json
+  - type: JSONSchema
+    url: json-schema/work-market-location.json
+  - type: JSONSchema
+    url: json-schema/work-market-custom-field.json
+  - type: JSONSchema
+    url: json-schema/work-market-project.json
+  - type: JSONSchema
+    url: json-schema/work-market-template.json
+  - type: JSONSchema
+    url: json-schema/work-market-payment.json
+  - type: JSONSchema
+    url: json-schema/work-market-pricing.json
+- aid: work-market:work-market-talent-pools-api
+  name: Work Market Talent Pools API
+  description: The Talent Pools API from Work Market — 6 operation(s) for talent pools.
+  humanURL: https://employer-api.workmarket.com/docs
+  baseURL: https://www.workmarket.com/api/v1
+  tags:
+  - Talent Pools
+  properties:
+  - type: OpenAPI
+    url: openapi/work-market-talent-pools-api-openapi.yml
+  - type: Documentation
+    url: https://developer.workmarket.com/
+  - type: APIReference
+    url: https://employer-api.workmarket.com/docs
+  - type: JSONSchema
+    url: json-schema/work-market-assignment-details.json
+  - type: JSONSchema
+    url: json-schema/work-market-assignment-list-item.json
+  - type: JSONSchema
+    url: json-schema/work-market-talent-pool.json
+  - type: JSONSchema
+    url: json-schema/work-market-client.json
+  - type: JSONSchema
+    url: json-schema/work-market-location.json
+  - type: JSONSchema
+    url: json-schema/work-market-custom-field.json
+  - type: JSONSchema
+    url: json-schema/work-market-project.json
+  - type: JSONSchema
+    url: json-schema/work-market-template.json
+  - type: JSONSchema
+    url: json-schema/work-market-payment.json
+  - type: JSONSchema
+    url: json-schema/work-market-pricing.json
+- aid: work-market:work-market-updatecheckin-api
+  name: Work Market UpdateCheckIn API
+  description: The UpdateCheckIn API from Work Market — 2 operation(s) for updatecheckin.
+  humanURL: https://employer-api.workmarket.com/docs
+  baseURL: https://www.workmarket.com/api/v1
+  tags:
+  - UpdateCheckIn
+  properties:
+  - type: OpenAPI
+    url: openapi/work-market-updatecheckin-api-openapi.yml
+  - type: Documentation
+    url: https://developer.workmarket.com/
+  - type: APIReference
+    url: https://employer-api.workmarket.com/docs
+  - type: JSONSchema
+    url: json-schema/work-market-assignment-details.json
+  - type: JSONSchema
+    url: json-schema/work-market-assignment-list-item.json
+  - type: JSONSchema
+    url: json-schema/work-market-talent-pool.json
+  - type: JSONSchema
+    url: json-schema/work-market-client.json
+  - type: JSONSchema
+    url: json-schema/work-market-location.json
+  - type: JSONSchema
+    url: json-schema/work-market-custom-field.json
+  - type: JSONSchema
+    url: json-schema/work-market-project.json
+  - type: JSONSchema
+    url: json-schema/work-market-template.json
+  - type: JSONSchema
+    url: json-schema/work-market-payment.json
+  - type: JSONSchema
+    url: json-schema/work-market-pricing.json
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/work-market-domain-security.yml
 - type: Website
   url: https://workmarket.com
+- type: DeveloperPortal
+  url: https://developer.workmarket.com/
+- type: Documentation
+  url: https://developer.workmarket.com/docs
+- type: APIReference
+  url: https://employer-api.workmarket.com/docs
+- type: GettingStarted
+  url: https://developer.workmarket.com/page/best-practices
+- type: Support
+  url: https://workmarket.zendesk.com/hc/en-us
+- type: Blog
+  url: https://www.workmarket.com/blog
+- type: GitHubOrganization
+  url: https://github.com/workmarket-oss
+- type: StatusPage
+  url: https://status.workmarket.com
+- type: TermsOfService
+  url: https://www.workmarket.com/tos
+- type: PrivacyPolicy
+  url: https://www.workmarket.com/privacy
+- type: Login
+  url: https://www.workmarket.com/login
+- type: SignUp
+  url: https://www.workmarket.com/contractors/join-workmarket
+- type: Postman
+  url: https://www.getpostman.com/collections/e4829238bea777d8995a
+- type: Webhooks
+  url: https://developer.workmarket.com/page/webhooks
+- type: Webhooks
+  url: asyncapi/work-market-webhooks.yml
+- type: LLMsTxt
+  url: llms/work-market-llms.txt
+- type: WellKnown
+  url: well-known/work-market-well-known.yml
+- type: Packages
+  url: packages/work-market-packages.yml
+- type: MCPServer
+  url: mcp/work-market-mcp.yml
+- type: Sandbox
+  url: sandbox/work-market-sandbox.yml
+- type: Conventions
+  url: conventions/work-market-conventions.yml
+- type: DataModel
+  url: data-model/work-market-data-model.yml
+- type: ErrorCatalog
+  url: errors/work-market-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/work-market-lifecycle.yml
+- type: Authentication
+  url: authentication/work-market-authentication.yml
+- type: Conformance
+  url: conformance/work-market-conformance.yml
+- type: AgentSkill
+  url: skills/_index.yml
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 29
+  pass: local-v1

@@ -1,0 +1,210 @@
+generated: '2026-07-21'
+method: derived
+status: candidate
+source: openapi/work-market-employer-api-openapi.yml
+description: No official WorkMarket MCP server was found (npm, the official MCP registry surface, and
+  the developer portal were searched 2026-07-21). This is a candidate tool list derived one-to-one from
+  the 66 operations of the published Employer API v1 Swagger spec.
+server:
+  name: work-market
+  transport: http
+  url: null
+tools:
+- name: list
+  description: List custom fields
+  source_operation: openapi/work-market-employer-api-openapi.yml#list
+- name: add_client
+  description: Add client
+  source_operation: openapi/work-market-employer-api-openapi.yml#addClient
+- name: add_client_contact
+  description: Add contact to client
+  source_operation: openapi/work-market-employer-api-openapi.yml#addClientContact
+- name: add_location_contact
+  description: Add contact to location
+  source_operation: openapi/work-market-employer-api-openapi.yml#addLocationContact
+- name: accept_bonus_post_action
+  description: Accept bonus request
+  source_operation: openapi/work-market-employer-api-openapi.yml#acceptBonusPostAction
+- name: accept_budget_increase_post_action
+  description: Accept budget increase request
+  source_operation: openapi/work-market-employer-api-openapi.yml#acceptBudgetIncreasePostAction
+- name: accept_expense_reimbursement_post_action
+  description: Accept expense reimbursement
+  source_operation: openapi/work-market-employer-api-openapi.yml#acceptExpenseReimbursementPostAction
+- name: accept_reschedule_post_action
+  description: Accept reschedule request
+  source_operation: openapi/work-market-employer-api-openapi.yml#acceptReschedulePostAction
+- name: add_note
+  description: Add message
+  source_operation: openapi/work-market-employer-api-openapi.yml#addNote
+- name: approve_payment
+  description: Approve payment
+  source_operation: openapi/work-market-employer-api-openapi.yml#approvePayment
+- name: add_document
+  description: Add document
+  source_operation: openapi/work-market-employer-api-openapi.yml#addDocument
+- name: get_attachment
+  description: Get attachment
+  source_operation: openapi/work-market-employer-api-openapi.yml#getAttachment
+- name: list_attachments
+  description: List attachments
+  source_operation: openapi/work-market-employer-api-openapi.yml#listAttachments
+- name: remove_attachment
+  description: Remove attachment
+  source_operation: openapi/work-market-employer-api-openapi.yml#removeAttachment
+- name: cancel
+  description: Cancel assignment
+  source_operation: openapi/work-market-employer-api-openapi.yml#cancel
+- name: create
+  description: Create new assignment
+  source_operation: openapi/work-market-employer-api-openapi.yml#create
+- name: decline_bonus_post_action
+  description: Decline bonus request
+  source_operation: openapi/work-market-employer-api-openapi.yml#declineBonusPostAction
+- name: decline_budget_increase_post_action
+  description: Decline budget increase request
+  source_operation: openapi/work-market-employer-api-openapi.yml#declineBudgetIncreasePostAction
+- name: decline_expense_reimbursement_post_action
+  description: Decline expense reimbursement request
+  source_operation: openapi/work-market-employer-api-openapi.yml#declineExpenseReimbursementPostAction
+- name: decline_reschedule_post_action
+  description: Decline reschedule request
+  source_operation: openapi/work-market-employer-api-openapi.yml#declineReschedulePostAction
+- name: delete
+  description: Delete assignment
+  source_operation: openapi/work-market-employer-api-openapi.yml#delete
+- name: get
+  description: Get assignment details
+  source_operation: openapi/work-market-employer-api-openapi.yml#get
+- name: increase_spend_limit
+  description: Increase spend limit
+  source_operation: openapi/work-market-employer-api-openapi.yml#increaseSpendLimit
+- name: add_post_action
+  description: Add labels to assignment
+  source_operation: openapi/work-market-employer-api-openapi.yml#addPostAction
+- name: list_assignment_lables_action
+  description: List labels
+  source_operation: openapi/work-market-employer-api-openapi.yml#listAssignmentLablesAction
+- name: remove_post_action
+  description: Remove label from assignment
+  source_operation: openapi/work-market-employer-api-openapi.yml#removePostAction
+- name: list_assignments_action
+  description: List assignments
+  source_operation: openapi/work-market-employer-api-openapi.yml#listAssignmentsAction
+- name: list_assignment_exceptions_action
+  description: List exception-status assignments
+  source_operation: openapi/work-market-employer-api-openapi.yml#listAssignmentExceptionsAction
+- name: list_updated_action
+  description: List updated assignments
+  source_operation: openapi/work-market-employer-api-openapi.yml#listUpdatedAction
+- name: accept_offer
+  description: Accept offer/application
+  source_operation: openapi/work-market-employer-api-openapi.yml#acceptOffer
+- name: decline_offer
+  description: Decline offer/application
+  source_operation: openapi/work-market-employer-api-openapi.yml#declineOffer
+- name: answer_question
+  description: Answer question
+  source_operation: openapi/work-market-employer-api-openapi.yml#answerQuestion
+- name: save_single_pending_resource_rating_data
+  description: Rate assignments
+  source_operation: openapi/work-market-employer-api-openapi.yml#saveSinglePendingResourceRatingData
+- name: reject_payment
+  description: Reject payment
+  source_operation: openapi/work-market-employer-api-openapi.yml#rejectPayment
+- name: reschedule
+  description: Request reschedule
+  source_operation: openapi/work-market-employer-api-openapi.yml#reschedule
+- name: list_assignment_statuses_action
+  description: List statuses
+  source_operation: openapi/work-market-employer-api-openapi.yml#listAssignmentStatusesAction
+- name: get_assignment_template_action
+  description: Get template
+  source_operation: openapi/work-market-employer-api-openapi.yml#getAssignmentTemplateAction
+- name: list_assignment_templates_action
+  description: List templates
+  source_operation: openapi/work-market-employer-api-openapi.yml#listAssignmentTemplatesAction
+- name: do_void
+  description: Void assignment
+  source_operation: openapi/work-market-employer-api-openapi.yml#doVoid
+- name: unassign_assignment
+  description: Unassign worker
+  source_operation: openapi/work-market-employer-api-openapi.yml#unassignAssignment
+- name: edit_assignment_fields_action
+  description: Update custom fields
+  source_operation: openapi/work-market-employer-api-openapi.yml#editAssignmentFieldsAction
+- name: edit_assignment_action
+  description: Edit assignment
+  source_operation: openapi/work-market-employer-api-openapi.yml#editAssignmentAction
+- name: increase_budget
+  description: Add budget increase
+  source_operation: openapi/work-market-employer-api-openapi.yml#increaseBudget
+- name: reimburse_expense_post_action
+  description: Add expense reimbursement
+  source_operation: openapi/work-market-employer-api-openapi.yml#reimburseExpensePostAction
+- name: send
+  description: Send assignment
+  source_operation: openapi/work-market-employer-api-openapi.yml#send
+- name: complete
+  description: Complete assignment for worker
+  source_operation: openapi/work-market-employer-api-openapi.yml#complete
+- name: request
+  description: Request new access token
+  source_operation: openapi/work-market-employer-api-openapi.yml#request
+- name: cancellation_reason_codes
+  description: List cancellation reason codes
+  source_operation: openapi/work-market-employer-api-openapi.yml#cancellationReasonCodes
+- name: dress_codes
+  description: List dress codes
+  source_operation: openapi/work-market-employer-api-openapi.yml#dressCodes
+- name: industries
+  description: List industry IDs
+  source_operation: openapi/work-market-employer-api-openapi.yml#industries
+- name: location_types
+  description: Location types
+  source_operation: openapi/work-market-employer-api-openapi.yml#locationTypes
+- name: sub_statuses
+  description: List substatuses
+  source_operation: openapi/work-market-employer-api-openapi.yml#subStatuses
+- name: unassign_reason_codes
+  description: List unassign reason codes
+  source_operation: openapi/work-market-employer-api-openapi.yml#unassignReasonCodes
+- name: list_clients_action
+  description: List clients
+  source_operation: openapi/work-market-employer-api-openapi.yml#listClientsAction
+- name: list_contacts_action
+  description: List contacts
+  source_operation: openapi/work-market-employer-api-openapi.yml#listContactsAction
+- name: list_locations_action
+  description: List locations
+  source_operation: openapi/work-market-employer-api-openapi.yml#listLocationsAction
+- name: list_talent_pools_action
+  description: List talent pools
+  source_operation: openapi/work-market-employer-api-openapi.yml#listTalentPoolsAction
+- name: add_or_invite_workers_action
+  description: Add or invite workers to talent pool
+  source_operation: openapi/work-market-employer-api-openapi.yml#addOrInviteWorkersAction
+- name: apply_to_talent_pool_on_behalf_action
+  description: Add workers to talent pool
+  source_operation: openapi/work-market-employer-api-openapi.yml#applyToTalentPoolOnBehalfAction
+- name: approve_workers_action
+  description: Approve workers in talent pool
+  source_operation: openapi/work-market-employer-api-openapi.yml#approveWorkersAction
+- name: decline_workers_action
+  description: Decline workers from talent pool
+  source_operation: openapi/work-market-employer-api-openapi.yml#declineWorkersAction
+- name: remove_workers_action
+  description: Remove workers from talent pool
+  source_operation: openapi/work-market-employer-api-openapi.yml#removeWorkersAction
+- name: add_project_action
+  description: Create project
+  source_operation: openapi/work-market-employer-api-openapi.yml#addProjectAction
+- name: list_projects_action
+  description: List projects
+  source_operation: openapi/work-market-employer-api-openapi.yml#listProjectsAction
+- name: update_check_in_action
+  description: Check-in action used for both new check-ins or updating an existing entry
+  source_operation: openapi/work-market-employer-api-openapi.yml#updateCheckInAction
+- name: update_check_out_action
+  description: Check-out action used for both new check-outs or updating an existing entry
+  source_operation: openapi/work-market-employer-api-openapi.yml#updateCheckOutAction

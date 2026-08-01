@@ -1,0 +1,28 @@
+generated: '2026-07-21'
+method: searched
+description: >-
+  First-party client libraries and connectors for the WorkMarket Employer API.
+  Public package registries (npm, PyPI, Maven Central, NuGet, RubyGems,
+  Packagist, crates.io) were searched on 2026-07-21 and none carry an official
+  WorkMarket SDK. The one first-party distributable is the Certified MuleSoft
+  Connector published through MuleSoft Anypoint Exchange, which WorkMarket
+  documents on its developer portal.
+packages:
+  - language: mule
+    registry: anypoint-exchange
+    name: WorkMarket Connector
+    url: https://www.mulesoft.com/exchange#!/work-market-integration-connector
+    docs: https://developer.workmarket.com/page/mulesoft-connector
+    official: true
+    notes: >-
+      Certified MuleSoft Connector for integrating WorkMarket with Salesforce,
+      Workday, ServiceNow, SAP, Oracle, Microsoft and other enterprise systems
+      via the Anypoint platform.
+registries_probed_without_results:
+  - npm
+  - pypi
+  - maven-central
+  - nuget
+  - rubygems
+  - packagist
+  - crates.io

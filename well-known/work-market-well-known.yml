@@ -1,0 +1,73 @@
+generated: '2026-07-21'
+method: searched
+description: >-
+  Results of probing the /.well-known/ discovery surface (plus /llms.txt) for
+  every WorkMarket host referenced by apis.yml and the developer portal.
+  Status is the HTTP code observed at fetch time (2026-07-21).
+  api.workmarket.com did not resolve publicly (recorded as 000). The only
+  live discovery documents are the llms.txt files on the two ReadMe-hosted
+  docs sites; the developer-portal one is saved verbatim at
+  llms/work-market-llms.txt.
+hosts:
+  - host: https://workmarket.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /llms.txt
+        status: 302
+        note: redirects into the marketing site; no llms.txt document served
+  - host: https://www.workmarket.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+  - host: https://developer.workmarket.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /llms.txt
+        status: 200
+        file: ../llms/work-market-llms.txt
+  - host: https://employer-api.workmarket.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /llms.txt
+        status: 200
+        note: minimal document (title + summary only), not saved separately
+  - host: https://api.workmarket.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 0
+        note: host did not resolve from the public internet at probe time

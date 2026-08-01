@@ -1,0 +1,40 @@
+generated: '2026-07-21'
+method: searched
+source: https://employer-api.workmarket.com/reference/get-access-token
+docs: https://employer-api.workmarket.com/reference/get-access-token
+description: >-
+  The WorkMarket Employer API uses an API token/secret pair exchanged for a
+  short-lived access token. Credentials are generated in the WorkMarket web
+  app; the client POSTs them to the authorization endpoint and then sends the
+  returned access token as a Bearer credential in the Authorization header on
+  subsequent requests. The published Swagger 2.0 spec declares no
+  securityDefinitions; the scheme below is taken from the live API reference
+  (which models it as an apiKey-style Authorization header) and the
+  authorization operation in the spec.
+summary:
+  types: [accessToken]
+  api_key_in: [header]
+  oauth2_flows: []
+schemes:
+  - name: sec0
+    type: apiKey
+    in: header
+    parameter: Authorization
+    format: 'Bearer <access token>'
+    sources:
+      - https://employer-api.workmarket.com/reference/get-access-token
+token_exchange:
+  operation: openapi/work-market-employer-api-openapi.yml#request
+  path: POST /v1/employer/authorization/request
+  parameters:
+    - name: token
+      in: query
+      required: true
+      description: API token generated in the WorkMarket application
+    - name: secret
+      in: query
+      required: true
+      description: API secret generated in the WorkMarket application
+  returns: access token (Authorization definition) used as Bearer credential
+notes:
+  - No OAuth 2.0 / OpenID Connect surface is published; scopes/ is not applicable.

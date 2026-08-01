@@ -1,0 +1,281 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/work-market-employer-api-openapi.yml
+description: Entity-relationship graph of the WorkMarket Employer API, derived from $ref links between
+  the 54 definitions in the published Swagger 2.0 spec.
+entities:
+- ActiveResource
+- AddProjectResponse
+- Address
+- ApiV1Response
+- ApplicantProfile
+- Application
+- ApplyToTalentPoolOnBehalfRequest
+- ApplyToTalentPoolOnBehalfResponse
+- AssignmentCreationResponse
+- AssignmentDetails
+- AssignmentDetailsAttachment
+- AssignmentDetailsLabel
+- AssignmentListItem
+- Attachment
+- Authorization
+- BonusRequest
+- BudgetIncreaseRequest
+- CheckInOut
+- Client
+- ClientCompanyId
+- ClientContactId
+- Contact
+- CustomField
+- CustomFieldGroup
+- DeclinedResource
+- ExpenseReimbursementRequest
+- History
+- Industry
+- InternalOwnerDetails
+- Label
+- ListLabel
+- Location
+- LocationContact
+- LocationType
+- Note
+- PartLocation
+- Parts
+- PartsGroup
+- Payment
+- PhoneNumber
+- Pricing
+- Project
+- QuestionAnswerPair
+- RescheduleRequest
+- SendResults
+- Status
+- Substatus
+- SupportContact
+- TalentPool
+- Template
+- TemplateListItem
+- dress_code
+- v1Meta
+- v1Status
+relationships:
+- from: ActiveResource
+  to: PhoneNumber
+  type: has_many
+  via: phone_numbers
+- from: ActiveResource
+  to: Address
+  type: has_one
+  via: address
+- from: ActiveResource
+  to: CheckInOut
+  type: has_many
+  via: check_in_out
+- from: ApiV1Response
+  to: v1Meta
+  type: has_one
+  via: meta
+- from: ApplicantProfile
+  to: PhoneNumber
+  type: has_many
+  via: phone_numbers
+- from: Application
+  to: ApplicantProfile
+  type: has_one
+  via: resource
+- from: Application
+  to: RescheduleRequest
+  type: has_one
+  via: scheduling
+- from: Application
+  to: Pricing
+  type: has_one
+  via: pricing
+- from: AssignmentCreationResponse
+  to: Address
+  type: has_one
+  via: correctedAddress
+- from: AssignmentDetails
+  to: AssignmentDetailsLabel
+  type: has_many
+  via: substatuses
+- from: AssignmentDetails
+  to: AssignmentDetailsLabel
+  type: has_many
+  via: labels
+- from: AssignmentDetails
+  to: InternalOwnerDetails
+  type: has_one
+  via: internal_owner_details
+- from: AssignmentDetails
+  to: RescheduleRequest
+  type: has_one
+  via: reschedule_request
+- from: AssignmentDetails
+  to: BudgetIncreaseRequest
+  type: has_one
+  via: budget_increase_request
+- from: AssignmentDetails
+  to: ExpenseReimbursementRequest
+  type: has_one
+  via: expense_reimbursement_request
+- from: AssignmentDetails
+  to: BonusRequest
+  type: has_one
+  via: bonus_request
+- from: AssignmentDetails
+  to: Location
+  type: has_one
+  via: location
+- from: AssignmentDetails
+  to: LocationContact
+  type: has_one
+  via: location_contact
+- from: AssignmentDetails
+  to: SupportContact
+  type: has_one
+  via: support_contact
+- from: AssignmentDetails
+  to: ActiveResource
+  type: has_one
+  via: active_resource
+- from: AssignmentDetails
+  to: Pricing
+  type: has_one
+  via: pricing
+- from: AssignmentDetails
+  to: Payment
+  type: has_one
+  via: payment
+- from: AssignmentDetails
+  to: AssignmentDetailsAttachment
+  type: has_many
+  via: attachments
+- from: AssignmentDetails
+  to: History
+  type: has_many
+  via: history
+- from: AssignmentDetails
+  to: Note
+  type: has_many
+  via: notes
+- from: AssignmentDetails
+  to: CustomFieldGroup
+  type: has_many
+  via: custom_fields
+- from: AssignmentDetails
+  to: PartsGroup
+  type: has_one
+  via: parts_group
+- from: AssignmentDetails
+  to: Application
+  type: has_many
+  via: pending_offers
+- from: AssignmentDetails
+  to: DeclinedResource
+  type: has_many
+  via: declined_resources
+- from: AssignmentDetails
+  to: QuestionAnswerPair
+  type: has_many
+  via: questions
+- from: AssignmentListItem
+  to: Label
+  type: has_many
+  via: substatuses
+- from: AssignmentListItem
+  to: Label
+  type: has_many
+  via: labels
+- from: CustomFieldGroup
+  to: CustomField
+  type: has_many
+  via: fields
+- from: DeclinedResource
+  to: PhoneNumber
+  type: has_many
+  via: phone_numbers
+- from: LocationContact
+  to: PhoneNumber
+  type: has_many
+  via: phone_numbers
+- from: PartsGroup
+  to: PartLocation
+  type: has_one
+  via: pickup_location
+- from: PartsGroup
+  to: Parts
+  type: has_many
+  via: site_parts
+- from: PartsGroup
+  to: Parts
+  type: has_many
+  via: return_parts
+- from: SupportContact
+  to: PhoneNumber
+  type: has_many
+  via: phone_numbers
+- from: Template
+  to: InternalOwnerDetails
+  type: has_one
+  via: internal_owner_details
+- from: Template
+  to: RescheduleRequest
+  type: has_one
+  via: reschedule_request
+- from: Template
+  to: BudgetIncreaseRequest
+  type: has_one
+  via: budget_increase_request
+- from: Template
+  to: ExpenseReimbursementRequest
+  type: has_one
+  via: expense_reimbursement_request
+- from: Template
+  to: BonusRequest
+  type: has_one
+  via: bonus_request
+- from: Template
+  to: Location
+  type: has_one
+  via: location
+- from: Template
+  to: LocationContact
+  type: has_one
+  via: location_contact
+- from: Template
+  to: SupportContact
+  type: has_one
+  via: support_contact
+- from: Template
+  to: Pricing
+  type: has_one
+  via: pricing
+- from: Template
+  to: AssignmentDetailsAttachment
+  type: has_many
+  via: attachments
+- from: Template
+  to: Note
+  type: has_many
+  via: notes
+- from: Template
+  to: CustomFieldGroup
+  type: has_many
+  via: custom_fields
+- from: Template
+  to: PartsGroup
+  type: has_one
+  via: parts_group
+- from: Template
+  to: Application
+  type: has_many
+  via: pending_offers
+- from: Template
+  to: DeclinedResource
+  type: has_many
+  via: declined_resources
+- from: Template
+  to: QuestionAnswerPair
+  type: has_many
+  via: questions

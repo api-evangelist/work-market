@@ -1,0 +1,35 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for the WorkMarket Employer API
+  version: 1.0.0
+x-generated: '2026-07-21'
+x-method: generated
+extends: openapi/work-market-employer-api-openapi.yml
+actions:
+  - target: $.info
+    update:
+      x-apievangelist:
+        harvested: '2026-07-21'
+        source: https://developer.workmarket.com/page/employer-api-v1-swaggeropenapi
+        notes: >-
+          The published spec has one YAML indentation flaw (the path key
+          '/v1/employer/assignments/{id}/pricing/bonus' is indented 3 spaces
+          instead of 2), which breaks strict YAML parsing. A repaired working
+          copy is kept at openapi/work-market-employer-api-openapi.yml.
+      contact:
+        x-solutions-engineering: solutions@workmarket.com
+  - target: $
+    update:
+      x-status-page: https://status.workmarket.com
+      x-webhooks-docs: https://developer.workmarket.com/page/webhooks
+      x-sandbox: https://api.dev.workmarket.com
+  - target: $.info
+    update:
+      x-gaps:
+        securityDefinitions: >-
+          The spec declares no securityDefinitions; the live reference models
+          auth as an Authorization: Bearer header obtained from
+          POST /v1/employer/authorization/request (token + secret).
+        error_responses: >-
+          Only 200 responses are documented; error shapes live in the
+          {meta.errors, meta.status_code} envelope.

@@ -1,0 +1,15 @@
+generated: '2026-07-21'
+method: generated
+skills:
+  - file: work-market-create-and-send-assignment.md
+    name: Create and send a WorkMarket assignment
+    api: openapi/work-market-employer-api-openapi.yml
+    operations: [request, create, send, get, listAssignmentsAction, listUpdatedAction]
+  - file: work-market-approve-work-for-payment.md
+    name: Approve completed WorkMarket work for payment
+    api: openapi/work-market-employer-api-openapi.yml
+    operations: [listAssignmentsAction, approvePayment, rejectPayment, saveSinglePendingResourceRatingData]
+  - file: work-market-manage-talent-pools.md
+    name: Manage WorkMarket talent pools
+    api: openapi/work-market-employer-api-openapi.yml
+    operations: [listTalentPoolsAction, addOrInviteWorkersAction, applyToTalentPoolOnBehalfAction, approveWorkersAction, declineWorkersAction, removeWorkersAction]

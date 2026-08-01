@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Payment",
+  "x-generated": "2026-07-21",
+  "x-method": "derived",
+  "x-source": "openapi/work-market-employer-api-openapi.yml#",
+  "type": "object",
+  "properties": {
+    "max_spend_limit": {
+      "type": "number",
+      "format": "double",
+      "readOnly": true
+    },
+    "actual_spend_limit": {
+      "type": "number",
+      "format": "double",
+      "readOnly": true
+    },
+    "buyer_fee": {
+      "type": "number",
+      "format": "double",
+      "readOnly": true
+    },
+    "total_cost": {
+      "type": "number",
+      "format": "double",
+      "readOnly": true
+    },
+    "hours_worked": {
+      "type": "number",
+      "format": "double",
+      "readOnly": true
+    },
+    "paid_on": {
+      "type": "integer",
+      "format": "int64",
+      "readOnly": true
+    },
+    "payment_due_on": {
+      "type": "integer",
+      "format": "int64",
+      "readOnly": true
+    }
+  }
+}

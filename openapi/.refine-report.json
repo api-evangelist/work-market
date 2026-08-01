@@ -1,0 +1,32 @@
+{
+  "provider": "work-market",
+  "sources": [
+    "work-market-addressbook-api-openapi.yml",
+    "work-market-assignments-api-openapi.yml",
+    "work-market-authorization-api-openapi.yml",
+    "work-market-constants-api-openapi.yml",
+    "work-market-custom-fields-api-openapi.yml",
+    "work-market-labels-api-openapi.yml",
+    "work-market-locations-api-openapi.yml",
+    "work-market-projects-api-openapi.yml",
+    "work-market-talent-pools-api-openapi.yml",
+    "work-market-updatecheckin-api-openapi.yml"
+  ],
+  "outputs": [
+    "work-market-addressbook-api-openapi.yml",
+    "work-market-assignments-api-openapi.yml",
+    "work-market-authorization-api-openapi.yml",
+    "work-market-constants-api-openapi.yml",
+    "work-market-custom-fields-api-openapi.yml",
+    "work-market-labels-api-openapi.yml",
+    "work-market-locations-api-openapi.yml",
+    "work-market-projects-api-openapi.yml",
+    "work-market-talent-pools-api-openapi.yml",
+    "work-market-updatecheckin-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

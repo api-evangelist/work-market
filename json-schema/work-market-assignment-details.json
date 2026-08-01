@@ -1,0 +1,1244 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "AssignmentDetails",
+  "x-generated": "2026-07-21",
+  "x-method": "derived",
+  "x-source": "openapi/work-market-employer-api-openapi.yml#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "readOnly": true
+    },
+    "title": {
+      "type": "string",
+      "readOnly": true
+    },
+    "description": {
+      "type": "string",
+      "readOnly": true
+    },
+    "instructions": {
+      "type": "string",
+      "readOnly": true
+    },
+    "desired_skills": {
+      "type": "string",
+      "readOnly": true
+    },
+    "short_url": {
+      "type": "string",
+      "readOnly": true
+    },
+    "status": {
+      "type": "string",
+      "readOnly": true
+    },
+    "substatuses": {
+      "type": "array",
+      "readOnly": true,
+      "items": {
+        "$ref": "#Label"
+      }
+    },
+    "labels": {
+      "type": "array",
+      "readOnly": true,
+      "items": {
+        "$ref": "#Label"
+      }
+    },
+    "project": {
+      "type": "integer",
+      "format": "int64",
+      "readOnly": true
+    },
+    "client": {
+      "type": "integer",
+      "format": "int64",
+      "readOnly": true
+    },
+    "internal_owner": {
+      "type": "string",
+      "readOnly": true
+    },
+    "internal_owner_details": {
+      "readOnly": true,
+      "$ref": "#/definitions/InternalOwnerDetails"
+    },
+    "sent_worker_count": {
+      "type": "integer",
+      "format": "int32",
+      "readOnly": true
+    },
+    "assignment_window_start": {
+      "type": "integer",
+      "format": "int64",
+      "readOnly": true
+    },
+    "assignment_window_start_date": {
+      "type": "string",
+      "readOnly": true
+    },
+    "assignment_window_end": {
+      "type": "integer",
+      "format": "int64",
+      "readOnly": true
+    },
+    "assignment_window_end_date": {
+      "type": "string",
+      "readOnly": true
+    },
+    "scheduled_time": {
+      "type": "integer",
+      "format": "int64",
+      "readOnly": true
+    },
+    "scheduled_time_date": {
+      "type": "string",
+      "readOnly": true
+    },
+    "scheduled_start": {
+      "type": "integer",
+      "format": "int64",
+      "readOnly": true
+    },
+    "scheduled_end": {
+      "type": "integer",
+      "format": "int64",
+      "readOnly": true
+    },
+    "reschedule_request": {
+      "readOnly": true,
+      "$ref": "#/definitions/RescheduleRequest"
+    },
+    "budget_increase_request": {
+      "readOnly": true,
+      "$ref": "#/definitions/BudgetIncreaseRequest"
+    },
+    "expense_reimbursement_request": {
+      "readOnly": true,
+      "$ref": "#/definitions/ExpenseReimbursementRequest"
+    },
+    "bonus_request": {
+      "readOnly": true,
+      "$ref": "#/definitions/BonusRequest"
+    },
+    "resolution": {
+      "type": "string",
+      "readOnly": true
+    },
+    "industry": {
+      "type": "string",
+      "readOnly": true
+    },
+    "time_zone": {
+      "type": "string",
+      "readOnly": true
+    },
+    "required_attachments": {
+      "type": "integer",
+      "format": "int32",
+      "readOnly": true
+    },
+    "location": {
+      "readOnly": true,
+      "$ref": "#/definitions/Location"
+    },
+    "location_offsite": {
+      "type": "boolean",
+      "readOnly": true
+    },
+    "location_contact": {
+      "readOnly": true,
+      "$ref": "#/definitions/LocationContact"
+    },
+    "support_contact": {
+      "readOnly": true,
+      "$ref": "#/definitions/SupportContact"
+    },
+    "active_resource": {
+      "readOnly": true,
+      "$ref": "#/definitions/ActiveResource"
+    },
+    "pricing": {
+      "readOnly": true,
+      "$ref": "#/definitions/Pricing"
+    },
+    "invoice_number": {
+      "type": "string",
+      "readOnly": true
+    },
+    "payment": {
+      "readOnly": true,
+      "$ref": "#/definitions/Payment"
+    },
+    "attachments": {
+      "type": "array",
+      "readOnly": true,
+      "items": {
+        "$ref": "#Attachment"
+      }
+    },
+    "created_on": {
+      "type": "integer",
+      "format": "int64",
+      "readOnly": true
+    },
+    "last_modified_on": {
+      "type": "integer",
+      "format": "int64",
+      "readOnly": true
+    },
+    "history": {
+      "type": "array",
+      "readOnly": true,
+      "items": {
+        "$ref": "#/definitions/History"
+      }
+    },
+    "notes": {
+      "type": "array",
+      "readOnly": true,
+      "items": {
+        "$ref": "#/definitions/Note"
+      }
+    },
+    "custom_fields": {
+      "type": "array",
+      "readOnly": true,
+      "items": {
+        "$ref": "#/definitions/CustomFieldGroup"
+      }
+    },
+    "parts_group": {
+      "readOnly": true,
+      "$ref": "#/definitions/PartsGroup"
+    },
+    "pending_offers": {
+      "type": "array",
+      "readOnly": true,
+      "items": {
+        "$ref": "#/definitions/Application"
+      }
+    },
+    "declined_resources": {
+      "type": "array",
+      "readOnly": true,
+      "items": {
+        "$ref": "#/definitions/DeclinedResource"
+      }
+    },
+    "questions": {
+      "type": "array",
+      "readOnly": true,
+      "items": {
+        "$ref": "#/definitions/QuestionAnswerPair"
+      }
+    },
+    "deliverables_fulfilled": {
+      "type": "boolean",
+      "readOnly": true
+    }
+  },
+  "definitions": {
+    "ActiveResource": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "readOnly": true
+        },
+        "first_name": {
+          "type": "string",
+          "readOnly": true
+        },
+        "last_name": {
+          "type": "string",
+          "readOnly": true
+        },
+        "company_name": {
+          "type": "string",
+          "readOnly": true
+        },
+        "email": {
+          "type": "string",
+          "readOnly": true
+        },
+        "profile_picture": {
+          "type": "string",
+          "readOnly": true
+        },
+        "profile_picture_large": {
+          "type": "string",
+          "readOnly": true
+        },
+        "rating": {
+          "type": "integer",
+          "format": "int32",
+          "readOnly": true
+        },
+        "number_of_ratings": {
+          "type": "integer",
+          "format": "int64",
+          "readOnly": true
+        },
+        "confirmed_onsite": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "confirmed_date": {
+          "type": "integer",
+          "format": "int64",
+          "readOnly": true
+        },
+        "phone_numbers": {
+          "type": "array",
+          "readOnly": true,
+          "items": {
+            "$ref": "#/definitions/PhoneNumber"
+          }
+        },
+        "address": {
+          "readOnly": true,
+          "$ref": "#/definitions/Address"
+        },
+        "check_in_out": {
+          "type": "array",
+          "readOnly": true,
+          "items": {
+            "$ref": "#/definitions/CheckInOut"
+          }
+        },
+        "uuid": {
+          "type": "string",
+          "readOnly": true
+        }
+      }
+    },
+    "Address": {
+      "type": "object",
+      "properties": {
+        "address_1": {
+          "type": "string",
+          "readOnly": true
+        },
+        "address_2": {
+          "type": "string",
+          "readOnly": true
+        },
+        "city": {
+          "type": "string",
+          "readOnly": true
+        },
+        "state": {
+          "type": "string",
+          "readOnly": true
+        },
+        "zip": {
+          "type": "string",
+          "readOnly": true
+        },
+        "country": {
+          "type": "string",
+          "readOnly": true
+        }
+      }
+    },
+    "ApplicantProfile": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "readOnly": true
+        },
+        "first_name": {
+          "type": "string",
+          "readOnly": true
+        },
+        "last_name": {
+          "type": "string",
+          "readOnly": true
+        },
+        "email": {
+          "type": "string",
+          "readOnly": true
+        },
+        "company_name": {
+          "type": "string",
+          "readOnly": true
+        },
+        "rating": {
+          "type": "number",
+          "format": "double",
+          "readOnly": true
+        },
+        "number_of_ratings": {
+          "type": "integer",
+          "format": "int32",
+          "readOnly": true
+        },
+        "job_title": {
+          "type": "string",
+          "readOnly": true
+        },
+        "overview": {
+          "type": "string",
+          "readOnly": true
+        },
+        "phone_numbers": {
+          "type": "array",
+          "readOnly": true,
+          "items": {
+            "$ref": "#/definitions/PhoneNumber"
+          }
+        },
+        "uuid": {
+          "type": "string",
+          "readOnly": true
+        }
+      }
+    },
+    "Application": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "readOnly": true
+        },
+        "note": {
+          "type": "string",
+          "readOnly": true
+        },
+        "resource": {
+          "readOnly": true,
+          "$ref": "#/definitions/ApplicantProfile"
+        },
+        "scheduling": {
+          "readOnly": true,
+          "$ref": "#/definitions/RescheduleRequest"
+        },
+        "pricing": {
+          "readOnly": true,
+          "$ref": "#/definitions/Pricing"
+        },
+        "expires_on": {
+          "type": "integer",
+          "format": "int64",
+          "readOnly": true
+        },
+        "expired": {
+          "type": "boolean",
+          "readOnly": true
+        }
+      }
+    },
+    "AssignmentDetailsAttachment": {
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "type": "string",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "readOnly": true
+        },
+        "description": {
+          "type": "string",
+          "readOnly": true
+        },
+        "relative_uri": {
+          "type": "string",
+          "readOnly": true
+        }
+      }
+    },
+    "AssignmentDetailsLabel": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "readOnly": true
+        },
+        "note": {
+          "type": "string",
+          "readOnly": true
+        },
+        "description": {
+          "type": "string",
+          "readOnly": true
+        },
+        "userResolvable": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "colorRgb": {
+          "type": "string",
+          "readOnly": true
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "readOnly": true
+        },
+        "isSetId": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "isSetDescription": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "isSetCode": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "isSetColorRgb": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "isSetNote": {
+          "type": "boolean",
+          "readOnly": true
+        }
+      }
+    },
+    "BonusRequest": {
+      "type": "object",
+      "properties": {
+        "bonus": {
+          "type": "number",
+          "format": "double",
+          "readOnly": true
+        },
+        "note": {
+          "type": "string",
+          "readOnly": true
+        },
+        "requested_on": {
+          "type": "integer",
+          "format": "int64",
+          "readOnly": true
+        }
+      }
+    },
+    "BudgetIncreaseRequest": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "readOnly": true
+        },
+        "spend_limit": {
+          "type": "number",
+          "format": "double",
+          "readOnly": true
+        },
+        "budget_increases": {
+          "type": "string",
+          "readOnly": true
+        },
+        "expense_reimbursements": {
+          "type": "number",
+          "format": "double",
+          "readOnly": true
+        },
+        "bonuses": {
+          "type": "number",
+          "format": "double",
+          "readOnly": true
+        },
+        "additional_expenses": {
+          "type": "number",
+          "format": "double",
+          "readOnly": true
+        },
+        "flat_price": {
+          "type": "number",
+          "format": "double",
+          "readOnly": true
+        },
+        "per_hour_price": {
+          "type": "number",
+          "format": "double",
+          "readOnly": true
+        },
+        "max_number_of_hours": {
+          "type": "number",
+          "format": "double",
+          "readOnly": true
+        },
+        "per_unit_price": {
+          "type": "number",
+          "format": "double",
+          "readOnly": true
+        },
+        "max_number_of_units": {
+          "type": "number",
+          "format": "double",
+          "readOnly": true
+        },
+        "initial_per_hour_price": {
+          "type": "number",
+          "format": "double",
+          "readOnly": true
+        },
+        "initial_number_of_hours": {
+          "type": "number",
+          "format": "double",
+          "readOnly": true
+        },
+        "additional_per_hour_price": {
+          "type": "number",
+          "format": "double",
+          "readOnly": true
+        },
+        "max_blended_number_of_hours": {
+          "type": "number",
+          "format": "double",
+          "readOnly": true
+        },
+        "note": {
+          "type": "string",
+          "readOnly": true
+        },
+        "requested_on": {
+          "type": "integer",
+          "format": "int64",
+          "readOnly": true
+        }
+      }
+    },
+    "CheckInOut": {
+      "type": "object",
+      "properties": {
+        "check_in_out_id": {
+          "type": "integer",
+          "format": "int64",
+          "readOnly": true
+        },
+        "checked_in_on": {
+          "type": "integer",
+          "format": "int64",
+          "readOnly": true
+        },
+        "checked_out_on": {
+          "type": "integer",
+          "format": "int64",
+          "readOnly": true
+        },
+        "created_on": {
+          "type": "integer",
+          "format": "int64",
+          "readOnly": true
+        },
+        "modified_on": {
+          "type": "integer",
+          "format": "int64",
+          "readOnly": true
+        },
+        "note": {
+          "type": "string",
+          "readOnly": true
+        }
+      }
+    },
+    "CustomField": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "readOnly": true
+        },
+        "default": {
+          "type": "string",
+          "readOnly": true
+        },
+        "required": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "value": {
+          "type": "string",
+          "readOnly": true
+        },
+        "type": {
+          "type": "string",
+          "readOnly": true
+        }
+      }
+    },
+    "CustomFieldGroup": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "readOnly": true
+        },
+        "fields": {
+          "type": "array",
+          "readOnly": true,
+          "items": {
+            "$ref": "#/definitions/CustomField"
+          }
+        },
+        "required": {
+          "type": "boolean",
+          "readOnly": true
+        }
+      }
+    },
+    "DeclinedResource": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "readOnly": true
+        },
+        "first_name": {
+          "type": "string",
+          "readOnly": true
+        },
+        "last_name": {
+          "type": "string",
+          "readOnly": true
+        },
+        "email": {
+          "type": "string",
+          "readOnly": true
+        },
+        "phone_numbers": {
+          "type": "array",
+          "readOnly": true,
+          "items": {
+            "$ref": "#/definitions/PhoneNumber"
+          }
+        },
+        "uuid": {
+          "type": "string",
+          "readOnly": true
+        }
+      }
+    },
+    "ExpenseReimbursementRequest": {
+      "type": "object",
+      "properties": {
+        "expense_reimbursement": {
+          "type": "number",
+          "format": "double",
+          "readOnly": true
+        },
+        "note": {
+          "type": "string",
+          "readOnly": true
+        },
+        "requested_on": {
+          "type": "integer",
+          "format": "int64",
+          "readOnly": true
+        }
+      }
+    },
+    "History": {
+      "type": "object",
+      "properties": {
+        "date": {
+          "type": "integer",
+          "format": "int64",
+          "readOnly": true
+        },
+        "text": {
+          "type": "string",
+          "readOnly": true
+        },
+        "set_by": {
+          "type": "string",
+          "readOnly": true
+        },
+        "resolved_by": {
+          "type": "string",
+          "readOnly": true
+        },
+        "label_id": {
+          "type": "integer",
+          "format": "int64",
+          "readOnly": true
+        },
+        "label_name": {
+          "type": "string",
+          "readOnly": true
+        },
+        "created_on": {
+          "type": "integer",
+          "format": "int64",
+          "readOnly": true
+        }
+      }
+    },
+    "InternalOwnerDetails": {
+      "type": "object",
+      "properties": {
+        "first_name": {
+          "type": "string",
+          "readOnly": true
+        },
+        "last_name": {
+          "type": "string",
+          "readOnly": true
+        }
+      }
+    },
+    "Location": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "readOnly": true
+        },
+        "location_number": {
+          "type": "string",
+          "readOnly": true
+        },
+        "instructions": {
+          "type": "string",
+          "readOnly": true
+        },
+        "address_1": {
+          "type": "string",
+          "readOnly": true
+        },
+        "address_2": {
+          "type": "string",
+          "readOnly": true
+        },
+        "city": {
+          "type": "string",
+          "readOnly": true
+        },
+        "state": {
+          "type": "string",
+          "readOnly": true
+        },
+        "zip": {
+          "type": "string",
+          "readOnly": true
+        },
+        "country": {
+          "type": "string",
+          "readOnly": true
+        },
+        "latitude": {
+          "type": "string",
+          "readOnly": true
+        },
+        "longitude": {
+          "type": "string",
+          "readOnly": true
+        }
+      }
+    },
+    "LocationContact": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "readOnly": true
+        },
+        "first_name": {
+          "type": "string",
+          "readOnly": true
+        },
+        "last_name": {
+          "type": "string",
+          "readOnly": true
+        },
+        "email": {
+          "type": "string",
+          "readOnly": true
+        },
+        "phone_numbers": {
+          "type": "array",
+          "readOnly": true,
+          "items": {
+            "$ref": "#/definitions/PhoneNumber"
+          }
+        }
+      }
+    },
+    "Note": {
+      "type": "object",
+      "properties": {
+        "date": {
+          "type": "integer",
+          "format": "int64",
+          "readOnly": true
+        },
+        "text": {
+          "type": "string",
+          "readOnly": true
+        },
+        "created_by": {
+          "type": "string",
+          "readOnly": true
+        },
+        "is_private": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "is_privileged": {
+          "type": "boolean",
+          "readOnly": true
+        }
+      }
+    },
+    "PartLocation": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "readOnly": true
+        },
+        "address1": {
+          "type": "string",
+          "readOnly": true
+        },
+        "address2": {
+          "type": "string",
+          "readOnly": true
+        },
+        "city": {
+          "type": "string",
+          "readOnly": true
+        },
+        "state": {
+          "type": "string",
+          "readOnly": true
+        },
+        "zip": {
+          "type": "string",
+          "readOnly": true
+        },
+        "country": {
+          "type": "string",
+          "readOnly": true
+        }
+      }
+    },
+    "Parts": {
+      "type": "object",
+      "properties": {
+        "part_value": {
+          "type": "number",
+          "format": "double",
+          "readOnly": true
+        },
+        "part_name": {
+          "type": "string",
+          "readOnly": true
+        },
+        "part_number": {
+          "type": "string",
+          "readOnly": true
+        },
+        "shipping_provider": {
+          "type": "string",
+          "readOnly": true
+        },
+        "tracking_number": {
+          "type": "string",
+          "readOnly": true
+        },
+        "priority": {
+          "type": "string",
+          "readOnly": true
+        },
+        "deliver_to": {
+          "type": "string",
+          "readOnly": true
+        },
+        "part_count": {
+          "type": "integer",
+          "format": "int32",
+          "readOnly": true
+        }
+      }
+    },
+    "PartsGroup": {
+      "type": "object",
+      "properties": {
+        "supplied_by_resource": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "return_required": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "distribution_method": {
+          "type": "string",
+          "readOnly": true
+        },
+        "pickup_location": {
+          "readOnly": true,
+          "$ref": "#/definitions/PartLocation"
+        },
+        "site_parts": {
+          "type": "array",
+          "readOnly": true,
+          "items": {
+            "$ref": "#/definitions/Parts"
+          }
+        },
+        "return_parts": {
+          "type": "array",
+          "readOnly": true,
+          "items": {
+            "$ref": "#/definitions/Parts"
+          }
+        }
+      }
+    },
+    "Payment": {
+      "type": "object",
+      "properties": {
+        "max_spend_limit": {
+          "type": "number",
+          "format": "double",
+          "readOnly": true
+        },
+        "actual_spend_limit": {
+          "type": "number",
+          "format": "double",
+          "readOnly": true
+        },
+        "buyer_fee": {
+          "type": "number",
+          "format": "double",
+          "readOnly": true
+        },
+        "total_cost": {
+          "type": "number",
+          "format": "double",
+          "readOnly": true
+        },
+        "hours_worked": {
+          "type": "number",
+          "format": "double",
+          "readOnly": true
+        },
+        "paid_on": {
+          "type": "integer",
+          "format": "int64",
+          "readOnly": true
+        },
+        "payment_due_on": {
+          "type": "integer",
+          "format": "int64",
+          "readOnly": true
+        }
+      }
+    },
+    "PhoneNumber": {
+      "type": "object",
+      "properties": {
+        "country_code": {
+          "type": "string",
+          "readOnly": true
+        },
+        "phone": {
+          "type": "string",
+          "readOnly": true
+        },
+        "type": {
+          "type": "string",
+          "readOnly": true,
+          "enum": [
+            "WORK",
+            "HOME",
+            "OTHER",
+            "MOBILE"
+          ]
+        },
+        "extension": {
+          "type": "string",
+          "readOnly": true
+        }
+      }
+    },
+    "Pricing": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "readOnly": true
+        },
+        "spend_limit": {
+          "type": "number",
+          "format": "double",
+          "readOnly": true
+        },
+        "budget_increases": {
+          "type": "string",
+          "readOnly": true
+        },
+        "expense_reimbursements": {
+          "type": "number",
+          "format": "double",
+          "readOnly": true
+        },
+        "bonuses": {
+          "type": "number",
+          "format": "double",
+          "readOnly": true
+        },
+        "additional_expenses": {
+          "type": "number",
+          "format": "double",
+          "readOnly": true
+        },
+        "flat_price": {
+          "type": "number",
+          "format": "double",
+          "readOnly": true
+        },
+        "per_hour_price": {
+          "type": "number",
+          "format": "double",
+          "readOnly": true
+        },
+        "max_number_of_hours": {
+          "type": "number",
+          "format": "double",
+          "readOnly": true
+        },
+        "per_unit_price": {
+          "type": "number",
+          "format": "double",
+          "readOnly": true
+        },
+        "max_number_of_units": {
+          "type": "number",
+          "format": "double",
+          "readOnly": true
+        },
+        "initial_per_hour_price": {
+          "type": "number",
+          "format": "double",
+          "readOnly": true
+        },
+        "initial_number_of_hours": {
+          "type": "number",
+          "format": "double",
+          "readOnly": true
+        },
+        "additional_per_hour_price": {
+          "type": "number",
+          "format": "double",
+          "readOnly": true
+        },
+        "max_blended_number_of_hours": {
+          "type": "number",
+          "format": "double",
+          "readOnly": true
+        }
+      }
+    },
+    "QuestionAnswerPair": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "readOnly": true
+        },
+        "question": {
+          "type": "string",
+          "readOnly": true
+        },
+        "answer": {
+          "type": "string",
+          "readOnly": true
+        }
+      }
+    },
+    "RescheduleRequest": {
+      "type": "object",
+      "properties": {
+        "note": {
+          "type": "string",
+          "readOnly": true
+        },
+        "requested_on": {
+          "type": "integer",
+          "format": "int64",
+          "readOnly": true
+        },
+        "request_window_start": {
+          "type": "integer",
+          "format": "int64",
+          "readOnly": true
+        },
+        "request_window_end": {
+          "type": "integer",
+          "format": "int64",
+          "readOnly": true
+        },
+        "request_scheduled_time": {
+          "type": "integer",
+          "format": "int64",
+          "readOnly": true
+        },
+        "requested_by_resource": {
+          "type": "boolean",
+          "readOnly": true
+        }
+      }
+    },
+    "SupportContact": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "readOnly": true
+        },
+        "first_name": {
+          "type": "string",
+          "readOnly": true
+        },
+        "last_name": {
+          "type": "string",
+          "readOnly": true
+        },
+        "email": {
+          "type": "string",
+          "readOnly": true
+        },
+        "phone_numbers": {
+          "type": "array",
+          "readOnly": true,
+          "items": {
+            "$ref": "#/definitions/PhoneNumber"
+          }
+        }
+      }
+    }
+  }
+}

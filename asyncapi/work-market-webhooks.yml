@@ -1,0 +1,131 @@
+generated: '2026-07-21'
+method: searched
+source: https://developer.workmarket.com/page/webhooks
+type: Webhooks
+description: >-
+  WorkMarket's outbound event surface is webhooks (no AsyncAPI document is
+  published). Webhooks push assignment-lifecycle events to any external URL
+  with a configurable HTTP method, headers, and templated body. They are a
+  premium feature enabled by an account manager and are configured at
+  https://www.workmarket.com/mmw/integration/webhooks. Failed callouts are
+  retried once. Date/time variables can be emitted as Unix time or ISO 8601.
+configuration:
+  console: https://www.workmarket.com/mmw/integration/webhooks
+  methods: [GET, POST, PUT, PATCH, DELETE]
+  headers: Content-Type required; additional custom headers supported
+  body: templated JSON/XML payload using webhook variables
+  retry: 1 retry on failure
+  timestamps: Unix time or ISO 8601 (configurable)
+events:
+  - name: Accepted
+    description: Assignment was accepted by a worker.
+  - name: Approved
+    description: Assignment was approved for payment.
+  - name: Attachment Added
+  - name: Attachment Removed
+  - name: Bonus Added
+    description: Bonus added by employer.
+  - name: Bonus Approved
+    description: Bonus request approved.
+  - name: Bonus Declined
+    description: Bonus request declined.
+  - name: Bonus Requested
+    description: Bonus requested by worker.
+  - name: Budget Increase Added
+    description: Budget Increase added by employer.
+  - name: Budget Increase Approved
+    description: Budget Increase request approved.
+  - name: Budget Increase Declined
+    description: Budget Increase request declined.
+  - name: Budget Increase Requested
+    description: Budget Increase requested by worker.
+  - name: Cancel
+    description: Assignment cancelled.
+  - name: Check In
+    description: Worker checked in (or updated an existing check in).
+  - name: Check Out
+    description: Worker checked out (or updated an existing check out).
+  - name: Completed
+    description: Assignment transitioned to "Pending Approval" status (worker submitted for approval).
+  - name: Confirm
+    description: Worker confirmed intent to fulfill an assignment.
+  - name: Created
+    description: Assignment was created.
+  - name: Custom Fields Updated
+    description: Custom field values updated.
+  - name: Expense Reimbursement Added
+    description: Expense Reimbursement added by employer.
+  - name: Expense Reimbursement Approved
+    description: Expense Reimbursement request approved.
+  - name: Expense Reimbursement Declined
+    description: Expense Reimbursement request declined.
+  - name: Expense Reimbursement Requested
+    description: Expense Reimbursement requested by worker.
+  - name: Label Added
+  - name: Label Removed
+  - name: Counteroffer Approved
+    description: Counteroffer approved by employer.
+  - name: Counteroffer Declined
+    description: Counteroffer declined.
+  - name: Counteroffer Requested
+    description: Counteroffer requested by worker (includes worker applications).
+  - name: Note Added
+    description: Message added to assignment.
+  - name: Paid
+    description: Assignment invoice paid.
+  - name: Reschedule Approved
+    description: Reschedule request approved.
+  - name: Reschedule Declined
+    description: Reschedule request declined.
+  - name: Reschedule Requested
+  - name: Sent
+    description: Assignment transitioned to Sent status.
+  - name: Voided
+    description: Assignment voided.
+variables:
+  all_events:
+    - assignment_id
+    - status
+    - start_date_time
+    - pricing_type
+    - end_date_time
+    - pricing_flat_price
+    - pricing_per_hour_price
+    - pricing_max_number_of_hours
+    - pricing_max_number_of_units
+    - pricing_per_unit_price
+    - pricing_additional_per_hour_price
+    - pricing_max_additional_number_of_hours
+    - resolution
+    - hours_worked
+    - units_completed
+    - expense_reimbursement
+    - bonus
+    - invoice_id
+    - total_cost
+    - statement_id
+    - owner_id
+    - owner_email
+    - client_name
+    - client_id
+    - client_customer_id
+    - project_id
+    - project_name
+    - now
+    - custom_field_#####
+  event_specific:
+    Accepted: [resource_id, resource_first_name, resource_last_name, resource_mobile, resource_phone, resource_address1, resource_address2, resource_city, resource_state, resource_postal_code, resource_country, resource_email]
+    Check In: [note, checked_in_on, check_in_out_id]
+    Check Out: [note, checked_out_on, check_in_out_id]
+    Label Added: [note, label_name, label_id, is_negotiation]
+    Label Removed: [note, label_name, label_id, is_negotiation]
+    Negotiations: [note, negotiation_id]
+    Expense Reimbursement / Bonus: [amount]
+    Budget Increase Requested: [proposed_flat_price, proposed_max_initial_number_of_hours, proposed_max_additional_number_of_hours, proposed_max_number_of_units]
+    Reschedule Requested: [proposed_start_date_time, proposed_end_date_time]
+    Attachment Added: [file_name, file_description, file_uuid, file_data_base64, file_data_binary, file_data_byte_length]
+    Attachment Removed: [file_name, file_description, file_uuid]
+deprecated_variables:
+  - name: file_data
+    replacement: file_data_base64
+examples: https://developer.workmarket.com/page/webhook-examples
