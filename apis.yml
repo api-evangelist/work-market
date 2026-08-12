@@ -387,6 +387,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Overlay
+  url: overlays/work-market-employer-api-overlay.yaml
 - type: DomainSecurity
   url: security/work-market-domain-security.yml
 - type: Website
