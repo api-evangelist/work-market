@@ -1,0 +1,161 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Swagger spec for Work Market API v1 Addressbook API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Addressbook",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Add client",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/employer/addressbook/clients/add",
+            "params": [
+              {
+                "name": "company_name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "industry_name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "customer_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "region",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "division",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Add client"
+        },
+        {
+          "info": {
+            "name": "Add contact to client",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/employer/addressbook/clients/contacts/add",
+            "params": [
+              {
+                "name": "client_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "first_name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "last_name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "title",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "manager",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Add contact to client"
+        },
+        {
+          "info": {
+            "name": "Add contact to location",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/employer/addressbook/locations/contacts/add",
+            "params": [
+              {
+                "name": "location_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "first_name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "last_name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "title",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "manager",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Add contact to location"
+        },
+        {
+          "info": {
+            "name": "List clients",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/employer/crm/clients/list"
+          },
+          "docs": "List clients"
+        },
+        {
+          "info": {
+            "name": "List contacts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/employer/crm/contacts/list",
+            "params": [
+              {
+                "name": "client_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List contacts"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

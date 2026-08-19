@@ -1,0 +1,36 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Swagger spec for Work Market API v1 Addressbook Locations API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Locations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List locations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/employer/crm/locations/list",
+            "params": [
+              {
+                "name": "client_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List locations"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

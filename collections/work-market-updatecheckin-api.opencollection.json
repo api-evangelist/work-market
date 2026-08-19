@@ -1,0 +1,79 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Swagger spec for Work Market API v1 Addressbook UpdateCheckIn API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "UpdateCheckIn",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Check-in action used for both new check-ins or updating an existing entry",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/employer/:id/update_checkin",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "check_in_out_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "datetime",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Check-in action used for both new check-ins or updating an existing entry"
+        },
+        {
+          "info": {
+            "name": "Check-out action used for both new check-outs or updating an existing entry",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/employer/:id/update_checkout",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "check_in_out_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "datetime",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "note",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Check-out action used for both new check-outs or updating an existing entry"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

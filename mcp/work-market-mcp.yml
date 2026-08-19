@@ -208,3 +208,9 @@ tools:
 - name: update_check_out_action
   description: Check-out action used for both new check-outs or updating an existing entry
   source_operation: openapi/work-market-employer-api-openapi.yml#updateCheckOutAction
+deployment:
+  mode: none
+  verified: derived
+  tools: 66
+  checked: '2026-08-12'
+  source: catalog MCP census

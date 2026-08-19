@@ -1,0 +1,84 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Swagger spec for Work Market API v1 Addressbook Constants API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Constants",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List cancellation reason codes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/employer/constants/cancellation_codes"
+          },
+          "docs": "List cancellation reason codes"
+        },
+        {
+          "info": {
+            "name": "List dress codes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/employer/constants/dress_codes"
+          },
+          "docs": "List dress codes"
+        },
+        {
+          "info": {
+            "name": "List industry IDs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/employer/constants/industries"
+          },
+          "docs": "List industry IDs"
+        },
+        {
+          "info": {
+            "name": "Location types",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/employer/constants/location_types"
+          },
+          "docs": "Location types"
+        },
+        {
+          "info": {
+            "name": "List substatuses",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/employer/constants/substatuses"
+          },
+          "docs": "List substatuses"
+        },
+        {
+          "info": {
+            "name": "List unassign reason codes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/employer/constants/unassign_codes"
+          },
+          "docs": "List unassign reason codes"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

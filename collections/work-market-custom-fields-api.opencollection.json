@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Swagger spec for Work Market API v1 Addressbook Custom Fields API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Custom Fields",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List custom fields",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/api/assignments/customfields/list"
+          },
+          "docs": "List custom fields"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,488 @@
+{
+  "item": [
+    {
+      "id": "f01b7261-1a5e-4302-9015-a4c04f10fc8d",
+      "name": "Constants",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "42c38122-8b50-43ed-a1b0-de0a46fa2e8a",
+          "name": "List cancellation reason codes",
+          "request": {
+            "name": "List cancellation reason codes",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "employer",
+                "constants",
+                "cancellation_codes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0024519b-1b0e-4065-bd04-5777dbe0f003",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "employer",
+                    "constants",
+                    "cancellation_codes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"meta\": {\n    \"status_code\": 9773,\n    \"version\": 3568,\n    \"requestId\": \"string\",\n    \"execution_time\": 3715.9816424825644,\n    \"timestamp\": 2983\n  },\n  \"response\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "14404216-494e-4d3e-ace7-931d23d39fe0",
+          "name": "List dress codes",
+          "request": {
+            "name": "List dress codes",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "employer",
+                "constants",
+                "dress_codes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fedf9479-8f68-4a45-965e-cdb33b38e26c",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "employer",
+                    "constants",
+                    "dress_codes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"meta\": {\n    \"status_code\": 7706,\n    \"version\": 7172,\n    \"requestId\": \"string\",\n    \"execution_time\": 7621.047205550519,\n    \"timestamp\": 7663\n  },\n  \"response\": [\n    {\n      \"id\": 3480,\n      \"name\": \"string\"\n    },\n    {\n      \"id\": 7038,\n      \"name\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0f9cd898-5f7a-4de8-8582-e979be08e89b",
+          "name": "List industry IDs",
+          "request": {
+            "name": "List industry IDs",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "employer",
+                "constants",
+                "industries"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9b2b5dcb-99d4-4136-b9b4-353f82c97661",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "employer",
+                    "constants",
+                    "industries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"meta\": {\n    \"status_code\": 4878,\n    \"version\": 7986,\n    \"requestId\": \"string\",\n    \"execution_time\": 5368.0076008360475,\n    \"timestamp\": 6911\n  },\n  \"response\": [\n    {\n      \"id\": 2861,\n      \"name\": \"string\",\n      \"checked\": true\n    },\n    {\n      \"id\": 3646,\n      \"name\": \"string\",\n      \"checked\": false\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "344f7d6d-2672-4fa9-8ca7-a8e1272edc5a",
+          "name": "Location types",
+          "request": {
+            "name": "Location types",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "employer",
+                "constants",
+                "location_types"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5d7a5ed4-a618-4bd2-9ac6-a1ccb119df68",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "employer",
+                    "constants",
+                    "location_types"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"meta\": {\n    \"status_code\": 7706,\n    \"version\": 7172,\n    \"requestId\": \"string\",\n    \"execution_time\": 7621.047205550519,\n    \"timestamp\": 7663\n  },\n  \"response\": [\n    {\n      \"id\": 3480,\n      \"name\": \"string\"\n    },\n    {\n      \"id\": 7038,\n      \"name\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8b6fc340-f942-4e50-84a7-984fd5011936",
+          "name": "List substatuses",
+          "request": {
+            "name": "List substatuses",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "employer",
+                "constants",
+                "substatuses"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f2b19f6c-7258-4081-8941-64967950732e",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "employer",
+                    "constants",
+                    "substatuses"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"meta\": {\n    \"status_code\": 3119,\n    \"version\": 7883,\n    \"requestId\": \"string\",\n    \"execution_time\": 4724.60805102596,\n    \"timestamp\": 1942\n  },\n  \"response\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a792123d-28ec-4fee-b37f-0c793ea3470d",
+          "name": "List unassign reason codes",
+          "request": {
+            "name": "List unassign reason codes",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "employer",
+                "constants",
+                "unassign_codes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "82872808-15f0-4379-ab6c-8dd7b6b1e7c5",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "employer",
+                    "constants",
+                    "unassign_codes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"meta\": {\n    \"status_code\": 429,\n    \"version\": 4287,\n    \"requestId\": \"string\",\n    \"execution_time\": 3825.694337203427,\n    \"timestamp\": 6313\n  },\n  \"response\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.workmarket.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "86b961e5-bc3b-48c2-bcf7-7a01e10fa37e",
+    "name": "Swagger spec for Work Market API v1 Addressbook Constants API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Employer APIs\n\nContact Support:\n Name: Work Market API Team\n Email: api@workmarket.com",
+      "type": "text/plain"
+    }
+  }
+}

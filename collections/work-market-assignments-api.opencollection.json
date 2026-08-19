@@ -1,0 +1,1523 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Swagger spec for Work Market API v1 Addressbook Assignments API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Assignments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Accept bonus request",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/employer/assignments/accept_bonus",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Accept bonus request"
+        },
+        {
+          "info": {
+            "name": "Accept budget increase request",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/employer/assignments/accept_budget_increase",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Accept budget increase request"
+        },
+        {
+          "info": {
+            "name": "Accept expense reimbursement",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/employer/assignments/accept_expense_reimbursement",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Accept expense reimbursement"
+        },
+        {
+          "info": {
+            "name": "Accept reschedule request",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/employer/assignments/accept_reschedule",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Accept reschedule request"
+        },
+        {
+          "info": {
+            "name": "Add message",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/employer/assignments/add_note",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "content",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "is_private",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "is_privileged",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Add message"
+        },
+        {
+          "info": {
+            "name": "Approve payment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/employer/assignments/approve_payment",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Approve payment"
+        },
+        {
+          "info": {
+            "name": "Add document",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/employer/assignments/attachments/add",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "attachment",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filename",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "description",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Add document"
+        },
+        {
+          "info": {
+            "name": "Get attachment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/employer/assignments/attachments/get",
+            "params": [
+              {
+                "name": "uuid",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get attachment"
+        },
+        {
+          "info": {
+            "name": "List attachments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/employer/assignments/attachments/list",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "closeout",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List attachments"
+        },
+        {
+          "info": {
+            "name": "Remove attachment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/employer/assignments/attachments/remove",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "uuid",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Remove attachment"
+        },
+        {
+          "info": {
+            "name": "Cancel assignment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/employer/assignments/cancel",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "note",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "amount",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "reason",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Cancel assignment"
+        },
+        {
+          "info": {
+            "name": "Create new assignment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/employer/assignments/create",
+            "params": [
+              {
+                "name": "template_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "external_work_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "title",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "description",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "instructions",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "private_instructions",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "desired_skills",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "industry_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "owner_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "owner_email",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "support_contact_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "support_contact_email",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "client_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "project_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "scheduled_start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "scheduled_start_date",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "scheduled_end",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "scheduled_end_date",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "multiple_day_schedule",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pricing_mode",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pricing_type",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pricing_flat_price",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pricing_per_hour_price",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pricing_max_number_of_hours",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pricing_per_unit_price",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pricing_max_number_of_units",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pricing_initial_per_hour_price",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pricing_initial_number_of_hours",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pricing_additional_per_hour_price",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pricing_max_blended_number_of_hours",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "location_offsite",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "location_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "location_name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "location_number",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "location_instructions",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "location_address1",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "location_address2",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "location_city",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "location_state",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "location_zip",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "location_country",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "location_dress_code",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "location_type",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "requirement_set_ids",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "send_radius",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "resource_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "assign_to_first_to_accept",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "auto_invite",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "show_in_work_feed",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "payment_terms_days",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "disable_address_correction",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "deliverables_instructions",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "deliverables_due_date",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Create new assignment"
+        },
+        {
+          "info": {
+            "name": "Decline bonus request",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/employer/assignments/decline_bonus",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "reason",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Decline bonus request"
+        },
+        {
+          "info": {
+            "name": "Decline budget increase request",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/employer/assignments/decline_budget_increase",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "reason",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Decline budget increase request"
+        },
+        {
+          "info": {
+            "name": "Decline expense reimbursement request",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/employer/assignments/decline_expense_reimbursement",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "reason",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Decline expense reimbursement request"
+        },
+        {
+          "info": {
+            "name": "Decline reschedule request",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/employer/assignments/decline_reschedule",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "reason",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Decline reschedule request"
+        },
+        {
+          "info": {
+            "name": "Delete assignment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/employer/assignments/delete",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Delete assignment"
+        },
+        {
+          "info": {
+            "name": "Get assignment details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/employer/assignments/get",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get assignment details"
+        },
+        {
+          "info": {
+            "name": "Increase spend limit",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/employer/assignments/increase_spendlimit",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pricing_mode",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "flat_price",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "per_hour_price",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "max_number_of_hours",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "per_unit_price",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "max_number_of_units",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "initial_per_hour_price",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "initial_number_of_hours",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "additional_per_hour_price",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "max_blended_number_of_hours",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Increase spend limit"
+        },
+        {
+          "info": {
+            "name": "List assignments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/employer/assignments/list",
+            "params": [
+              {
+                "name": "status",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "labels",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "client_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort_dir",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List assignments"
+        },
+        {
+          "info": {
+            "name": "List exception-status assignments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/employer/assignments/list_exceptions",
+            "params": [
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "exception_type",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List exception-status assignments"
+        },
+        {
+          "info": {
+            "name": "List updated assignments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/employer/assignments/list_updated",
+            "params": [
+              {
+                "name": "status",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "modified_since",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort_dir",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List updated assignments"
+        },
+        {
+          "info": {
+            "name": "Accept offer/application",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/employer/assignments/offers/accept",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Accept offer/application"
+        },
+        {
+          "info": {
+            "name": "Decline offer/application",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/employer/assignments/offers/decline",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "reason",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Decline offer/application"
+        },
+        {
+          "info": {
+            "name": "Answer question",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/employer/assignments/questions/answer",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "answer",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Answer question"
+        },
+        {
+          "info": {
+            "name": "Rate assignments",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/employer/assignments/rate_assignment",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "value",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "quality",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "professionalism",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "communication",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "review",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Rate assignments"
+        },
+        {
+          "info": {
+            "name": "Reject payment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/employer/assignments/reject_payment",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "note",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Reject payment"
+        },
+        {
+          "info": {
+            "name": "Request reschedule",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/employer/assignments/reschedule",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "scheduled_start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "scheduled_end",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "multiple_day_schedule",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Request reschedule"
+        },
+        {
+          "info": {
+            "name": "List statuses",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/employer/assignments/statuses"
+          },
+          "docs": "List statuses"
+        },
+        {
+          "info": {
+            "name": "Get template",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/employer/assignments/templates/get",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get template"
+        },
+        {
+          "info": {
+            "name": "List templates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/employer/assignments/templates/list",
+            "params": [
+              {
+                "name": "client_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List templates"
+        },
+        {
+          "info": {
+            "name": "Void assignment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/employer/assignments/void",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "note",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Void assignment"
+        },
+        {
+          "info": {
+            "name": "Unassign worker",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/employer/assignments/:assignmentId/unassign",
+            "params": [
+              {
+                "name": "assignmentId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "cancellation_reason",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "rollback_to_original_price",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "note",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Unassign worker"
+        },
+        {
+          "info": {
+            "name": "Update custom fields",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/employer/assignments/:id/custom_fields",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update custom fields"
+        },
+        {
+          "info": {
+            "name": "Edit assignment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/employer/assignments/:id/edit",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "title",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "description",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "instructions",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "desired_skills",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "industry_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "owner_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "owner_email",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "support_contact_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "support_contact_email",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "client_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "project_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "scheduled_start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "scheduled_start_date",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "scheduled_end",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "scheduled_end_date",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "multiple_day_schedule",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pricing_mode",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pricing_type",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pricing_flat_price",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pricing_per_hour_price",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pricing_max_number_of_hours",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pricing_per_unit_price",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pricing_max_number_of_units",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pricing_initial_per_hour_price",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pricing_initial_number_of_hours",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pricing_additional_per_hour_price",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pricing_max_blended_number_of_hours",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "location_offsite",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "location_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "location_name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "location_number",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "location_instructions",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "location_address1",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "location_address2",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "location_city",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "location_state",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "location_zip",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "location_country",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "location_dress_code",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "location_type",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "requirement_set_ids",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Edit assignment"
+        },
+        {
+          "info": {
+            "name": "Add budget increase",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/employer/assignments/:id/pricing/bonus",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "flat_price",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "max_number_of_hours",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "max_number_of_units",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "max_blended_number_of_hours",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Add budget increase"
+        },
+        {
+          "info": {
+            "name": "Add expense reimbursement",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/employer/assignments/:id/pricing/expense_reimbursement",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "amount",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Add expense reimbursement"
+        },
+        {
+          "info": {
+            "name": "Send assignment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/employer/assignments/:id/send",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "group_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "send_radius",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "resource_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "assign_to_first_to_accept",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "auto_invite",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Send assignment"
+        },
+        {
+          "info": {
+            "name": "Complete assignment for worker",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/employer/assignments/:workNumber/complete",
+            "params": [
+              {
+                "name": "workNumber",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "resolution",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "hours_worked",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "units",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "override_additional_expenses",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "override_price",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "tax_rate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "approve_payment",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Complete assignment for worker"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

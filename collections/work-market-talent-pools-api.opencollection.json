@@ -1,0 +1,146 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Swagger spec for Work Market API v1 Addressbook Talent Pools API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Talent Pools",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List talent pools",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/employer/groups/list",
+            "params": [
+              {
+                "name": "iDisplayStart",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "iDisplayLength",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "activeOnly",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List talent pools"
+        },
+        {
+          "info": {
+            "name": "Add or invite workers to talent pool",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/employer/groups/:groupId/add_workers",
+            "params": [
+              {
+                "name": "groupId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Add or invite workers to talent pool"
+        },
+        {
+          "info": {
+            "name": "Add workers to talent pool",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/employer/groups/:groupId/apply_on_behalf",
+            "params": [
+              {
+                "name": "groupId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Add workers to talent pool"
+        },
+        {
+          "info": {
+            "name": "Approve workers in talent pool",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/employer/groups/:groupId/approve_workers",
+            "params": [
+              {
+                "name": "groupId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Approve workers in talent pool"
+        },
+        {
+          "info": {
+            "name": "Decline workers from talent pool",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/employer/groups/:groupId/decline_workers",
+            "params": [
+              {
+                "name": "groupId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Decline workers from talent pool"
+        },
+        {
+          "info": {
+            "name": "Remove workers from talent pool",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/employer/groups/:groupId/remove_workers",
+            "params": [
+              {
+                "name": "groupId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Remove workers from talent pool"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

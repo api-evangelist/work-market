@@ -1,0 +1,110 @@
+{
+  "item": [
+    {
+      "id": "de3b8076-65f5-4f82-a1ac-dcf26b36092f",
+      "name": "Custom Fields",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5378d05b-7b88-452c-8092-cbf62558ce61",
+          "name": "List custom fields",
+          "request": {
+            "name": "List custom fields",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "api",
+                "assignments",
+                "customfields",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5bfff750-63b1-4a54-8edb-f1a21f34978c",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "api",
+                    "assignments",
+                    "customfields",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"meta\": {\n    \"status_code\": 3600,\n    \"version\": 590,\n    \"requestId\": \"string\",\n    \"execution_time\": 5717.919394182663,\n    \"timestamp\": 8594\n  },\n  \"response\": [\n    {\n      \"id\": 4327,\n      \"name\": \"string\",\n      \"fields\": [\n        {\n          \"id\": 4231,\n          \"name\": \"string\",\n          \"default\": \"string\",\n          \"required\": true,\n          \"value\": \"string\",\n          \"type\": \"string\"\n        },\n        {\n          \"id\": 6878,\n          \"name\": \"string\",\n          \"default\": \"string\",\n          \"required\": false,\n          \"value\": \"string\",\n          \"type\": \"string\"\n        }\n      ],\n      \"required\": true\n    },\n    {\n      \"id\": 4160,\n      \"name\": \"string\",\n      \"fields\": [\n        {\n          \"id\": 3703,\n          \"name\": \"string\",\n          \"default\": \"string\",\n          \"required\": true,\n          \"value\": \"string\",\n          \"type\": \"string\"\n        },\n        {\n          \"id\": 8309,\n          \"name\": \"string\",\n          \"default\": \"string\",\n          \"required\": true,\n          \"value\": \"string\",\n          \"type\": \"string\"\n        }\n      ],\n      \"required\": true\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.workmarket.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "866112d3-3393-43cd-8714-9821769c1804",
+    "name": "Swagger spec for Work Market API v1 Addressbook Custom Fields API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Employer APIs\n\nContact Support:\n Name: Work Market API Team\n Email: api@workmarket.com",
+      "type": "text/plain"
+    }
+  }
+}
