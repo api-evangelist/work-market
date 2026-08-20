@@ -47,6 +47,8 @@ apis:
   humanURL: https://employer-api.workmarket.com/docs
   baseURL: https://www.workmarket.com/api/v1
   tags:
+  - Address Book
+  tags_raw:
   - Addressbook
   properties:
   - type: OpenAPI
@@ -285,6 +287,8 @@ apis:
   humanURL: https://employer-api.workmarket.com/docs
   baseURL: https://www.workmarket.com/api/v1
   tags:
+  - Project
+  tags_raw:
   - Projects
   properties:
   - type: OpenAPI
