@@ -59,7 +59,7 @@ apis:
   humanURL: https://employer-api.workmarket.com/docs
   baseURL: https://www.workmarket.com/api/v1
   tags:
-  - Address Book
+  - Addressbook
   tags_raw:
   - Addressbook
   properties:
