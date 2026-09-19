@@ -52,6 +52,15 @@ tags:
 - Gig Economy
 - Human Resources
 - Payments
+- Field Service
+- Staffing
+tags_raw:
+- Workforce Management
+- Contractors
+- Freelance
+- Gig Economy
+- Human Resources
+- Payments
 - Field Services
 - Staffing
 apis:
@@ -231,6 +240,8 @@ apis:
   humanURL: https://employer-api.workmarket.com/docs
   baseURL: https://www.workmarket.com/api/v1
   tags:
+  - Location
+  tags_raw:
   - Locations
   properties:
   - type: OpenAPI
