@@ -1,8 +1,8 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
   description: Employer APIs
   version: v1
-  title: Swagger spec for Work Market API v1 Addressbook UpdateCheckIn API
+  title: Swagger spec for Work Market API v1 Update Check In API
   termsOfService: https://developer.workmarket.com/tos
   contact:
     name: Work Market API Team
@@ -11,10 +11,8 @@ info:
   license:
     name: Company Licence
     url: https://developer.workmarket.com/licenses/LICENSE-2.0.html
-host: www.workmarket.com
-basePath: /
-schemes:
-- https
+servers:
+- url: https://www.workmarket.com/
 tags:
 - name: UpdateCheckIn
 paths:
@@ -29,20 +27,25 @@ paths:
       - name: id
         in: path
         required: true
-        type: string
+        schema:
+          type: string
       - name: check_in_out_id
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       - name: datetime
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       responses:
         '200':
           description: Success
-          schema:
-            $ref: '#/definitions/ApiV1Response'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiV1Response'
   /v1/employer/{id}/update_checkout:
     post:
       tags:
@@ -54,49 +57,56 @@ paths:
       - name: id
         in: path
         required: true
-        type: string
+        schema:
+          type: string
       - name: check_in_out_id
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       - name: datetime
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       - name: note
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       responses:
         '200':
           description: Success
-          schema:
-            $ref: '#/definitions/ApiV1Response'
-definitions:
-  v1Meta:
-    type: object
-    properties:
-      errors:
-        type: array
-        items:
-          type: object
-      status_code:
-        type: integer
-        format: int32
-      version:
-        type: integer
-        format: int32
-      requestId:
-        type: string
-      execution_time:
-        type: number
-        format: double
-      timestamp:
-        type: integer
-        format: int64
-  ApiV1Response:
-    type: object
-    properties:
-      meta:
-        description: Details about this response
-        $ref: '#/definitions/v1Meta'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiV1Response'
+components:
+  schemas:
+    ApiV1Response:
+      type: object
+      properties:
+        meta:
+          description: Details about this response
+          $ref: '#/components/schemas/v1Meta'
+    v1Meta:
+      type: object
+      properties:
+        errors:
+          type: array
+          items:
+            type: object
+        status_code:
+          type: integer
+          format: int32
+        version:
+          type: integer
+          format: int32
+        requestId:
+          type: string
+        execution_time:
+          type: number
+          format: double
+        timestamp:
+          type: integer
+          format: int64

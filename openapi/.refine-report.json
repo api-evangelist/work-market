@@ -1,16 +1,7 @@
 {
   "provider": "work-market",
   "sources": [
-    "work-market-addressbook-api-openapi.yml",
-    "work-market-assignments-api-openapi.yml",
-    "work-market-authorization-api-openapi.yml",
-    "work-market-constants-api-openapi.yml",
-    "work-market-custom-fields-api-openapi.yml",
-    "work-market-labels-api-openapi.yml",
-    "work-market-locations-api-openapi.yml",
-    "work-market-projects-api-openapi.yml",
-    "work-market-talent-pools-api-openapi.yml",
-    "work-market-updatecheckin-api-openapi.yml"
+    "_original/work-market-employer-api-openapi.yml"
   ],
   "outputs": [
     "work-market-addressbook-api-openapi.yml",
@@ -24,9 +15,27 @@
     "work-market-talent-pools-api-openapi.yml",
     "work-market-updatecheckin-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 1 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "work-market-employer-api-openapi.yml: upgraded swagger 2.0 -> OpenAPI 3.2.0",
+    "superseded outputs removed: work-market-address-book-api-openapi.yml",
+    "apis.yml register: written (+1 apis, 10 total)"
+  ],
+  "skipped": [
+    "work-market-address-book-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "work-market-assignments-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "work-market-authorization-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "work-market-constants-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "work-market-custom-fields-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "work-market-labels-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "work-market-locations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "work-market-projects-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "work-market-talent-pools-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "work-market-updatecheckin-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
