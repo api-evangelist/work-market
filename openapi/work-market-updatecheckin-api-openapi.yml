@@ -83,12 +83,6 @@ paths:
                 $ref: '#/components/schemas/ApiV1Response'
 components:
   schemas:
-    ApiV1Response:
-      type: object
-      properties:
-        meta:
-          description: Details about this response
-          $ref: '#/components/schemas/v1Meta'
     v1Meta:
       type: object
       properties:
@@ -110,3 +104,9 @@ components:
         timestamp:
           type: integer
           format: int64
+    ApiV1Response:
+      type: object
+      properties:
+        meta:
+          description: Details about this response
+          $ref: '#/components/schemas/v1Meta'

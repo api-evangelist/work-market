@@ -46,6 +46,27 @@ paths:
                       $ref: '#/components/schemas/Location'
 components:
   schemas:
+    v1Meta:
+      type: object
+      properties:
+        errors:
+          type: array
+          items:
+            type: object
+        status_code:
+          type: integer
+          format: int32
+        version:
+          type: integer
+          format: int32
+        requestId:
+          type: string
+        execution_time:
+          type: number
+          format: double
+        timestamp:
+          type: integer
+          format: int64
     Location:
       type: object
       properties:
@@ -86,24 +107,3 @@ components:
         longitude:
           type: string
           readOnly: true
-    v1Meta:
-      type: object
-      properties:
-        errors:
-          type: array
-          items:
-            type: object
-        status_code:
-          type: integer
-          format: int32
-        version:
-          type: integer
-          format: int32
-        requestId:
-          type: string
-        execution_time:
-          type: number
-          format: double
-        timestamp:
-          type: integer
-          format: int64

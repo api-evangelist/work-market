@@ -57,6 +57,27 @@ components:
         required:
           type: boolean
           readOnly: true
+    v1Meta:
+      type: object
+      properties:
+        errors:
+          type: array
+          items:
+            type: object
+        status_code:
+          type: integer
+          format: int32
+        version:
+          type: integer
+          format: int32
+        requestId:
+          type: string
+        execution_time:
+          type: number
+          format: double
+        timestamp:
+          type: integer
+          format: int64
     CustomField:
       type: object
       properties:
@@ -79,24 +100,3 @@ components:
         type:
           type: string
           readOnly: true
-    v1Meta:
-      type: object
-      properties:
-        errors:
-          type: array
-          items:
-            type: object
-        status_code:
-          type: integer
-          format: int32
-        version:
-          type: integer
-          format: int32
-        requestId:
-          type: string
-        execution_time:
-          type: number
-          format: double
-        timestamp:
-          type: integer
-          format: int64

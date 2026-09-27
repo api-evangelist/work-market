@@ -106,12 +106,6 @@ paths:
                     $ref: '#/components/schemas/v1Status'
 components:
   schemas:
-    v1Status:
-      type: object
-      properties:
-        successful:
-          type: boolean
-          readOnly: true
     ListLabel:
       type: object
       properties:
@@ -143,3 +137,9 @@ components:
         timestamp:
           type: integer
           format: int64
+    v1Status:
+      type: object
+      properties:
+        successful:
+          type: boolean
+          readOnly: true

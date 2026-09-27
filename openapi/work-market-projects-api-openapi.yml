@@ -92,16 +92,6 @@ components:
           type: integer
           format: int64
           readOnly: true
-    Project:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int64
-          readOnly: true
-        name:
-          type: string
-          readOnly: true
     v1Meta:
       type: object
       properties:
@@ -123,3 +113,13 @@ components:
         timestamp:
           type: integer
           format: int64
+    Project:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          readOnly: true
+        name:
+          type: string
+          readOnly: true
