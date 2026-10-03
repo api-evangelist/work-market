@@ -82,15 +82,15 @@ paths:
                       $ref: '#/components/schemas/Project'
 components:
   schemas:
-    AddProjectResponse:
+    Project:
       type: object
       properties:
-        successful:
-          type: boolean
-          readOnly: true
         id:
           type: integer
           format: int64
+          readOnly: true
+        name:
+          type: string
           readOnly: true
     v1Meta:
       type: object
@@ -113,13 +113,13 @@ components:
         timestamp:
           type: integer
           format: int64
-    Project:
+    AddProjectResponse:
       type: object
       properties:
+        successful:
+          type: boolean
+          readOnly: true
         id:
           type: integer
           format: int64
-          readOnly: true
-        name:
-          type: string
           readOnly: true

@@ -39,24 +39,6 @@ paths:
                       $ref: '#/components/schemas/CustomFieldGroup'
 components:
   schemas:
-    CustomFieldGroup:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int64
-          readOnly: true
-        name:
-          type: string
-          readOnly: true
-        fields:
-          type: array
-          readOnly: true
-          items:
-            $ref: '#/components/schemas/CustomField'
-        required:
-          type: boolean
-          readOnly: true
     v1Meta:
       type: object
       properties:
@@ -78,6 +60,24 @@ components:
         timestamp:
           type: integer
           format: int64
+    CustomFieldGroup:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          readOnly: true
+        name:
+          type: string
+          readOnly: true
+        fields:
+          type: array
+          readOnly: true
+          items:
+            $ref: '#/components/schemas/CustomField'
+        required:
+          type: boolean
+          readOnly: true
     CustomField:
       type: object
       properties:

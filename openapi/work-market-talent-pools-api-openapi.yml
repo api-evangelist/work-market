@@ -232,33 +232,6 @@ paths:
                 type: string
 components:
   schemas:
-    v1Meta:
-      type: object
-      properties:
-        errors:
-          type: array
-          items:
-            type: object
-        status_code:
-          type: integer
-          format: int32
-        version:
-          type: integer
-          format: int32
-        requestId:
-          type: string
-        execution_time:
-          type: number
-          format: double
-        timestamp:
-          type: integer
-          format: int64
-    v1Status:
-      type: object
-      properties:
-        successful:
-          type: boolean
-          readOnly: true
     ApplyToTalentPoolOnBehalfRequest:
       type: object
       properties:
@@ -271,6 +244,25 @@ components:
           type: boolean
           readOnly: true
         suppressNotification:
+          type: boolean
+          readOnly: true
+    ApplyToTalentPoolOnBehalfResponse:
+      type: object
+      properties:
+        success:
+          type: array
+          readOnly: true
+          items:
+            type: string
+        failure:
+          type: array
+          readOnly: true
+          items:
+            type: string
+    v1Status:
+      type: object
+      properties:
+        successful:
           type: boolean
           readOnly: true
     TalentPool:
@@ -296,16 +288,24 @@ components:
         deleted:
           type: boolean
           readOnly: true
-    ApplyToTalentPoolOnBehalfResponse:
+    v1Meta:
       type: object
       properties:
-        success:
+        errors:
           type: array
-          readOnly: true
           items:
-            type: string
-        failure:
-          type: array
-          readOnly: true
-          items:
-            type: string
+            type: object
+        status_code:
+          type: integer
+          format: int32
+        version:
+          type: integer
+          format: int32
+        requestId:
+          type: string
+        execution_time:
+          type: number
+          format: double
+        timestamp:
+          type: integer
+          format: int64
