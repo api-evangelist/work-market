@@ -414,6 +414,9 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: CapabilityMap
+  url: capabilities/work-market-capability-edges.yml
+  name: Work Market Business Capability Map
 - type: Overlay
   url: overlays/work-market-employer-api-overlay.yaml
 - type: DomainSecurity
