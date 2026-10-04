@@ -203,6 +203,13 @@ paths:
                       $ref: '#/components/schemas/Contact'
 components:
   schemas:
+    ClientCompanyId:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          readOnly: true
     Client:
       type: object
       properties:
@@ -214,6 +221,16 @@ components:
           type: string
           readOnly: true
         customer_id:
+          type: string
+          readOnly: true
+    Contact:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          readOnly: true
+        name:
           type: string
           readOnly: true
     ClientContactId:
@@ -244,20 +261,3 @@ components:
         timestamp:
           type: integer
           format: int64
-    ClientCompanyId:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int64
-          readOnly: true
-    Contact:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int64
-          readOnly: true
-        name:
-          type: string
-          readOnly: true

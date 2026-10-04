@@ -146,6 +146,15 @@ paths:
                       type: string
 components:
   schemas:
+    Substatus:
+      type: object
+      properties:
+        id:
+          type: string
+          readOnly: true
+        name:
+          type: string
+          readOnly: true
     LocationType:
       type: object
       properties:
@@ -156,36 +165,6 @@ components:
         name:
           type: string
           readOnly: true
-    Substatus:
-      type: object
-      properties:
-        id:
-          type: string
-          readOnly: true
-        name:
-          type: string
-          readOnly: true
-    v1Meta:
-      type: object
-      properties:
-        errors:
-          type: array
-          items:
-            type: object
-        status_code:
-          type: integer
-          format: int32
-        version:
-          type: integer
-          format: int32
-        requestId:
-          type: string
-        execution_time:
-          type: number
-          format: double
-        timestamp:
-          type: integer
-          format: int64
     dress_code:
       type: object
       properties:
@@ -209,3 +188,24 @@ components:
         checked:
           type: boolean
           readOnly: true
+    v1Meta:
+      type: object
+      properties:
+        errors:
+          type: array
+          items:
+            type: object
+        status_code:
+          type: integer
+          format: int32
+        version:
+          type: integer
+          format: int32
+        requestId:
+          type: string
+        execution_time:
+          type: number
+          format: double
+        timestamp:
+          type: integer
+          format: int64

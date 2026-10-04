@@ -1954,20 +1954,7 @@ paths:
                     $ref: '#/components/schemas/v1Status'
 components:
   schemas:
-    QuestionAnswerPair:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int64
-          readOnly: true
-        question:
-          type: string
-          readOnly: true
-        answer:
-          type: string
-          readOnly: true
-    SupportContact:
+    ActiveResource:
       type: object
       properties:
         id:
@@ -1979,34 +1966,231 @@ components:
         last_name:
           type: string
           readOnly: true
+        company_name:
+          type: string
+          readOnly: true
         email:
           type: string
+          readOnly: true
+        profile_picture:
+          type: string
+          readOnly: true
+        profile_picture_large:
+          type: string
+          readOnly: true
+        rating:
+          type: integer
+          format: int32
+          readOnly: true
+        number_of_ratings:
+          type: integer
+          format: int64
+          readOnly: true
+        confirmed_onsite:
+          type: boolean
+          readOnly: true
+        confirmed_date:
+          type: integer
+          format: int64
           readOnly: true
         phone_numbers:
           type: array
           readOnly: true
           items:
             $ref: '#/components/schemas/PhoneNumber'
-    Attachment:
-      type: object
-      properties:
+        address:
+          readOnly: true
+          $ref: '#/components/schemas/Address'
+        check_in_out:
+          type: array
+          readOnly: true
+          items:
+            $ref: '#/components/schemas/CheckInOut'
         uuid:
           type: string
           readOnly: true
-        filename:
+    Template:
+      type: object
+      properties:
+        template_id:
+          type: string
+          description: template_id
+          readOnly: true
+        title:
           type: string
           readOnly: true
         description:
           type: string
           readOnly: true
-        size:
+        instructions:
+          type: string
+          readOnly: true
+        desired_skills:
+          type: string
+          readOnly: true
+        project:
+          type: integer
+          format: int64
+          readOnly: true
+        client:
+          type: integer
+          format: int64
+          readOnly: true
+        internal_owner:
+          type: string
+          readOnly: true
+        internal_owner_details:
+          readOnly: true
+          $ref: '#/components/schemas/InternalOwnerDetails'
+        sent_worker_count:
           type: integer
           format: int32
           readOnly: true
-        attachment:
+        assignment_window_start:
+          type: integer
+          format: int64
+          readOnly: true
+        assignment_window_start_date:
           type: string
           readOnly: true
-    AssignmentCreationResponse:
+        assignment_window_end:
+          type: integer
+          format: int64
+          readOnly: true
+        assignment_window_end_date:
+          type: string
+          readOnly: true
+        scheduled_time:
+          type: integer
+          format: int64
+          readOnly: true
+        scheduled_time_date:
+          type: string
+          readOnly: true
+        scheduled_start:
+          type: integer
+          format: int64
+          readOnly: true
+        scheduled_end:
+          type: integer
+          format: int64
+          readOnly: true
+        reschedule_request:
+          readOnly: true
+          $ref: '#/components/schemas/RescheduleRequest'
+        budget_increase_request:
+          readOnly: true
+          $ref: '#/components/schemas/BudgetIncreaseRequest'
+        expense_reimbursement_request:
+          readOnly: true
+          $ref: '#/components/schemas/ExpenseReimbursementRequest'
+        bonus_request:
+          readOnly: true
+          $ref: '#/components/schemas/BonusRequest'
+        industry:
+          type: string
+          readOnly: true
+        time_zone:
+          type: string
+          readOnly: true
+        required_attachments:
+          type: integer
+          format: int32
+          readOnly: true
+        location:
+          readOnly: true
+          $ref: '#/components/schemas/Location'
+        location_offsite:
+          type: boolean
+          readOnly: true
+        location_contact:
+          readOnly: true
+          $ref: '#/components/schemas/LocationContact'
+        support_contact:
+          readOnly: true
+          $ref: '#/components/schemas/SupportContact'
+        pricing:
+          readOnly: true
+          $ref: '#/components/schemas/Pricing'
+        invoice_number:
+          type: string
+          readOnly: true
+        attachments:
+          type: array
+          readOnly: true
+          items:
+            $ref: '#/components/schemas/AssignmentDetailsAttachment'
+        created_on:
+          type: integer
+          format: int64
+          readOnly: true
+        last_modified_on:
+          type: integer
+          format: int64
+          readOnly: true
+        notes:
+          type: array
+          readOnly: true
+          items:
+            $ref: '#/components/schemas/Note'
+        custom_fields:
+          type: array
+          readOnly: true
+          items:
+            $ref: '#/components/schemas/CustomFieldGroup'
+        parts_group:
+          readOnly: true
+          $ref: '#/components/schemas/PartsGroup'
+        pending_offers:
+          type: array
+          readOnly: true
+          items:
+            $ref: '#/components/schemas/Application'
+        declined_resources:
+          type: array
+          readOnly: true
+          items:
+            $ref: '#/components/schemas/DeclinedResource'
+        questions:
+          type: array
+          readOnly: true
+          items:
+            $ref: '#/components/schemas/QuestionAnswerPair'
+        deliverables_fulfilled:
+          type: boolean
+          readOnly: true
+        template_name:
+          type: string
+          readOnly: true
+        template_description:
+          type: string
+          readOnly: true
+    PartsGroup:
+      type: object
+      properties:
+        supplied_by_resource:
+          type: boolean
+          readOnly: true
+        return_required:
+          type: boolean
+          readOnly: true
+        distribution_method:
+          type: string
+          readOnly: true
+        pickup_location:
+          readOnly: true
+          $ref: '#/components/schemas/PartLocation'
+        site_parts:
+          type: array
+          readOnly: true
+          items:
+            $ref: '#/components/schemas/Parts'
+        return_parts:
+          type: array
+          readOnly: true
+          items:
+            $ref: '#/components/schemas/Parts'
+    SendResults:
       type: object
       properties:
         resource_send_results:
@@ -2029,16 +2213,52 @@ components:
         successful:
           type: boolean
           readOnly: true
-        id:
+    Payment:
+      type: object
+      properties:
+        max_spend_limit:
+          type: number
+          format: double
+          readOnly: true
+        actual_spend_limit:
+          type: number
+          format: double
+          readOnly: true
+        buyer_fee:
+          type: number
+          format: double
+          readOnly: true
+        total_cost:
+          type: number
+          format: double
+          readOnly: true
+        hours_worked:
+          type: number
+          format: double
+          readOnly: true
+        paid_on:
+          type: integer
+          format: int64
+          readOnly: true
+        payment_due_on:
+          type: integer
+          format: int64
+          readOnly: true
+    BonusRequest:
+      type: object
+      properties:
+        bonus:
+          type: number
+          format: double
+          readOnly: true
+        note:
           type: string
           readOnly: true
-        requestURL:
-          type: string
+        requested_on:
+          type: integer
+          format: int64
           readOnly: true
-        correctedAddress:
-          readOnly: true
-          $ref: '#/components/schemas/Address'
-    History:
+    Note:
       type: object
       properties:
         date:
@@ -2048,22 +2268,374 @@ components:
         text:
           type: string
           readOnly: true
-        set_by:
+        created_by:
           type: string
           readOnly: true
-        resolved_by:
+        is_private:
+          type: boolean
+          readOnly: true
+        is_privileged:
+          type: boolean
+          readOnly: true
+    Address:
+      type: object
+      properties:
+        address_1:
           type: string
           readOnly: true
-        label_id:
+        address_2:
+          type: string
+          readOnly: true
+        city:
+          type: string
+          readOnly: true
+        state:
+          type: string
+          readOnly: true
+        zip:
+          type: string
+          readOnly: true
+        country:
+          type: string
+          readOnly: true
+    Label:
+      type: object
+      properties:
+        id:
+          type: string
+          readOnly: true
+        name:
+          type: string
+          readOnly: true
+    AssignmentDetailsLabel:
+      type: object
+      properties:
+        code:
+          type: string
+          readOnly: true
+        note:
+          type: string
+          readOnly: true
+        description:
+          type: string
+          readOnly: true
+        userResolvable:
+          type: boolean
+          readOnly: true
+        colorRgb:
+          type: string
+          readOnly: true
+        id:
           type: integer
           format: int64
           readOnly: true
-        label_name:
-          type: string
+        isSetId:
+          type: boolean
           readOnly: true
-        created_on:
+        isSetDescription:
+          type: boolean
+          readOnly: true
+        isSetCode:
+          type: boolean
+          readOnly: true
+        isSetColorRgb:
+          type: boolean
+          readOnly: true
+        isSetNote:
+          type: boolean
+          readOnly: true
+    CustomField:
+      type: object
+      properties:
+        id:
           type: integer
           format: int64
+          readOnly: true
+        name:
+          type: string
+          readOnly: true
+        default:
+          type: string
+          readOnly: true
+        required:
+          type: boolean
+          readOnly: true
+        value:
+          type: string
+          readOnly: true
+        type:
+          type: string
+          readOnly: true
+    Location:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          readOnly: true
+        name:
+          type: string
+          readOnly: true
+        location_number:
+          type: string
+          readOnly: true
+        instructions:
+          type: string
+          readOnly: true
+        address_1:
+          type: string
+          readOnly: true
+        address_2:
+          type: string
+          readOnly: true
+        city:
+          type: string
+          readOnly: true
+        state:
+          type: string
+          readOnly: true
+        zip:
+          type: string
+          readOnly: true
+        country:
+          type: string
+          readOnly: true
+        latitude:
+          type: string
+          readOnly: true
+        longitude:
+          type: string
+          readOnly: true
+    TemplateListItem:
+      type: object
+      properties:
+        template_id:
+          type: string
+          readOnly: true
+        name:
+          type: string
+          readOnly: true
+        client_id:
+          type: integer
+          format: int64
+          readOnly: true
+    InternalOwnerDetails:
+      type: object
+      properties:
+        first_name:
+          type: string
+          readOnly: true
+        last_name:
+          type: string
+          readOnly: true
+    Application:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          readOnly: true
+        note:
+          type: string
+          readOnly: true
+        resource:
+          readOnly: true
+          $ref: '#/components/schemas/ApplicantProfile'
+        scheduling:
+          readOnly: true
+          $ref: '#/components/schemas/RescheduleRequest'
+        pricing:
+          readOnly: true
+          $ref: '#/components/schemas/Pricing'
+        expires_on:
+          type: integer
+          format: int64
+          readOnly: true
+        expired:
+          type: boolean
+          readOnly: true
+    AssignmentListItem:
+      type: object
+      properties:
+        id:
+          type: string
+          readOnly: true
+        project_id:
+          type: integer
+          format: int64
+          readOnly: true
+        project_name:
+          type: string
+          readOnly: true
+        title:
+          type: string
+          readOnly: true
+        scheduled_start:
+          type: integer
+          format: int64
+          readOnly: true
+        scheduled_end:
+          type: integer
+          format: int64
+          readOnly: true
+        address_line1:
+          type: string
+          readOnly: true
+        address_line2:
+          type: string
+          readOnly: true
+        city:
+          type: string
+          readOnly: true
+        state:
+          type: string
+          readOnly: true
+        postal_code:
+          type: string
+          readOnly: true
+        country:
+          type: string
+          readOnly: true
+        latitude:
+          type: number
+          format: double
+          readOnly: true
+        longitude:
+          type: number
+          format: double
+          readOnly: true
+        location_id:
+          type: string
+          readOnly: true
+        spend_limit:
+          type: string
+          readOnly: true
+        modified_status:
+          type: string
+          readOnly: true
+        status:
+          type: string
+          readOnly: true
+        substatuses:
+          type: array
+          readOnly: true
+          items:
+            $ref: '#/components/schemas/Label'
+        labels:
+          type: array
+          readOnly: true
+          items:
+            $ref: '#/components/schemas/Label'
+        internal_owner:
+          type: string
+          readOnly: true
+        client:
+          type: string
+          readOnly: true
+        client_id:
+          type: integer
+          format: int64
+          readOnly: true
+        invoice_number:
+          type: string
+          readOnly: true
+        paid_date:
+          type: integer
+          format: int64
+          readOnly: true
+        total_cost:
+          type: string
+          readOnly: true
+        resource_company_name:
+          type: string
+          readOnly: true
+        resource_user_number:
+          type: string
+          readOnly: true
+        resource_full_name:
+          type: string
+          readOnly: true
+        last_modified_on:
+          type: integer
+          format: int64
+          readOnly: true
+        modifier_first_name:
+          type: string
+          readOnly: true
+        modifier_last_name:
+          type: string
+          readOnly: true
+    Status:
+      type: object
+      properties:
+        id:
+          type: string
+          readOnly: true
+        name:
+          type: string
+          readOnly: true
+    ExpenseReimbursementRequest:
+      type: object
+      properties:
+        expense_reimbursement:
+          type: number
+          format: double
+          readOnly: true
+        note:
+          type: string
+          readOnly: true
+        requested_on:
+          type: integer
+          format: int64
+          readOnly: true
+    PartLocation:
+      type: object
+      properties:
+        name:
+          type: string
+          readOnly: true
+        address1:
+          type: string
+          readOnly: true
+        address2:
+          type: string
+          readOnly: true
+        city:
+          type: string
+          readOnly: true
+        state:
+          type: string
+          readOnly: true
+        zip:
+          type: string
+          readOnly: true
+        country:
+          type: string
+          readOnly: true
+    RescheduleRequest:
+      type: object
+      properties:
+        note:
+          type: string
+          readOnly: true
+        requested_on:
+          type: integer
+          format: int64
+          readOnly: true
+        request_window_start:
+          type: integer
+          format: int64
+          readOnly: true
+        request_window_end:
+          type: integer
+          format: int64
+          readOnly: true
+        request_scheduled_time:
+          type: integer
+          format: int64
+          readOnly: true
+        requested_by_resource:
+          type: boolean
           readOnly: true
     CheckInOut:
       type: object
@@ -2091,6 +2663,150 @@ components:
         note:
           type: string
           readOnly: true
+    Pricing:
+      type: object
+      properties:
+        type:
+          type: string
+          readOnly: true
+        spend_limit:
+          type: number
+          format: double
+          readOnly: true
+        budget_increases:
+          type: string
+          readOnly: true
+        expense_reimbursements:
+          type: number
+          format: double
+          readOnly: true
+        bonuses:
+          type: number
+          format: double
+          readOnly: true
+        additional_expenses:
+          type: number
+          format: double
+          readOnly: true
+        flat_price:
+          type: number
+          format: double
+          readOnly: true
+        per_hour_price:
+          type: number
+          format: double
+          readOnly: true
+        max_number_of_hours:
+          type: number
+          format: double
+          readOnly: true
+        per_unit_price:
+          type: number
+          format: double
+          readOnly: true
+        max_number_of_units:
+          type: number
+          format: double
+          readOnly: true
+        initial_per_hour_price:
+          type: number
+          format: double
+          readOnly: true
+        initial_number_of_hours:
+          type: number
+          format: double
+          readOnly: true
+        additional_per_hour_price:
+          type: number
+          format: double
+          readOnly: true
+        max_blended_number_of_hours:
+          type: number
+          format: double
+          readOnly: true
+    PhoneNumber:
+      type: object
+      properties:
+        country_code:
+          type: string
+          readOnly: true
+        phone:
+          type: string
+          readOnly: true
+        type:
+          type: string
+          readOnly: true
+          enum:
+          - WORK
+          - HOME
+          - OTHER
+          - MOBILE
+        extension:
+          type: string
+          readOnly: true
+    DeclinedResource:
+      type: object
+      properties:
+        id:
+          type: string
+          readOnly: true
+        first_name:
+          type: string
+          readOnly: true
+        last_name:
+          type: string
+          readOnly: true
+        email:
+          type: string
+          readOnly: true
+        phone_numbers:
+          type: array
+          readOnly: true
+          items:
+            $ref: '#/components/schemas/PhoneNumber'
+        uuid:
+          type: string
+          readOnly: true
+    History:
+      type: object
+      properties:
+        date:
+          type: integer
+          format: int64
+          readOnly: true
+        text:
+          type: string
+          readOnly: true
+        set_by:
+          type: string
+          readOnly: true
+        resolved_by:
+          type: string
+          readOnly: true
+        label_id:
+          type: integer
+          format: int64
+          readOnly: true
+        label_name:
+          type: string
+          readOnly: true
+        created_on:
+          type: integer
+          format: int64
+          readOnly: true
+    QuestionAnswerPair:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          readOnly: true
+        question:
+          type: string
+          readOnly: true
+        answer:
+          type: string
+          readOnly: true
     v1Meta:
       type: object
       properties:
@@ -2112,14 +2828,11 @@ components:
         timestamp:
           type: integer
           format: int64
-    InternalOwnerDetails:
+    v1Status:
       type: object
       properties:
-        first_name:
-          type: string
-          readOnly: true
-        last_name:
-          type: string
+        successful:
+          type: boolean
           readOnly: true
     AssignmentDetails:
       type: object
@@ -2300,478 +3013,7 @@ components:
         deliverables_fulfilled:
           type: boolean
           readOnly: true
-    CustomFieldGroup:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int64
-          readOnly: true
-        name:
-          type: string
-          readOnly: true
-        fields:
-          type: array
-          readOnly: true
-          items:
-            $ref: '#/components/schemas/CustomField'
-        required:
-          type: boolean
-          readOnly: true
-    Payment:
-      type: object
-      properties:
-        max_spend_limit:
-          type: number
-          format: double
-          readOnly: true
-        actual_spend_limit:
-          type: number
-          format: double
-          readOnly: true
-        buyer_fee:
-          type: number
-          format: double
-          readOnly: true
-        total_cost:
-          type: number
-          format: double
-          readOnly: true
-        hours_worked:
-          type: number
-          format: double
-          readOnly: true
-        paid_on:
-          type: integer
-          format: int64
-          readOnly: true
-        payment_due_on:
-          type: integer
-          format: int64
-          readOnly: true
-    AssignmentDetailsAttachment:
-      type: object
-      properties:
-        uuid:
-          type: string
-          readOnly: true
-        name:
-          type: string
-          readOnly: true
-        description:
-          type: string
-          readOnly: true
-        relative_uri:
-          type: string
-          readOnly: true
-    Parts:
-      type: object
-      properties:
-        part_value:
-          type: number
-          format: double
-          readOnly: true
-        part_name:
-          type: string
-          readOnly: true
-        part_number:
-          type: string
-          readOnly: true
-        shipping_provider:
-          type: string
-          readOnly: true
-        tracking_number:
-          type: string
-          readOnly: true
-        priority:
-          type: string
-          readOnly: true
-        deliver_to:
-          type: string
-          readOnly: true
-        part_count:
-          type: integer
-          format: int32
-          readOnly: true
-    CustomField:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int64
-          readOnly: true
-        name:
-          type: string
-          readOnly: true
-        default:
-          type: string
-          readOnly: true
-        required:
-          type: boolean
-          readOnly: true
-        value:
-          type: string
-          readOnly: true
-        type:
-          type: string
-          readOnly: true
-    ExpenseReimbursementRequest:
-      type: object
-      properties:
-        expense_reimbursement:
-          type: number
-          format: double
-          readOnly: true
-        note:
-          type: string
-          readOnly: true
-        requested_on:
-          type: integer
-          format: int64
-          readOnly: true
-    Note:
-      type: object
-      properties:
-        date:
-          type: integer
-          format: int64
-          readOnly: true
-        text:
-          type: string
-          readOnly: true
-        created_by:
-          type: string
-          readOnly: true
-        is_private:
-          type: boolean
-          readOnly: true
-        is_privileged:
-          type: boolean
-          readOnly: true
-    Pricing:
-      type: object
-      properties:
-        type:
-          type: string
-          readOnly: true
-        spend_limit:
-          type: number
-          format: double
-          readOnly: true
-        budget_increases:
-          type: string
-          readOnly: true
-        expense_reimbursements:
-          type: number
-          format: double
-          readOnly: true
-        bonuses:
-          type: number
-          format: double
-          readOnly: true
-        additional_expenses:
-          type: number
-          format: double
-          readOnly: true
-        flat_price:
-          type: number
-          format: double
-          readOnly: true
-        per_hour_price:
-          type: number
-          format: double
-          readOnly: true
-        max_number_of_hours:
-          type: number
-          format: double
-          readOnly: true
-        per_unit_price:
-          type: number
-          format: double
-          readOnly: true
-        max_number_of_units:
-          type: number
-          format: double
-          readOnly: true
-        initial_per_hour_price:
-          type: number
-          format: double
-          readOnly: true
-        initial_number_of_hours:
-          type: number
-          format: double
-          readOnly: true
-        additional_per_hour_price:
-          type: number
-          format: double
-          readOnly: true
-        max_blended_number_of_hours:
-          type: number
-          format: double
-          readOnly: true
-    Template:
-      type: object
-      properties:
-        template_id:
-          type: string
-          description: template_id
-          readOnly: true
-        title:
-          type: string
-          readOnly: true
-        description:
-          type: string
-          readOnly: true
-        instructions:
-          type: string
-          readOnly: true
-        desired_skills:
-          type: string
-          readOnly: true
-        project:
-          type: integer
-          format: int64
-          readOnly: true
-        client:
-          type: integer
-          format: int64
-          readOnly: true
-        internal_owner:
-          type: string
-          readOnly: true
-        internal_owner_details:
-          readOnly: true
-          $ref: '#/components/schemas/InternalOwnerDetails'
-        sent_worker_count:
-          type: integer
-          format: int32
-          readOnly: true
-        assignment_window_start:
-          type: integer
-          format: int64
-          readOnly: true
-        assignment_window_start_date:
-          type: string
-          readOnly: true
-        assignment_window_end:
-          type: integer
-          format: int64
-          readOnly: true
-        assignment_window_end_date:
-          type: string
-          readOnly: true
-        scheduled_time:
-          type: integer
-          format: int64
-          readOnly: true
-        scheduled_time_date:
-          type: string
-          readOnly: true
-        scheduled_start:
-          type: integer
-          format: int64
-          readOnly: true
-        scheduled_end:
-          type: integer
-          format: int64
-          readOnly: true
-        reschedule_request:
-          readOnly: true
-          $ref: '#/components/schemas/RescheduleRequest'
-        budget_increase_request:
-          readOnly: true
-          $ref: '#/components/schemas/BudgetIncreaseRequest'
-        expense_reimbursement_request:
-          readOnly: true
-          $ref: '#/components/schemas/ExpenseReimbursementRequest'
-        bonus_request:
-          readOnly: true
-          $ref: '#/components/schemas/BonusRequest'
-        industry:
-          type: string
-          readOnly: true
-        time_zone:
-          type: string
-          readOnly: true
-        required_attachments:
-          type: integer
-          format: int32
-          readOnly: true
-        location:
-          readOnly: true
-          $ref: '#/components/schemas/Location'
-        location_offsite:
-          type: boolean
-          readOnly: true
-        location_contact:
-          readOnly: true
-          $ref: '#/components/schemas/LocationContact'
-        support_contact:
-          readOnly: true
-          $ref: '#/components/schemas/SupportContact'
-        pricing:
-          readOnly: true
-          $ref: '#/components/schemas/Pricing'
-        invoice_number:
-          type: string
-          readOnly: true
-        attachments:
-          type: array
-          readOnly: true
-          items:
-            $ref: '#/components/schemas/AssignmentDetailsAttachment'
-        created_on:
-          type: integer
-          format: int64
-          readOnly: true
-        last_modified_on:
-          type: integer
-          format: int64
-          readOnly: true
-        notes:
-          type: array
-          readOnly: true
-          items:
-            $ref: '#/components/schemas/Note'
-        custom_fields:
-          type: array
-          readOnly: true
-          items:
-            $ref: '#/components/schemas/CustomFieldGroup'
-        parts_group:
-          readOnly: true
-          $ref: '#/components/schemas/PartsGroup'
-        pending_offers:
-          type: array
-          readOnly: true
-          items:
-            $ref: '#/components/schemas/Application'
-        declined_resources:
-          type: array
-          readOnly: true
-          items:
-            $ref: '#/components/schemas/DeclinedResource'
-        questions:
-          type: array
-          readOnly: true
-          items:
-            $ref: '#/components/schemas/QuestionAnswerPair'
-        deliverables_fulfilled:
-          type: boolean
-          readOnly: true
-        template_name:
-          type: string
-          readOnly: true
-        template_description:
-          type: string
-          readOnly: true
-    Address:
-      type: object
-      properties:
-        address_1:
-          type: string
-          readOnly: true
-        address_2:
-          type: string
-          readOnly: true
-        city:
-          type: string
-          readOnly: true
-        state:
-          type: string
-          readOnly: true
-        zip:
-          type: string
-          readOnly: true
-        country:
-          type: string
-          readOnly: true
-    v1Status:
-      type: object
-      properties:
-        successful:
-          type: boolean
-          readOnly: true
-    Location:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int64
-          readOnly: true
-        name:
-          type: string
-          readOnly: true
-        location_number:
-          type: string
-          readOnly: true
-        instructions:
-          type: string
-          readOnly: true
-        address_1:
-          type: string
-          readOnly: true
-        address_2:
-          type: string
-          readOnly: true
-        city:
-          type: string
-          readOnly: true
-        state:
-          type: string
-          readOnly: true
-        zip:
-          type: string
-          readOnly: true
-        country:
-          type: string
-          readOnly: true
-        latitude:
-          type: string
-          readOnly: true
-        longitude:
-          type: string
-          readOnly: true
-    Application:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int64
-          readOnly: true
-        note:
-          type: string
-          readOnly: true
-        resource:
-          readOnly: true
-          $ref: '#/components/schemas/ApplicantProfile'
-        scheduling:
-          readOnly: true
-          $ref: '#/components/schemas/RescheduleRequest'
-        pricing:
-          readOnly: true
-          $ref: '#/components/schemas/Pricing'
-        expires_on:
-          type: integer
-          format: int64
-          readOnly: true
-        expired:
-          type: boolean
-          readOnly: true
-    TemplateListItem:
-      type: object
-      properties:
-        template_id:
-          type: string
-          readOnly: true
-        name:
-          type: string
-          readOnly: true
-        client_id:
-          type: integer
-          format: int64
-          readOnly: true
-    DeclinedResource:
+    SupportContact:
       type: object
       properties:
         id:
@@ -2791,46 +3033,78 @@ components:
           readOnly: true
           items:
             $ref: '#/components/schemas/PhoneNumber'
+    ApplicantProfile:
+      type: object
+      properties:
+        id:
+          type: string
+          readOnly: true
+        first_name:
+          type: string
+          readOnly: true
+        last_name:
+          type: string
+          readOnly: true
+        email:
+          type: string
+          readOnly: true
+        company_name:
+          type: string
+          readOnly: true
+        rating:
+          type: number
+          format: double
+          readOnly: true
+        number_of_ratings:
+          type: integer
+          format: int32
+          readOnly: true
+        job_title:
+          type: string
+          readOnly: true
+        overview:
+          type: string
+          readOnly: true
+        phone_numbers:
+          type: array
+          readOnly: true
+          items:
+            $ref: '#/components/schemas/PhoneNumber'
         uuid:
           type: string
           readOnly: true
-    AssignmentDetailsLabel:
+    AssignmentCreationResponse:
       type: object
       properties:
-        code:
-          type: string
+        resource_send_results:
+          type: object
           readOnly: true
-        note:
-          type: string
+          additionalProperties:
+            type: array
+            items:
+              type: string
+        invalid_groups:
+          type: array
           readOnly: true
-        description:
-          type: string
-          readOnly: true
-        userResolvable:
-          type: boolean
-          readOnly: true
-        colorRgb:
-          type: string
-          readOnly: true
-        id:
+          items:
+            type: integer
+            format: int64
+        number_of_resources_sent:
           type: integer
           format: int64
           readOnly: true
-        isSetId:
+        successful:
           type: boolean
           readOnly: true
-        isSetDescription:
-          type: boolean
+        id:
+          type: string
           readOnly: true
-        isSetCode:
-          type: boolean
+        requestURL:
+          type: string
           readOnly: true
-        isSetColorRgb:
-          type: boolean
+        correctedAddress:
           readOnly: true
-        isSetNote:
-          type: boolean
-          readOnly: true
+          $ref: '#/components/schemas/Address'
     BudgetIncreaseRequest:
       type: object
       properties:
@@ -2899,135 +3173,52 @@ components:
           type: integer
           format: int64
           readOnly: true
-    SendResults:
+    CustomFieldGroup:
       type: object
       properties:
-        resource_send_results:
-          type: object
-          readOnly: true
-          additionalProperties:
-            type: array
-            items:
-              type: string
-        invalid_groups:
-          type: array
-          readOnly: true
-          items:
-            type: integer
-            format: int64
-        number_of_resources_sent:
+        id:
           type: integer
           format: int64
           readOnly: true
-        successful:
+        name:
+          type: string
+          readOnly: true
+        fields:
+          type: array
+          readOnly: true
+          items:
+            $ref: '#/components/schemas/CustomField'
+        required:
           type: boolean
           readOnly: true
-    ApplicantProfile:
+    Parts:
       type: object
       properties:
-        id:
-          type: string
-          readOnly: true
-        first_name:
-          type: string
-          readOnly: true
-        last_name:
-          type: string
-          readOnly: true
-        email:
-          type: string
-          readOnly: true
-        company_name:
-          type: string
-          readOnly: true
-        rating:
+        part_value:
           type: number
           format: double
           readOnly: true
-        number_of_ratings:
+        part_name:
+          type: string
+          readOnly: true
+        part_number:
+          type: string
+          readOnly: true
+        shipping_provider:
+          type: string
+          readOnly: true
+        tracking_number:
+          type: string
+          readOnly: true
+        priority:
+          type: string
+          readOnly: true
+        deliver_to:
+          type: string
+          readOnly: true
+        part_count:
           type: integer
           format: int32
-          readOnly: true
-        job_title:
-          type: string
-          readOnly: true
-        overview:
-          type: string
-          readOnly: true
-        phone_numbers:
-          type: array
-          readOnly: true
-          items:
-            $ref: '#/components/schemas/PhoneNumber'
-        uuid:
-          type: string
-          readOnly: true
-    PhoneNumber:
-      type: object
-      properties:
-        country_code:
-          type: string
-          readOnly: true
-        phone:
-          type: string
-          readOnly: true
-        type:
-          type: string
-          readOnly: true
-          enum:
-          - WORK
-          - HOME
-          - OTHER
-          - MOBILE
-        extension:
-          type: string
-          readOnly: true
-    Label:
-      type: object
-      properties:
-        id:
-          type: string
-          readOnly: true
-        name:
-          type: string
-          readOnly: true
-    BonusRequest:
-      type: object
-      properties:
-        bonus:
-          type: number
-          format: double
-          readOnly: true
-        note:
-          type: string
-          readOnly: true
-        requested_on:
-          type: integer
-          format: int64
-          readOnly: true
-    PartLocation:
-      type: object
-      properties:
-        name:
-          type: string
-          readOnly: true
-        address1:
-          type: string
-          readOnly: true
-        address2:
-          type: string
-          readOnly: true
-        city:
-          type: string
-          readOnly: true
-        state:
-          type: string
-          readOnly: true
-        zip:
-          type: string
-          readOnly: true
-        country:
-          type: string
           readOnly: true
     LocationContact:
       type: object
@@ -3050,228 +3241,37 @@ components:
           readOnly: true
           items:
             $ref: '#/components/schemas/PhoneNumber'
-    RescheduleRequest:
+    Attachment:
       type: object
       properties:
-        note:
-          type: string
-          readOnly: true
-        requested_on:
-          type: integer
-          format: int64
-          readOnly: true
-        request_window_start:
-          type: integer
-          format: int64
-          readOnly: true
-        request_window_end:
-          type: integer
-          format: int64
-          readOnly: true
-        request_scheduled_time:
-          type: integer
-          format: int64
-          readOnly: true
-        requested_by_resource:
-          type: boolean
-          readOnly: true
-    PartsGroup:
-      type: object
-      properties:
-        supplied_by_resource:
-          type: boolean
-          readOnly: true
-        return_required:
-          type: boolean
-          readOnly: true
-        distribution_method:
-          type: string
-          readOnly: true
-        pickup_location:
-          readOnly: true
-          $ref: '#/components/schemas/PartLocation'
-        site_parts:
-          type: array
-          readOnly: true
-          items:
-            $ref: '#/components/schemas/Parts'
-        return_parts:
-          type: array
-          readOnly: true
-          items:
-            $ref: '#/components/schemas/Parts'
-    ActiveResource:
-      type: object
-      properties:
-        id:
-          type: string
-          readOnly: true
-        first_name:
-          type: string
-          readOnly: true
-        last_name:
-          type: string
-          readOnly: true
-        company_name:
-          type: string
-          readOnly: true
-        email:
-          type: string
-          readOnly: true
-        profile_picture:
-          type: string
-          readOnly: true
-        profile_picture_large:
-          type: string
-          readOnly: true
-        rating:
-          type: integer
-          format: int32
-          readOnly: true
-        number_of_ratings:
-          type: integer
-          format: int64
-          readOnly: true
-        confirmed_onsite:
-          type: boolean
-          readOnly: true
-        confirmed_date:
-          type: integer
-          format: int64
-          readOnly: true
-        phone_numbers:
-          type: array
-          readOnly: true
-          items:
-            $ref: '#/components/schemas/PhoneNumber'
-        address:
-          readOnly: true
-          $ref: '#/components/schemas/Address'
-        check_in_out:
-          type: array
-          readOnly: true
-          items:
-            $ref: '#/components/schemas/CheckInOut'
         uuid:
           type: string
           readOnly: true
-    AssignmentListItem:
+        filename:
+          type: string
+          readOnly: true
+        description:
+          type: string
+          readOnly: true
+        size:
+          type: integer
+          format: int32
+          readOnly: true
+        attachment:
+          type: string
+          readOnly: true
+    AssignmentDetailsAttachment:
       type: object
       properties:
-        id:
-          type: string
-          readOnly: true
-        project_id:
-          type: integer
-          format: int64
-          readOnly: true
-        project_name:
-          type: string
-          readOnly: true
-        title:
-          type: string
-          readOnly: true
-        scheduled_start:
-          type: integer
-          format: int64
-          readOnly: true
-        scheduled_end:
-          type: integer
-          format: int64
-          readOnly: true
-        address_line1:
-          type: string
-          readOnly: true
-        address_line2:
-          type: string
-          readOnly: true
-        city:
-          type: string
-          readOnly: true
-        state:
-          type: string
-          readOnly: true
-        postal_code:
-          type: string
-          readOnly: true
-        country:
-          type: string
-          readOnly: true
-        latitude:
-          type: number
-          format: double
-          readOnly: true
-        longitude:
-          type: number
-          format: double
-          readOnly: true
-        location_id:
-          type: string
-          readOnly: true
-        spend_limit:
-          type: string
-          readOnly: true
-        modified_status:
-          type: string
-          readOnly: true
-        status:
-          type: string
-          readOnly: true
-        substatuses:
-          type: array
-          readOnly: true
-          items:
-            $ref: '#/components/schemas/Label'
-        labels:
-          type: array
-          readOnly: true
-          items:
-            $ref: '#/components/schemas/Label'
-        internal_owner:
-          type: string
-          readOnly: true
-        client:
-          type: string
-          readOnly: true
-        client_id:
-          type: integer
-          format: int64
-          readOnly: true
-        invoice_number:
-          type: string
-          readOnly: true
-        paid_date:
-          type: integer
-          format: int64
-          readOnly: true
-        total_cost:
-          type: string
-          readOnly: true
-        resource_company_name:
-          type: string
-          readOnly: true
-        resource_user_number:
-          type: string
-          readOnly: true
-        resource_full_name:
-          type: string
-          readOnly: true
-        last_modified_on:
-          type: integer
-          format: int64
-          readOnly: true
-        modifier_first_name:
-          type: string
-          readOnly: true
-        modifier_last_name:
-          type: string
-          readOnly: true
-    Status:
-      type: object
-      properties:
-        id:
+        uuid:
           type: string
           readOnly: true
         name:
+          type: string
+          readOnly: true
+        description:
+          type: string
+          readOnly: true
+        relative_uri:
           type: string
           readOnly: true
