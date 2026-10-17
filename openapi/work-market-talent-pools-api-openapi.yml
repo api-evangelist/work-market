@@ -232,33 +232,6 @@ paths:
                 type: string
 components:
   schemas:
-    ApplyToTalentPoolOnBehalfResponse:
-      type: object
-      properties:
-        success:
-          type: array
-          readOnly: true
-          items:
-            type: string
-        failure:
-          type: array
-          readOnly: true
-          items:
-            type: string
-    ApplyToTalentPoolOnBehalfRequest:
-      type: object
-      properties:
-        userIds:
-          type: array
-          readOnly: true
-          items:
-            type: string
-        override:
-          type: boolean
-          readOnly: true
-        suppressNotification:
-          type: boolean
-          readOnly: true
     TalentPool:
       type: object
       properties:
@@ -282,6 +255,39 @@ components:
         deleted:
           type: boolean
           readOnly: true
+    ApplyToTalentPoolOnBehalfRequest:
+      type: object
+      properties:
+        userIds:
+          type: array
+          readOnly: true
+          items:
+            type: string
+        override:
+          type: boolean
+          readOnly: true
+        suppressNotification:
+          type: boolean
+          readOnly: true
+    v1Status:
+      type: object
+      properties:
+        successful:
+          type: boolean
+          readOnly: true
+    ApplyToTalentPoolOnBehalfResponse:
+      type: object
+      properties:
+        success:
+          type: array
+          readOnly: true
+          items:
+            type: string
+        failure:
+          type: array
+          readOnly: true
+          items:
+            type: string
     v1Meta:
       type: object
       properties:
@@ -303,9 +309,3 @@ components:
         timestamp:
           type: integer
           format: int64
-    v1Status:
-      type: object
-      properties:
-        successful:
-          type: boolean
-          readOnly: true

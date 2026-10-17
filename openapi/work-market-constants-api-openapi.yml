@@ -146,15 +146,6 @@ paths:
                       type: string
 components:
   schemas:
-    Substatus:
-      type: object
-      properties:
-        id:
-          type: string
-          readOnly: true
-        name:
-          type: string
-          readOnly: true
     LocationType:
       type: object
       properties:
@@ -175,18 +166,14 @@ components:
         name:
           type: string
           readOnly: true
-    Industry:
+    Substatus:
       type: object
       properties:
         id:
-          type: integer
-          format: int64
+          type: string
           readOnly: true
         name:
           type: string
-          readOnly: true
-        checked:
-          type: boolean
           readOnly: true
     v1Meta:
       type: object
@@ -209,3 +196,16 @@ components:
         timestamp:
           type: integer
           format: int64
+    Industry:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          readOnly: true
+        name:
+          type: string
+          readOnly: true
+        checked:
+          type: boolean
+          readOnly: true
