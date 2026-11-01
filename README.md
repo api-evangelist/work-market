@@ -64,6 +64,151 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Work Market is a company surfaced as a portfolio company of union-square-ventures and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+WorkMarket, an ADP company, is an independent contractor management platform that helps businesses organize, manage, and pay their extended workforce of 1099 contractors and freelancers. The platform covers contractor onboarding and verification, Labor Clouds for organizing talent by skill and location, assignment creation and tracking, compliance support, and fast payment processing. The WorkMarket Employer API exposes assignments, talent pools, address book, custom fields, labels, projects, and payment approval as a REST API, with webhooks, a Relay automation tool, and a certified MuleSoft connector for enterprise integration.
 
-Backed by: union-square-ventures — https://workmarket.com
+**Areas:** Workforce Management · Contractors · Freelance · Gig Economy · Human Resources · Payments · Field Service · Staffing
+
+## Work Market on APIs.io
+
+Everything profiled for Work Market is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/work-market/](https://apis.io/providers/work-market/)** — or go straight to one of the APIs or properties below.
+
+### APIs (10)
+
+- [Work Market Assignments API](https://apis.io/apis/work-market/work-market-assignments-api/) — The Assignments API from Work Market — 39 operation(s) for assignments.
+- [Work Market Authorization API](https://apis.io/apis/work-market/work-market-authorization-api/) — The Authorization API from Work Market — 1 operation(s) for authorization.
+- [Work Market Constants API](https://apis.io/apis/work-market/work-market-constants-api/) — The Constants API from Work Market — 6 operation(s) for constants.
+- [Work Market Custom Fields API](https://apis.io/apis/work-market/work-market-custom-fields-api/) — The Custom Fields API from Work Market — 1 operation(s) for custom fields.
+- [Work Market Labels API](https://apis.io/apis/work-market/work-market-labels-api/) — The Labels API from Work Market — 3 operation(s) for labels.
+- [Work Market Locations API](https://apis.io/apis/work-market/work-market-locations-api/) — The Locations API from Work Market — 1 operation(s) for locations.
+- [Work Market Projects API](https://apis.io/apis/work-market/work-market-projects-api/) — The Projects API from Work Market — 2 operation(s) for projects.
+- [Work Market Talent Pools API](https://apis.io/apis/work-market/work-market-talent-pools-api/) — The Talent Pools API from Work Market — 6 operation(s) for talent pools.
+- [Work Market UpdateCheckIn API](https://apis.io/apis/work-market/work-market-updatecheckin-api/) — The UpdateCheckIn API from Work Market — 2 operation(s) for updatecheckin.
+- [Work Market Address Book API](https://apis.io/apis/work-market/work-market-address-book-api/) — The Address Book API from Work Market — 5 operation(s) for address book.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### AsyncAPI (1)
+
+Event-driven and webhook contracts.
+
+- [Work Market Webhooks](https://apis.io/asyncapis/work-market/work-market-webhooks/)
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [work-market](https://apis.io/servers/work-market/work-market/)
+
+#### JSON Schema (10)
+
+The data models the API reads and writes.
+
+- [AssignmentDetails](https://apis.io/schemas/work-market/work-market-assignment-details/)
+- [AssignmentListItem](https://apis.io/schemas/work-market/work-market-assignment-list-item/)
+- [Client](https://apis.io/schemas/work-market/work-market-client/)
+- [CustomField](https://apis.io/schemas/work-market/work-market-custom-field/)
+- [Location](https://apis.io/schemas/work-market/work-market-location/)
+- [Payment](https://apis.io/schemas/work-market/work-market-payment/)
+- [Pricing](https://apis.io/schemas/work-market/work-market-pricing/)
+- [Project](https://apis.io/schemas/work-market/work-market-project/)
+- [TalentPool](https://apis.io/schemas/work-market/work-market-talent-pool/)
+- [Template](https://apis.io/schemas/work-market/work-market-template/)
+
+#### Collections (10)
+
+Postman and Open Collection request collections.
+
+- [Swagger spec for Work Market API v1 Addressbook API](https://apis.io/collections/work-market/open-work-market-addressbook-api/)
+- [Swagger spec for Work Market API v1 Addressbook Assignments API](https://apis.io/collections/work-market/open-work-market-assignments-api/)
+- [Swagger spec for Work Market API v1 Addressbook Authorization API](https://apis.io/collections/work-market/open-work-market-authorization-api/)
+- [Swagger spec for Work Market API v1 Addressbook Constants API](https://apis.io/collections/work-market/open-work-market-constants-api/)
+- [Swagger spec for Work Market API v1 Addressbook Custom Fields API](https://apis.io/collections/work-market/open-work-market-custom-fields-api/)
+- [Swagger spec for Work Market API v1 Addressbook Labels API](https://apis.io/collections/work-market/open-work-market-labels-api/)
+- [Swagger spec for Work Market API v1 Addressbook Locations API](https://apis.io/collections/work-market/open-work-market-locations-api/)
+- [Swagger spec for Work Market API v1 Addressbook Projects API](https://apis.io/collections/work-market/open-work-market-projects-api/)
+- [Swagger spec for Work Market API v1 Addressbook Talent Pools API](https://apis.io/collections/work-market/open-work-market-talent-pools-api/)
+- [Swagger spec for Work Market API v1 Addressbook UpdateCheckIn API](https://apis.io/collections/work-market/open-work-market-updatecheckin-api/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Work Market Employer Api Overlay](https://apis.io/overlays/work-market/work-market-employer-api-overlay/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Work Market Authentication](https://apis.io/security/work-market/work-market-authentication/)
+- [Work Market Domain Security](https://apis.io/security/work-market/work-market-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://workmarket.com)
+- [Documentation](https://developer.workmarket.com/docs)
+- [Getting started](https://developer.workmarket.com/page/best-practices)
+- [API reference](https://employer-api.workmarket.com/docs)
+- [Sign up](https://www.workmarket.com/contractors/join-workmarket)
+- [Support](https://workmarket.zendesk.com/hc/en-us)
+- [Blog](https://www.workmarket.com/blog)
+- [Terms of service](https://www.workmarket.com/tos)
+- [Privacy policy](https://www.workmarket.com/privacy)
+- [GitHub](https://github.com/workmarket-oss)
+- [Status](https://status.workmarket.com)
+
+## API Evangelist rating
+
+**Kin Score 39.2** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 49.9 |
+| Contract governance | 4.5 |
+| Operational transparency | 22.4 |
+| Developer ergonomics | 47.0 |
+| Access clarity | 34.2 |
+
+**Agent readiness 23.1** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | documented (partial credit) |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | derived (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | yes |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 22.3** — Payments
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/work-market/](https://apis.io/providers/work-market/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Work Market: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/work-market/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
